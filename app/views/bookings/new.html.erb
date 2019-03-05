@@ -1,1 +1,37 @@
-Bookings Page
+<div class="new-bookings-background">
+  <div class="new-bookings-left-items">
+
+    <div class="new-bookings-left-pack">
+      <h1>Pack Card</h1>
+    </div>
+    <div class="new-bookings-left-policy-container">
+      <div class="new-bookings-left-policy-heading">
+        <p>PACKER GUIDELINES</p>
+      </div>
+      <div class="new-bookings-left-policy-content">
+        <ul>
+          <li>Rule 1</li>
+          <li>Rule 2</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="new-bookings-right-items">
+    <div class="new-bookings-right-form">
+      <div class="new-bookings-form-card">
+        <%= simple_form_for [@booking] do |f| %>
+          <p class="new-bookings-form-labels">DELIVERY LOCATION</p>
+          <%= f.input :delivery_address, label: false %>
+          <p class="new-bookings-form-labels">DELIVERY DATE</p>
+          <%= f.input :delivery_date, label: false %>
+          <div class="new-bookings-form-buttons-container">
+            <%= f.button :button, 'BACK', type: :reset, class: "new-bookings-form-buttons" %>
+            <%= f.button :submit, "CONFIRM", class: "new-bookings-form-buttons" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
