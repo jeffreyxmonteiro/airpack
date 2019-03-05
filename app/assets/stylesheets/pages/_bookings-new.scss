@@ -1,0 +1,70 @@
+.new-bookings-background {
+  color: black;
+  text-align: center;
+  height: 100vh;
+  background: #E2ECED;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.new-bookings-left-items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.new-bookings-right-items {
+  display: flex;
+  align-items: center;
+}
+
+
+.new-bookings-left-pack {
+
+}
+
+.new-bookings-left-policy-container {
+  text-align: left;
+  width: 30vw;
+}
+
+.new-bookings-left-policy-heading {
+  border-bottom: .75px solid #42B6C5;
+}
+
+.new-bookings-left-policy-content {
+  padding-top: 25px;
+}
+
+.new-bookings-right-form {
+
+}
+
+.new-bookings-form-labels {
+  text-align: left;
+}
+
+.new-bookings-form-buttons-container {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new-bookings-form-buttons {
+  background-image: linear-gradient(#42B6C5, #0C8B9C);
+  border-radius: 50px;
+  width: 7em;
+  color: white;
+}
+
+.new-bookings-form-card {
+  background-color: white;
+  width: 28vw;
+  padding: 25px;
+  box-shadow: 1px 1px 1px 1px #ccc;
+  border-radius: 5px;
+}
+
