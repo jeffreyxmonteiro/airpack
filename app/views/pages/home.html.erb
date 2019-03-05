@@ -1,14 +1,22 @@
-<div class="banner-container">
-  <div class="banner">
-    <div class="banner-links-container">
-      <!-- <span class="banner-link"><%#= link_to "Become an Owner", new_owner_registration_path %></span> -->
-     <!--  <span class="banner-link"><%#= link_to "User Sign Up", new_user_registration_path %></span>
-      <span class="banner-link"><%#= link_to "Owner Login", new_owner_session_path %></span>
-      <span class="banner-link"><%#= link_to "User Login", new_user_session_path %></span> -->
+<div class="home-container">
+  <div class="home-background">
+    <div class="home-links-container">
+      <div class="home-links">
+      <!-- <span class="home-link"><%#= link_to "Become an Owner", new_owner_registration_path %></span> -->
+     <!--  <span class="home-link"><%#= link_to "User Sign Up", new_user_registration_path %></span>
+      <span class="home-link"><%#= link_to "Owner Login", new_owner_session_path %></span>
+      <span class="home-link"><%#= link_to "User Login", new_user_session_path %></span> -->
+      </div>
+      <div class="name-and-logo">
+          <h1>airPack <%= image_tag('logo.png') %></h1>
+      </div>
     </div>
-    <div class="banner-content">
+    <div class="pack-model-cards">
+      <%= image_tag('home-card.png') %>
+    </div>
+    <div class="home-content">
       <h1>Travel without the baggage</h1>
-        <%#= link_to "FIND PACKS", packs_path, class: "btn btn-lg" %>
+      <%= link_to "FIND PACKS", packages_path, class: "packs-btn btn-lg" %>
     </div>
   </div>
 </div>
