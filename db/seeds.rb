@@ -1,143 +1,10 @@
 require 'faker'
-Traveler.destroy_all
-Packer.destroy_all
+
 Booking.destroy_all
 Item.destroy_all
 Pack.destroy_all
-Cart.destroy_all
-
-puts "Creating seeds."
-
-puts "Creating Traveler Seeds"
-
-50.times do
-  Traveler.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    photo_url: AVATARIMAGES.sample,
-    biography: "What's up! Huge travel junkie, originally from #{Faker::Address.country}! Some of my other interests are reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}."
-    )
-end
-
-puts "Finished Creating Traveler Seeds"
-
-puts "Creating Packer Seeds"
-
-50.times do
-  Packer.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    photo_url: USERIMAGES.sample,
-    biography: "Living that good life in Tokyo! My other interests are reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}."
-    location: TOKYOLOCATIONS.sample
-    )
-end
-
-puts "Finished Packer Traveler Seeds"
-
-puts "Creating Initial Packs Seeds"
-
-Packer.all.each do |packer|
-  3.times do
-    Pack.create!(
-      size: SIZES.sample,
-      duration: DURATIONS.sample,
-      name: "Millenial Traveler Kit",
-      style: STYLES.sample,
-      description: "This pack is really good for an international trip.",
-      photo_url: PACKIMAGES.sample,
-      price: rand(100).to_s
-      )
-  end
-end
-
-Pack.all.each do |pack|
-  5.times do
-  Item.create! (
-    name: "Trendy item"
-    description: "This will be very useful in your travels."
-    category: "Top",
-    style: STYLES.sample,
-    size: SIZES.sample,
-    price: rand(10).to_s
-    photo_url: TOPSIMAGES.sample
-  )
-  end
-
-  5.times do
-    Item.create! (
-      name: "Trendy item"
-      description: "This will be very useful in your travels."
-      category: "Bottom",
-      style: STYLES.sample,
-      size: SIZES.sample,
-      price: rand(10).to_s
-      photo_url: BOTTOMSIMAGES.sample
-    )
-  end
-
-  2.times do
-    Item.create! (
-      name: "Trendy item"
-      description: "This will be very useful in your travels."
-      category: "Hats",
-      style: STYLES.sample,
-      size: SIZES.sample,
-      price: rand(10).to_s
-      photo_url: HATS.sample
-    )
-  end
-
-  2.times do
-    Item.create! (
-      name: "Trendy item"
-      description: "This will be very useful in your travels."
-      category: "Belt",
-      style: STYLES.sample,
-      size: SIZES.sample,
-      price: rand(10).to_s
-      photo_url: BELTS.sample
-    )
-  end
-
-  2.times do
-    Item.create! (
-      name: "Trendy item"
-      description: "This will be very useful in your travels."
-      category: "Shoes",
-      style: STYLES.sample,
-      size: SIZES.sample,
-      price: rand(10).to_s
-      photo_url: SHOES.sample
-    )
-  end
-end
-
-puts "Finished Creating Initial Packs Seeds"
-
-puts "Creating Separate Closet Items Seeds"
-
-Packer.all.each do |packer|
-  2.times do
-    Item.create! (
-      name: "Trendy item"
-      description: "This will be very useful in your travels."
-      category: "Shoes",
-      style: STYLES.sample,
-      size: SIZES.sample,
-      price: rand(10).to_s
-      photo_url: UPSELLS.sample
-    )
-  end
-end
-
-puts "Finished Creating Separate Closet Items Seeds"
-
-puts "Creating Bookings Seeds"
-
-puts "Finished Bookings Packs Seeds"
-
-puts "Finished creating all seeds :D"
+Traveler.destroy_all
+Packer.destroy_all
 
 AVATARIMAGES = [
                 "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
@@ -296,5 +163,183 @@ UPSELLS = [
 "https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwe3984e85/prod_images/MD17PKTHR_MUL_ALT_02.jpg"
 ]
 
+puts "Creating seeds."
 
+puts "Creating Traveler Seeds"
 
+Traveler.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo_url: AVATARIMAGES.sample,
+    biography: "What's up! Huge travel junkie, originally from #{Faker::Address.country}! Some of my other interests are reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    email: "traveler@gmail.com",
+    password: "tsecret"
+    )
+
+10.times do
+  Traveler.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo_url: AVATARIMAGES.sample,
+    biography: "What's up! Huge travel junkie, originally from #{Faker::Address.country}! Some of my other interests are reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    email: "#{rand(1000)}#{Faker::Internet.email}",
+    password: "tsecret"
+    )
+end
+
+puts "Finished Creating Traveler Seeds"
+
+puts "Creating Packer Seeds"
+
+Packer.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo_url: USERIMAGES.sample,
+    biography: "Living that good life in Tokyo! My other interests are reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    location: TOKYOLOCATIONS.sample,
+    email: "packer@gmail.com",
+    password: "psecret"
+    )
+
+10.times do
+  Packer.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo_url: USERIMAGES.sample,
+    biography: "Living that good life in Tokyo! My other interests are reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    location: TOKYOLOCATIONS.sample,
+    email: "#{rand(1000)}#{Faker::Internet.email}",
+    password: "psecret"
+    )
+end
+
+puts "Finished Packer Traveler Seeds"
+
+puts "Creating Initial Packs Seeds"
+
+Packer.all.each do |packer|
+  1.times do
+    Pack.create!(
+      size: SIZES.sample,
+      duration: DURATIONS.sample,
+      name: "Millenial Traveler Kit",
+      style: STYLES.sample,
+      description: "This pack is really good for an international trip.",
+      photo_url: PACKIMAGES.sample,
+      price: rand(100),
+      packer_id: packer.id
+      )
+  end
+end
+
+Pack.all.each do |pack|
+  3.times do
+  Item.create!(
+    name: "Trendy item",
+    description: "This will be very useful in your travels.",
+    category: "Top",
+    style: STYLES.sample,
+    size: SIZES.sample,
+    price: rand(10),
+    photo_url: TOPSIMAGES.sample,
+    pack_id: pack.id,
+    packer_id: pack.packer.id
+  )
+  end
+
+  3.times do
+    Item.create!(
+      name: "Trendy item",
+      description: "This will be very useful in your travels.",
+      category: "Bottom",
+      style: STYLES.sample,
+      size: SIZES.sample,
+      price: rand(10),
+      photo_url: BOTTOMSIMAGES.sample,
+      pack_id: pack.id,
+      packer_id: pack.packer.id
+    )
+  end
+
+  1.times do
+    Item.create!(
+      name: "Trendy item",
+      description: "This will be very useful in your travels.",
+      category: "Hats",
+      style: STYLES.sample,
+      size: SIZES.sample,
+      price: rand(10),
+      photo_url: HATS.sample,
+      pack_id: pack.id,
+      packer_id: pack.packer.id
+    )
+  end
+
+  2.times do
+    Item.create!(
+      name: "Trendy item",
+      description: "This will be very useful in your travels.",
+      category: "Belt",
+      style: STYLES.sample,
+      size: SIZES.sample,
+      price: rand(10),
+      photo_url: BELTS.sample,
+      pack_id: pack.id,
+      packer_id: pack.packer.id
+    )
+  end
+
+  2.times do
+    Item.create!(
+      name: "Trendy item",
+      description: "This will be very useful in your travels.",
+      category: "Shoes",
+      style: STYLES.sample,
+      size: SIZES.sample,
+      price: rand(10),
+      photo_url: SHOES.sample,
+      pack_id: pack.id,
+      packer_id: pack.packer.id
+    )
+  end
+end
+
+puts "Finished Creating Initial Packs Seeds"
+
+puts "Creating Separate Closet Items Seeds"
+
+Packer.all.each do |packer|
+  2.times do
+    Item.create!(
+      name: "Trendy item",
+      description: "This will be very useful in your travels.",
+      category: "Shoes",
+      style: STYLES.sample,
+      size: SIZES.sample,
+      price: rand(10),
+      photo_url: UPSELLS.sample,
+      packer_id: packer.id
+    )
+  end
+end
+
+puts "Finished Creating Separate Closet Items Seeds"
+
+puts "Creating Bookings Seeds"
+
+  Traveler.all.each do |traveler|
+  2.times do
+    Booking.create!(
+      fees: rand(10),
+      delivery_address: "Impact HUB Tokyo, 2 Chome-11-３ Meguro, Tokyo 153-0063",
+      traveler_id: traveler.id,
+      completed: [true, false].sample,
+      delivery_date: "15-3-2019",
+      return_deadline: "20-3-2019"
+    )
+  end
+end
+
+puts "Finished Bookings Packs Seeds"
+
+puts "Finished creating all seeds :D"
