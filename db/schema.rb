@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_045053) do
+ActiveRecord::Schema.define(version: 2019_03_05_051812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_045053) do
     t.string "delivery_address"
     t.string "delivery_date"
     t.string "return_deadline"
-    t.string "completed"
+    t.boolean "completed"
     t.bigint "traveler_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_045053) do
     t.string "category"
     t.string "style"
     t.string "size"
-    t.string "price"
+    t.integer "price"
     t.string "photo_url"
     t.bigint "pack_id"
     t.bigint "packer_id"
@@ -90,11 +90,13 @@ ActiveRecord::Schema.define(version: 2019_03_05_045053) do
     t.string "style"
     t.string "size"
     t.string "duration"
-    t.string "price"
+    t.integer "price"
     t.string "photo_url"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "packer_id"
+    t.index ["packer_id"], name: "index_packs_on_packer_id"
   end
 
   create_table "travelers", force: :cascade do |t|
@@ -125,20 +127,9 @@ ActiveRecord::Schema.define(version: 2019_03_05_045053) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
   add_foreign_key "bookings", "travelers"
   add_foreign_key "carts", "travelers"
   add_foreign_key "items", "packers"
   add_foreign_key "items", "packs"
+  add_foreign_key "packs", "packers"
 end
