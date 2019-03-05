@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 2019_03_04_092507) do
     t.string "delivery_date"
     t.string "return_deadline"
     t.string "completed"
-    t.bigint "traveller_id"
+    t.bigint "traveler_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["traveller_id"], name: "index_bookings_on_traveller_id"
+    t.index ["traveler_id"], name: "index_bookings_on_traveler_id"
   end
 
   create_table "cart_items", force: :cascade do |t|
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 2019_03_04_092507) do
   end
 
   create_table "carts", force: :cascade do |t|
-    t.bigint "traveller_id"
+    t.bigint "traveler_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["traveller_id"], name: "index_carts_on_traveller_id"
+    t.index ["traveler_id"], name: "index_carts_on_traveler_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_092507) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "travellers", force: :cascade do |t|
+  create_table "travelers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "photo_url"
@@ -99,20 +99,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_092507) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  add_foreign_key "bookings", "travellers"
-  add_foreign_key "carts", "travellers"
+  add_foreign_key "bookings", "travelers"
+  add_foreign_key "carts", "travelers"
   add_foreign_key "items", "packers"
   add_foreign_key "items", "packs"
 end
