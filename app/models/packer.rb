@@ -1,3 +1,3 @@
 class Packer < ApplicationRecord
-  has_many :packs, through: :items
+  has_many :packs
 end
