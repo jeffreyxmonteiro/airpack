@@ -1,1 +1,20 @@
-Index Page
+<div class="packs-container">
+  <div class="index-page-description text-center">
+    <h3>Available Packs Near You</h3>
+  </div>
+  <div class="pack-row">
+    <% @packs.first(12).each do |pack| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="pack-card">
+          <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= pack.photo_url[0] %>);"></div>
+          <div class="pack-description">
+            <h2><%=  %></h2>
+            <h6>  </h6>
+            <h6><%=  %></h6>
+          </div>
+           <%= link_to "", package_path(pack), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
