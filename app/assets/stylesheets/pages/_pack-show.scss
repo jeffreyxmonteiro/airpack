@@ -1,0 +1,72 @@
+.container {
+
+}
+
+.banner {
+  height: 300px;
+  width: 100vw;
+  display: flex;
+  background-size: cover;
+}
+
+.bnr-card {
+  width: 720px;
+  height: 230px;
+  background: white;
+  margin: auto;
+  display: flex;
+  padding: 0px;
+}
+
+.bc-photo {
+  width: 230px;
+  height: 230px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+}
+
+.bc-details {
+  width: 440px;
+  padding: 10px 10px;
+}
+
+.sm-profile {
+  width: 240px;
+  height: 230px;
+  margin: auto;
+  padding: 0px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  right: 100px;
+}
+
+.show-pack-btn {
+    background-image: linear-gradient(#42B6C5, #0C8B9C);
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 5px 30px;
+}
+
+.show-pack-btn a {
+  color: white;
+}
+
+.body-of-cards {
+  height: calc(100vh - 370px)
+}
+
+.img-circle {
+  width: 90px;
+  height: 90px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
