@@ -7,6 +7,12 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+    <%#= link_to packs_path do %>
+      <span class="pack-btn">
+        <a href="#">FIND PACKS</a>
+      </span>
+    <%# end %>
+
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
