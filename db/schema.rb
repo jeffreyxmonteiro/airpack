@@ -10,21 +10,97 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_073248) do
+ActiveRecord::Schema.define(version: 2019_03_04_092507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+  create_table "booking_items", force: :cascade do |t|
+    t.string "bookable_type"
+    t.string "bookable_id"
+    t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["booking_id"], name: "index_booking_items_on_booking_id"
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.integer "fees"
+    t.string "delivery_address"
+    t.string "delivery_date"
+    t.string "return_deadline"
+    t.string "completed"
+    t.bigint "traveler_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["traveler_id"], name: "index_bookings_on_traveler_id"
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.string "cartable_type"
+    t.string "cartable_id"
+    t.bigint "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.bigint "traveler_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["traveler_id"], name: "index_carts_on_traveler_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "category"
+    t.string "style"
+    t.string "size"
+    t.string "price"
+    t.string "photo_url"
+    t.bigint "pack_id"
+    t.bigint "packer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pack_id"], name: "index_items_on_pack_id"
+    t.index ["packer_id"], name: "index_items_on_packer_id"
+  end
+
+  create_table "packers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "biography"
+    t.string "location"
+    t.string "photo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "packs", force: :cascade do |t|
+    t.string "name"
+    t.string "style"
+    t.string "size"
+    t.string "duration"
+    t.string "price"
+    t.string "photo_url"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "travelers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "photo_url"
+    t.string "biography"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "bookings", "travelers"
+  add_foreign_key "carts", "travelers"
+  add_foreign_key "items", "packers"
+  add_foreign_key "items", "packs"
 end
