@@ -1,0 +1,42 @@
+.container {
+
+}
+
+.banner {
+  height: 300px;
+  width: 100vw;
+  display: flex;
+  background-size: cover;
+}
+
+.bnr-card {
+  width: 720px;
+  height: 230px;
+  background: white;
+  margin: auto;
+  display: flex;
+}
+
+.bc-photo {
+  width: 230px;
+  height: 230px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.bc-details {
+  width: 440px;
+}
+
+.sm-profile {
+  width: 240px;
+  height: 230px;
+}
+
+.body-of-cards {
+  height: calc(100vh - 370px)
+}
+
+
