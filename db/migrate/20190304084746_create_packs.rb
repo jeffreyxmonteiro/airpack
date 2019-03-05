@@ -5,7 +5,7 @@ class CreatePacks < ActiveRecord::Migration[5.2]
       t.string :style
       t.string :size
       t.string :duration
-      t.string :price
+      t.integer :price
       t.string :photo_url
       t.string :description
 
