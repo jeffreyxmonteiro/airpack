@@ -4,6 +4,6 @@ class PackagesController < ApplicationController
   end
 
   def show
-    @package = Package.all
+    @pack = Pack.all
   end
 end
