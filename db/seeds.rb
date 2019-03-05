@@ -37,15 +37,101 @@ puts "Finished Packer Traveler Seeds"
 
 puts "Creating Initial Packs Seeds"
 
+Packer.all.each do |packer|
+  3.times do
+    Pack.create!(
+      size: SIZES.sample,
+      duration: DURATIONS.sample,
+      name: "Millenial Traveler Kit",
+      style: STYLES.sample,
+      description: "This pack is really good for an international trip.",
+      photo_url: PACKIMAGES.sample,
+      price: rand(100).to_s
+      )
+  end
+end
+
+Pack.all.each do |pack|
+  5.times do
+  Item.create! (
+    name: "Trendy item"
+    description: "This will be very useful in your travels."
+    category: "Top",
+    style: STYLES.sample,
+    size: SIZES.sample,
+    price: rand(10).to_s
+    photo_url: TOPSIMAGES.sample
+  )
+  end
+
+  5.times do
+    Item.create! (
+      name: "Trendy item"
+      description: "This will be very useful in your travels."
+      category: "Bottom",
+      style: STYLES.sample,
+      size: SIZES.sample,
+      price: rand(10).to_s
+      photo_url: BOTTOMSIMAGES.sample
+    )
+  end
+
+  2.times do
+    Item.create! (
+      name: "Trendy item"
+      description: "This will be very useful in your travels."
+      category: "Hats",
+      style: STYLES.sample,
+      size: SIZES.sample,
+      price: rand(10).to_s
+      photo_url: HATS.sample
+    )
+  end
+
+  2.times do
+    Item.create! (
+      name: "Trendy item"
+      description: "This will be very useful in your travels."
+      category: "Belt",
+      style: STYLES.sample,
+      size: SIZES.sample,
+      price: rand(10).to_s
+      photo_url: BELTS.sample
+    )
+  end
+
+  2.times do
+    Item.create! (
+      name: "Trendy item"
+      description: "This will be very useful in your travels."
+      category: "Shoes",
+      style: STYLES.sample,
+      size: SIZES.sample,
+      price: rand(10).to_s
+      photo_url: SHOES.sample
+    )
+  end
+end
+
 puts "Finished Creating Initial Packs Seeds"
 
-puts "Creating Items Seeds"
+puts "Creating Separate Closet Items Seeds"
 
-puts "Finished Creating Items Seeds"
+Packer.all.each do |packer|
+  2.times do
+    Item.create! (
+      name: "Trendy item"
+      description: "This will be very useful in your travels."
+      category: "Shoes",
+      style: STYLES.sample,
+      size: SIZES.sample,
+      price: rand(10).to_s
+      photo_url: UPSELLS.sample
+    )
+  end
+end
 
-puts "Creating Completed Packs Seeds"
-
-puts "Finished Creating Completed Packs Seeds"
+puts "Finished Creating Separate Closet Items Seeds"
 
 puts "Creating Bookings Seeds"
 
@@ -80,6 +166,10 @@ USERIMAGES = [
               "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
               "https://images.pexels.com/photos/1001180/pexels-photo-1001180.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
               ]
+
+PACKIMAGES = [
+"https://images.pexels.com/photos/57750/pexels-photo-57750.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+]
 
 TOKYOLOCATIONS = [
               "Shibuya, Tokyo",
@@ -116,6 +206,8 @@ SIZES = [
 ]
 
 ITEMCATEGORY = [
+"Top",
+"Bottom",
 "Casual Shirt Short Sleeve",
 "Casual Shirt Long Sleeve",
 "Casual Button Down",
@@ -195,60 +287,14 @@ BELTS = [
   "https://im.uniqlo.com/images/jp/pc/goods/416101/item/38_416101_middles.jpg"
 ]
 
+DURATIONS = ["3 days", "7 days", "14 days"]
+
+UPSELLS = [
+"https://thedailywant.com/wp-content/uploads/2017/06/harrys-travel-shave-kit.jpg",
+"https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/204/original/1350X1350_BoxerBrief_Throwback_10P.jpg",
+"https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwaa4f896c/prod_images/MD18PKMAR_MUL_ALT_02.jpg",
+"https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwe3984e85/prod_images/MD17PKTHR_MUL_ALT_02.jpg"
+]
 
 
 
-
-
-
-
-=begin
-dogs
-"https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-"https://images.pexels.com/photos/350428/pexels-photo-350428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/374906/pexels-photo-374906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/160846/french-bulldog-summer-smile-joy-160846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/257540/pexels-photo-257540.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/235805/pexels-photo-235805.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/164186/pexels-photo-164186.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/9080/night-garden-yellow-animal.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1591939/pexels-photo-1591939.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/97082/weimaraner-puppy-dog-snout-97082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1124002/pexels-photo-1124002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-
-user
-"https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/555790/pexels-photo-555790.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/247206/pexels-photo-247206.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/245239/pexels-photo-245239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/965324/pexels-photo-965324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1689731/pexels-photo-1689731.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1722198/pexels-photo-1722198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1001180/pexels-photo-1001180.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-
-
-owner
-"https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/769772/pexels-photo-769772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-"https://images.pexels.com/photos/227294/pexels-photo-227294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-
-=end
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
