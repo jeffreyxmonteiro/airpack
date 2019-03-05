@@ -4,7 +4,7 @@
   </div>
   <div class="packs-container">
     <div class="pack-row">
-      <% @packs.first(9).each do |pack| %>
+      <% @packs.first(12).each do |pack| %>
         <div class="col-xs-12 col-sm-4">
           <div class="pack-card">
             <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= pack.photo_url %>);"></div>
@@ -21,7 +21,7 @@
               <h6>¥<%= pack.price %></h6>
               </div>
             </div>
-             <%= link_to "", package_path(pack), class: "card-link" %>
+             <%= link_to "", pack_path(pack), class: "card-link" %>
           </div>
         </div>
       <% end %>
