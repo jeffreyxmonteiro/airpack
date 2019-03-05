@@ -51,7 +51,6 @@ TOKYOLOCATIONS = [
               "Chiba, Tokyo"
               ]
 STYLES = [
-'Style',
 'Jock',
 'Prepster',
 'Hipster',
