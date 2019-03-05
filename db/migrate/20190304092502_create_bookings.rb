@@ -5,7 +5,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.string :delivery_address
       t.string :delivery_date
       t.string :return_deadline
-      t.string :completed
+      t.boolean :completed
       t.references :traveler, foreign_key: true
 
       t.timestamps

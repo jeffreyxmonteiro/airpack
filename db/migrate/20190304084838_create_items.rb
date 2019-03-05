@@ -6,7 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :category
       t.string :style
       t.string :size
-      t.string :price
+      t.integer :price
       t.string :photo_url
       t.references :pack, foreign_key: true
       t.references :packer, foreign_key: true
