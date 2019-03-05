@@ -3,7 +3,7 @@ class CartItemsController < ApplicationController
     # Needs an Object
     CartItem.create!(
       cart: current_user.cart,
-      cartable: self # item or pack
+      cartable: params[:item] || params[:pack] # item or pack
       )
   end
 end
