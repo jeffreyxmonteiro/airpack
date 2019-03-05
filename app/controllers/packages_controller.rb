@@ -1,9 +1,9 @@
 class PackagesController < ApplicationController
   def index
-    @packages = Package.all
+    @packs = Pack.all
   end
 
   def show
-    @package = Package.all
+    @pack = Pack.all
   end
 end
