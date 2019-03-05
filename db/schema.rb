@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_051812) do
     t.string "delivery_address"
     t.string "delivery_date"
     t.string "return_deadline"
-    t.string "completed"
+    t.boolean "completed"
     t.bigint "traveler_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_051812) do
     t.string "category"
     t.string "style"
     t.string "size"
-    t.string "price"
+    t.integer "price"
     t.string "photo_url"
     t.bigint "pack_id"
     t.bigint "packer_id"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_051812) do
     t.string "style"
     t.string "size"
     t.string "duration"
-    t.string "price"
+    t.integer "price"
     t.string "photo_url"
     t.string "description"
     t.datetime "created_at", null: false
