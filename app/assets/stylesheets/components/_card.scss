@@ -1,10 +1,9 @@
 .card {
-  // width: 400px;
   height: 180px;
   background-color: white;
   margin: 30px;
-  // padding: 10px 10px;
   display: flex;
+  border-radius: 8px;
 }
 
 .card-photo {
@@ -14,8 +13,36 @@
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
+  border-radius: 8px 0px 0px 8px;
 }
 
 .card-details {
-  padding: 10px 10px;
+  padding: 50px 20px 10px 20px;
 }
+
+.card-category {
+  color: gray;
+  margin: 0px;
+}
+
+.card-name {
+  font-weight: bold;
+  margin: 0px;
+}
+
+.card-size {
+  font-size: 10px;
+}
+
+.card-price {
+  font-weight: bold;
+  text-align: right;
+}
+
+.card-type {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+}
+
+

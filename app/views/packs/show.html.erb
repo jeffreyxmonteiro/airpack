@@ -4,31 +4,31 @@
       <div class="container bc-photo" style="background-image: url('<%= image_path 'pack_sample.jpg' %>')">
       </div>
       <div class="container bc-details">
-        <p><%= @pack.style %> <%= @pack.duration %></p>
-        <p><%= @pack.name %></p>
-        <p><%= @pack.size %></p>
+        <p class="card-category"><%= @pack.style %> · <%= @pack.duration %></p>
+        <p class="card-name"><%= @pack.name %></p>
+        <p class="card-size"><%= @pack.size %></p>
         <p><%= @pack.description %></p>
-        <p><%= @pack.price %></p>
+        <p class="card-price">$<%= @pack.price %></p>
       </div>
     </div>
     <div class="container sm-profile">
       <%= image_tag @pack.packer.photo_url, class: "img-circle" %>
       <div><%=  @pack.packer.first_name %></div>
       <span class="show-pack-btn">
-        <a href="#">BOOK</a>
+        <a href="#">ADD TO CART</a>
       </span>
     </div>
   </div>
   <div class="container body-of-cards">
-    <% @pack.items.each do |pack| %>
+    <% @pack.items.each do |item| %>
       <div class="col-xs-12 col-md-4">
         <div class="card">
-          <div class="card-photo" style="background-image: url(<%= pack.photo_url %>);">
+          <div class="card-photo" style="background-image: url(<%= item.photo_url %>);">
           </div>
           <div class="card-details">
-            <p><%= pack.name %></p>
-            <p><%= pack.description %></p>
-            <p><%= pack.category %></p>
+            <p class="card-name"><%= item.name %></p>
+            <p><%= item.description %></p>
+            <p class="card-type"><%= item.category %></p>
           </div>
         </div>
       </div>
