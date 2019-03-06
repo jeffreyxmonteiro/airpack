@@ -3,7 +3,14 @@ class CartItemsController < ApplicationController
     # Needs an Object
     CartItem.create!(
       cart: current_traveler.cart,
-      cartable: params[:item] || params[:pack] # item or pack
-      )
+      cartable: @pack || @item # item or pack
+    )
+    redirect_to packs_show_path
+  end
+
+  def destroy
+    @cart_item = cart_item
+    @cart_item.destroy
+    redirect_to packs_show_path
   end
 end
