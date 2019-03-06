@@ -20,6 +20,49 @@
       <%#= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%#= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
+      <div class="navbar-wagon-item navbar-airpack-link">
+          <a href="#">Bookings</a>
+      </div>
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= image_tag 'cart-icon.png', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+<!--           <i class="fas fa-cart-arrow-down dropdown-toggle" id="navbar-wagon-menu"></i>
+ -->        <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <h4 class="dropdown-margin">Your Cart</h4>
+              <div class="navbar-card">
+                <div class="navbar-card-photo" style="background-image: url('<%= image_path 'pack_sample.jpg' %>')">
+                </div>
+                <div class="navbar-card-details">
+                  <p class="card-category">@pack.style · @pack.duration</p>
+                  <p class="card-name">Sample 1 @pack.name</p>
+                  <p class="card-size">@pack.size</p>
+                  <p class="navbar-card-price">$@pack.price</p>
+                </div>
+              </div>
+              <div class="navbar-card">
+                <div class="navbar-card-photo" style="background-image: url('<%= image_path 'pack_sample.jpg' %>')">
+                </div>
+                <div class="navbar-card-details">
+                  <p class="card-category">@pack.style · @pack.duration</p>
+                  <p class="card-name">Sample 2 @pack.name</p>
+                  <p class="card-size">@pack.size</p>
+                  <p class="navbar-card-price">$@pack.price</p>
+                </div>
+              </div>
+            <!-- <li>
+              <%#= link_to "#" do %>
+                <i class="fa fa-cog"></i>  <%#= t(".settings", default: "Settings") %>
+              <#% end %>
+            </li>
+            <li>
+              <%#= link_to destroy_traveler_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%#= t(".sign_out", default: "Log out") %>
+              <#% end %>
+            </li> -->
+          </div>
+        </div>
+      </div>
+
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
