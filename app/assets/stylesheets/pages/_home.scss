@@ -39,11 +39,16 @@
 }
 .home-links-container {
   position: absolute;
+  height: 13%;
   top: 0px;
-  right: 10px;
+  right: 13px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+.name-and-logo {
+  align-self: flex-start;
 }
 .name-and-logo img {
  mix-blend-mode: multiply;
