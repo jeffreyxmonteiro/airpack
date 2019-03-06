@@ -19,7 +19,9 @@
   width: 35vw;
   background-color: white;
   padding: 50px;
+  overflow: auto;
   height: calc(100vh - 350px);
+  margin-top: 15px;
 }
 .log-in-form-container a {
   color: black;
