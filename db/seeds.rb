@@ -3,6 +3,7 @@ require 'faker'
 Booking.destroy_all
 Item.destroy_all
 Pack.destroy_all
+Cart.destroy_all
 Traveler.destroy_all
 Packer.destroy_all
 
