@@ -2,49 +2,19 @@
   <div class="new-bookings-left-items">
 
     <div class="new-bookings-left-pack">
-
-    <div class="container-spacer">
-      <div class="new-bookings-card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-        <div class="new-bookings-card-product-infos">
-          <h2>Product name</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+      <% @cart.cart_items.each do |item| %>
+        <div class="container-spacer">
+          <div class="new-bookings-card-product">
+            <img src=<%= item.cartable.photo_url  %>>
+            <div class="new-bookings-card-product-infos">
+              <h2><%= item.cartable.name %> | <%= item.cartable.price %></h2>
+              <p><%= item.cartable.description %></p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="container-spacer">
-      <div class="new-bookings-card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-        <div class="new-bookings-card-product-infos">
-          <h2>Product name</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-spacer">
-      <div class="new-bookings-card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-        <div class="new-bookings-card-product-infos">
-          <h2>Product name</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-spacer">
-      <div class="new-bookings-card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-        <div class="new-bookings-card-product-infos">
-          <h2>Product name</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
-        </div>
-      </div>
-    </div>
+      <% end %>
 
     </div>
-
   </div>
 
   <div class="new-bookings-right-items">
