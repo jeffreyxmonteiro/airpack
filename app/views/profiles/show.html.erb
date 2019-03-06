@@ -16,7 +16,11 @@
     <div class="profile-show-bottom-headings-left"><h3>Profile Details</h3></div>
 
     <div class="profile-show-bottom-left-profile-details-card">
-      <p>Test</p>
+      <p><strong>Email: </strong><%= @user.email  %></p>
+      <p><strong>First Name: </strong><%= @user.first_name  %></p>
+      <p><strong>Last Name: </strong><%= @user.last_name  %></p>
+      <p><strong>Profile Created: </strong><%= @user.created_at.strftime("%B %d, %Y")  %></p>
+
     </div>
   </div>
 
