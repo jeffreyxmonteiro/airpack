@@ -15,7 +15,7 @@
       <%= image_tag @pack.packer.photo_url, class: "img-circle" %>
       <div><%=  @pack.packer.first_name %></div>
       <span class="show-pack-btn">
-        <%= link_to "Add to Cart", cart_items_path, method: :create %>
+        <%= link_to "Add to Cart", cart_items_path(cartable_id: @pack.id, cartable_type: @pack.class), method: :create %>
       </span>
     </div>
   </div>
