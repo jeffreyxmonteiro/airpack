@@ -5,32 +5,42 @@
   background: #E2ECED;
   background-size: cover;
   display: flex;
-  align-items: center;
   justify-content: space-around;
 }
 
 .new-bookings-left-items {
+  padding-top: 75px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  height: 80vh;
 }
 
 .new-bookings-right-items {
+  padding-top: 75px;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  height: 80vh;
 }
 
+.container-spacer{
+  padding-bottom: 15px;
+}
 
 .new-bookings-left-pack {
-
+  width: 45vw;
 }
 
-.new-bookings-left-policy-container {
+.new-bookings-right-policy-container {
   text-align: left;
-  width: 30vw;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
 }
 
-.new-bookings-left-policy-heading {
+.new-bookings-right-policy-heading {
   border-bottom: .75px solid #42B6C5;
 }
 
@@ -61,10 +71,45 @@
 }
 
 .new-bookings-form-card {
+  // margin-top: 25px;
   background-color: white;
-  width: 28vw;
+  width: 40vw;
   padding: 25px;
   box-shadow: 1px 1px 1px 1px #ccc;
   border-radius: 5px;
 }
 
+.new-bookings-card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.new-bookings-card-product img {
+  height: 100%;
+  width: 175px;
+  object-fit: cover;
+}
+
+.new-bookings-card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+}
+
+.new-bookings-card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.new-bookings-card-product .new-bookings-card-product-infos {
+  padding: 16px;
+}
