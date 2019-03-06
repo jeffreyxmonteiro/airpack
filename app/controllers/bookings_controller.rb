@@ -21,6 +21,18 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.completed = true
+    unmark_booked_items(@booking)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    unmark_booked_items(@booking)
+    @booking.destroy
+  end
+
   private
 
   def booking_params
@@ -41,10 +53,17 @@ class BookingsController < ApplicationController
         booking: my_booking,
         bookable: cart_item.cartable
       )
+      cart_item.cartable.booked = true
     end
   end
 
   def clear_cart(cart)
     cart.cart_items.each(&:destroy)
+  end
+
+  def unmark_booked_items(booking)
+    booking.booking_items.each do |booking_item|
+      booking_item.bookable.booked = false
+    end
   end
 end
