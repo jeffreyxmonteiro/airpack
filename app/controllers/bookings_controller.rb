@@ -1,18 +1,24 @@
 class BookingsController < ApplicationController
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
     @traveler = current_traveler
     @booking = Booking.new
   end
 
   def create
-    @traveler = current_traveler
     @booking = make_booking
     @cart = current_traveler.cart
-    render :new unless @booking.save
-    make_booking_items(@cart, @booking)
-    clear_cart(@cart)
-    redirect_to booking_path(@booking)
+    if @booking.save
+      make_booking_items(@cart, @booking)
+      clear_cart(@cart)
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
   end
 
   private
@@ -22,9 +28,10 @@ class BookingsController < ApplicationController
   end
 
   def make_booking
-    booking = Booking.new(bookings_params)
+    booking = Booking.new(booking_params)
     booking.fees = 20
-    booking.return_deadline = @booking.delivery_date + 30.days
+    booking.return_deadline = booking.delivery_date
+    booking.traveler = current_traveler
     return booking
   end
 
