@@ -1,0 +1,122 @@
+.profile-show-banner {
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.profile-show-banner-left-picture {
+  display: flex;
+  align-items: center;
+  width: 30vw;
+  justify-content: flex-end;
+  padding-right: 2vw;
+
+}
+
+.profile-show-banner-avatar-square {
+  width: 200px;
+  height: 35vh;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white .25px solid;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.profile-show-banner-right-content {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  justify-content: center;
+}
+
+.profile-show-bottom {
+  display: flex;
+  background: #E2ECED;
+  height: 55vh;
+  justify-content: space-around;
+
+}
+
+.profile-show-bottom-left-profile-details {
+  display: flex;
+  width: 30vw;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-show-bottom-right-bookings {
+  display: flex;
+  width: 60vw;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-show-bottom-headings-left {
+  display: flex;
+  width: 30vw;
+  // height: 5vh;
+}
+
+.profile-show-bottom-headings-right {
+  display: flex;
+  width: 50vw;
+  // height: 5vh;
+}
+
+.profile-show-bottom-left-profile-details-card {
+  // margin-top: 25px;
+  background-color: white;
+  width: 30vw;
+  padding: 25px;
+  box-shadow: 1px 1px 1px 1px #ccc;
+  border-radius: 5px;
+}
+
+.profile-show-bottom-right-bookings-cards {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  // align-items: center;
+  width: 50vw;
+  border-radius: 5px;
+}
+
+.profile-show-bottom-right-bookings-cards img {
+  height: 100%;
+  width: 175px;
+  object-fit: cover;
+}
+
+.profile-show-bottom-right-bookings-cards h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+}
+
+.profile-show-bottom-right-bookings-cards p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.profile-show-bottom-right-bookings-cards .profile-show-bottom-right-bookings-cards-infos {
+  padding: 16px;
+}
+
+.profile-show-bottom-right-bookings-cards-container-spacer {
+  padding-bottom: 15px;
+  width: 50vw;
+}

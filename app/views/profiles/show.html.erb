@@ -1,0 +1,48 @@
+<div class="profile-show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+
+  <div class="profile-show-banner-left-picture">
+    <img class="profile-show-banner-avatar-square" alt="avatar-square" src=<%= @user.photo_url %> />
+  </div>
+
+  <div class="profile-show-banner-right-content">
+    <h3><%= "#{@user.first_name} #{@user.last_name}"  %></h3>
+    <p><%= @user.biography  %></p>
+  </div>
+
+</div>
+
+<div class="profile-show-bottom">
+  <div class="profile-show-bottom-left-profile-details-left">
+    <div class="profile-show-bottom-headings-left"><h3>Profile Details</h3></div>
+
+    <div class="profile-show-bottom-left-profile-details-card">
+      <p>Test</p>
+    </div>
+  </div>
+
+  <div class="profile-show-bottom-right-bookings">
+
+    <div class="profile-show-bottom-headings-right"><h3>Upcoming / Completed Bookings</h3></div>
+
+    <div class="profile-show-bottom-right-bookings-cards-container-spacer">
+      <div class="profile-show-bottom-right-bookings-cards">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+        <div class="profile-show-bottom-right-bookings-cards-infos">
+          <h2>Product name</h2>
+          <p>Product description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+<!-- Traveler id: 22, first_name: "Sang", last_name: "Schowalter", photo_url: "https://images.pexels.com/photos/1239288/pexels-ph...", biography: "What's up! Huge travel junkie, originally from Ber...", created_at: "2019-03-05 06:14:36", updated_at: "2019-03-05 06:14:36", email: "traveler@gmail.com"> -->
+
+<%# if current_user.class == "Owner" %>
+
+<!-- current_traveler || current_packer -->
