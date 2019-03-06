@@ -34,10 +34,15 @@
   // position: absolute;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   color: white;
   height: 40vh;
   background-size: cover;
   margin-bottom: 15px;
+}
+.index-page-description h3 {
+  font-size: 40px;
+  letter-spacing: 1px;
 }
 .pack-description {
   display: flex;
