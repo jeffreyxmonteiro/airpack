@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
   def new
     @traveler = current_traveler
     @booking = Booking.new
+    @cart = current_traveler.cart
   end
 
   def create
