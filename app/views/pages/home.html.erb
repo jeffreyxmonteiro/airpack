@@ -1,21 +1,31 @@
 <div class="home-container">
   <div class="home-background">
-    <div class="home-links-container">
-      <div class="home-links">
-      <!-- <span class="home-link"><%#= link_to "Become an Owner", new_owner_registration_path %></span> -->
-     <!--  <span class="home-link"><%#= link_to "User Sign Up", new_user_registration_path %></span>
-      <span class="home-link"><%#= link_to "Owner Login", new_owner_session_path %></span>
-      <span class="home-link"><%#= link_to "User Login", new_user_session_path %></span> -->
-      </div>
-      <div class="name-and-logo">
-          <h1>airPack <%= image_tag('logo.png') %></h1>
-      </div>
+    <div class="name-and-logo">
+      <span id="app-name">airPack <%= image_tag('logo.png') %></span>
     </div>
+    <div class="home-links-container">
+      <span class="home-link"><%= link_to "Become an Owner", new_packer_registration_path %></span>
+      <span class="home-link"><%= link_to "User Sign Up", new_traveler_registration_path %></span>
+      <span class="home-link"><%= link_to "Owner Login", new_packer_session_path %></span>
+      <span class="home-link"><%= link_to "User Login", new_traveler_session_path %></span>
+    </div>
+  </div>
+  <div class="bottom-half">
     <div class="pack-model-cards">
-      <%= image_tag('home-card.png') %>
+      <p id="main-image"><%= image_tag('home-card.png') %></p>
     </div>
     <div class="home-content">
       <h1>Travel without the baggage</h1>
+      <div class="form-content">
+        <%= simple_form_for [@pack] do |f| %>
+          <%= simple_fields_for :other do |o| %>
+           <h5><%= o.input :location, label: 'LOCATION', placeholder: 'Shinjuku, Tokyo', input_html: { class: 'form-headers' }%></h5>
+           <h5><%= o.input :delivery_date, label: 'DELIVERY DATE', placeholder: 'March 15, 2019', input_html: { class: 'form-headers' }%></h5>
+          <% end %>
+          <h5><%= f.input :duration, label: 'TRIP DURATION', placeholder: '7 Days', input_html: { class: 'form-headers' } %></h5>
+          <h5><%= f.input :style, label: 'STYLE', placeholder: 'Hipster', input_html: { class: 'form-headers' } %></h5>
+        <% end %>
+      </div>
       <%= link_to "FIND PACKS", packs_path, class: "packs-btn btn-lg" %>
     </div>
   </div>
