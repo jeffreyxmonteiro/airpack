@@ -108,5 +108,18 @@
 }
 
 .navbar-airpack-link a {
-  color: #333333;
+  color: #999999;
 }
+
+.navbar-airpack-link a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+
+.center {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+

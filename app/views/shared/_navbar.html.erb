@@ -7,11 +7,24 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <%#= link_to packs_path do %>
-      <span class="pack-btn">
-        <a href="#">FIND PACKS</a>
-      </span>
-    <%# end %>
+      <form class="form-inline" action="/action_page.php">
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" placeholder="Location">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" placeholder="Delivery Date">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="pwd" placeholder="Trip Duration">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" placeholder="Style">
+        </div>
+      </form>
+
+    <span class="pack-btn">
+      <%= link_to "FIND PACKS", packs_path %>
+    </span>
 
     <% if traveler_signed_in? %>
 
@@ -49,16 +62,6 @@
                   <p class="navbar-card-price">$@pack.price</p>
                 </div>
               </div>
-            <!-- <li>
-              <%#= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%#= t(".settings", default: "Settings") %>
-              <#% end %>
-            </li>
-            <li>
-              <%#= link_to destroy_traveler_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%#= t(".sign_out", default: "Log out") %>
-              <#% end %>
-            </li> -->
           </div>
         </div>
       </div>
@@ -66,16 +69,11 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag current_traveler.photo_url, class: "avatar dropdown-toggle center", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to profile_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
               <% end %>
             </li>
             <li>
