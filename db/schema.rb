@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_070017) do
+
+
+ActiveRecord::Schema.define(version: 2019_03_07_092209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +36,8 @@ ActiveRecord::Schema.define(version: 2019_03_07_070017) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "booking_days"
+    t.bigint "packer_id"
+    t.index ["packer_id"], name: "index_bookings_on_packer_id"
     t.index ["traveler_id"], name: "index_bookings_on_traveler_id"
   end
 
@@ -134,6 +138,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_070017) do
     t.index ["reset_password_token"], name: "index_travelers_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "packers"
   add_foreign_key "bookings", "travelers"
   add_foreign_key "carts", "travelers"
   add_foreign_key "items", "packers"

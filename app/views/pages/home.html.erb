@@ -5,14 +5,17 @@
     </div>
     <div class="home-links-container">
       <span class="home-link"><%= link_to "Become a Packer", new_packer_registration_path %></span>
-      <span class="home-link"><%= link_to "Traveler Sign Up", new_traveler_registration_path %></span>
+      <span class="home-link"><%= link_to "Traveler Signup", new_traveler_registration_path %></span>
       <span class="home-link"><%= link_to "Packer Login", new_packer_session_path %></span>
       <span class="home-link"><%= link_to "Traveler Login", new_traveler_session_path %></span>
     </div>
   </div>
   <div class="bottom-half">
     <div class="pack-model-cards">
-      <p id="main-image"><%= image_tag('home-card.png') %></p>
+      <div class="fadein">
+        <p id="main-image"><%= image_tag 'home-card.png', id: 'f1' %></p>
+        <!-- <p id="main-image"><%#= image_tag 'model.png', id: 'f2' %></p> -->
+      </div>
     </div>
     <div class="home-content">
       <h1>Travel without the baggage</h1>
