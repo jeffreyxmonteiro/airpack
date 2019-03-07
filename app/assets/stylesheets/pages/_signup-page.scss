@@ -1,54 +1,47 @@
-.login-background {
+.signup-background {
   color: black;
   text-align: left;
   height: calc(100vh - 70px);
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   background-color: #E2ECED;
+  background-size: cover;
   padding: 0px 75px;
 }
-.log-in-image {
-  height: calc(100vh - 150px);
-  width: 35vw;
-  background-size: cover;
-  border-radius: 10px;
-}
-.log-in-form-container {
+.sign-up-form-container {
   box-shadow: 0.2px 0.2px 2px 2px rgba(0, 0, 0, 0.1);
   width: 35vw;
   background-color: white;
-  padding: 50px;
+  padding: 30px 50px;
   overflow: auto;
-  height: calc(100vh - 350px);
+  height: calc(100vh - 150px);
   margin-top: 15px;
 }
-.log-in-form-container a {
+.sign-up-form-container a {
   color: black;
 }
-.log-in-form-container h2 {
+.sign-up-form-container h2 {
   margin-bottom: 40px;
   margin-top: 5px;
   font-weight: 600;
 }
-.form-check input {
-  margin-right: 10px;
+.signup-form-btns {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 45px;
 }
-.form-links {
-  line-height: 40px;
-}
-.log-in-btn input{
+.sign-up-btn input{
   padding: 10px 30px;
-  margin-top: 50px;
   font-weight: bold;
   background: linear-gradient(#42B6C5, #0C8B9C);
   border-radius: 50px;
   color: white;
 }
-.log-in-btn {
-  text-align: center;
-}
-#signup-link a {
+.sign-up-btn a {
+  padding: 10px 30px;
   font-weight: bold;
-  color: #763C00;
+  background: linear-gradient(#42B6C5, #0C8B9C);
+  border-radius: 50px;
+  color: white;
 }

@@ -1,4 +1,6 @@
 class PacksController < ApplicationController
+  # skip_before_action :authenticate_traveler!, only: [:index, :show]
+
   def index
     @packs = Pack.all
   end
@@ -9,5 +11,16 @@ class PacksController < ApplicationController
 
   def new
     @pack = Pack.new
+  end
+  def create
+    @pack = Pack.new(pack_params)
+#     @pack.style
+#     @pack.size
+  end
+
+  private
+
+  def pack_params
+    params.require(:pack).permit(:name, :style, :duration, :price, :photo_url, :description)
   end
 end

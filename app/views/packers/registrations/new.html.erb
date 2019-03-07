@@ -1,25 +1,44 @@
-<h2>Sign up</h2>
+<div class="signup-background" style="background-image: linear-gradient(rgba(239, 94, 32, 0.05), rgba(13, 173, 169, 0.1)), url('<%= image_path 'clothes.jpg' %>')">
+  <div class="sign-up-form-container">
+    <h2>Packer Signup</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+      <div class="form-inputs">
+
+        <%= f.input :first_name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "first_name" } %>
+        <%= f.input :last_name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "last_name" } %>
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :location,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "location" } %>
+      </div>
+    <div class="signup-form-btns">
+      <div class="form-actions sign-up-btn">
+        <%= link_to "BACK", root_path, {:class=>"btn btn-default"} %>
+      </div>
+      <div class="form-actions sign-up-btn">
+        <%= f.button :submit, "SIGN UP" %>
+      </div>
+    </div>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "packers/shared/links" %>
+</div>

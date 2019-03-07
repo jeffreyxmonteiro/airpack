@@ -14,3 +14,57 @@
 .pack-btn a:hover {
   text-decoration: none;
 }
+
+.find-btn {
+  border-radius: 50px;
+  font-weight: bold;
+  padding: 10px 30px;
+  right: 400px;
+  position: absolute;
+  border: 1px solid #42B6C5;
+}
+
+.find-btn a {
+  color: #42B6C5;
+}
+
+.find-btn a:hover {
+  text-decoration: none;
+  color: #5DD1D2;
+}
+
+.booking-btn {
+  // background-image: linear-gradient(#42B6C5, #0C8B9C);
+  // border-radius: 50px;
+  font-weight: bold;
+  padding: 5px 15px;
+  right: 300px;
+  bottom: 10px;
+  position: absolute;
+}
+
+a .booking-btn {
+  color: white;
+}
+
+a:hover .booking-btn {
+  text-decoration: none;
+}
+
+.clear-btn {
+  // background-image: linear-gradient(#42B6C5, #0C8B9C);
+  // border-radius: 50px;
+  font-weight: bold;
+  padding: 5px 15px;
+  right: 200px;
+  bottom: 10px;
+  position: absolute;
+}
+
+a .clear-btn {
+  color: white;
+}
+
+a:hover .clear-btn  {
+  text-decoration: none;
+}
