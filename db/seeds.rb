@@ -329,7 +329,7 @@ Packer.all.each do |packer|
 end
 
 Pack.all.each do |pack|
-  20.times do
+  5.times do
   Item.create!(
     name: TOPSNAMES.sample,
     description: TOPSDESCRIPTIONS.sample,
@@ -343,7 +343,7 @@ Pack.all.each do |pack|
   )
   end
 
-  10.times do
+  5.times do
     Item.create!(
       name: BOTTOMSNAMES.sample,
       description: BOTTOMSDESCRIPTIONS.sample,
@@ -357,7 +357,7 @@ Pack.all.each do |pack|
     )
   end
 
-  10.times do
+  2.times do
     Item.create!(
       name: "Trendy item",
       description: "This will be very useful in your travels.",
