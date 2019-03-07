@@ -1,7 +1,7 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   background: #E2ECED;
   background-size: cover;
 }
@@ -37,9 +37,16 @@
   // box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
+
 .home-content a {
   font-size: 20px;
 }
+
+.home-content a:hover {
+  text-decoration: none;
+  color: white;
+}
+
 #main-image img {
   height: 80vh;
   width: 35vw;
