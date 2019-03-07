@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_085616) do
+ActiveRecord::Schema.define(version: 2019_03_07_070017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_085616) do
     t.string "delivery_address"
     t.string "delivery_date"
     t.string "return_deadline"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.bigint "traveler_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -102,6 +102,22 @@ ActiveRecord::Schema.define(version: 2019_03_06_085616) do
     t.index ["packer_id"], name: "index_packs_on_packer_id"
   end
 
+  create_table "temp_closet_items", force: :cascade do |t|
+    t.bigint "temp_closet_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_temp_closet_items_on_item_id"
+    t.index ["temp_closet_id"], name: "index_temp_closet_items_on_temp_closet_id"
+  end
+
+  create_table "temp_closets", force: :cascade do |t|
+    t.bigint "packer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["packer_id"], name: "index_temp_closets_on_packer_id"
+  end
+
   create_table "travelers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -123,4 +139,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_085616) do
   add_foreign_key "items", "packers"
   add_foreign_key "items", "packs"
   add_foreign_key "packs", "packers"
+  add_foreign_key "temp_closet_items", "items"
+  add_foreign_key "temp_closet_items", "temp_closets"
+  add_foreign_key "temp_closets", "packers"
 end
