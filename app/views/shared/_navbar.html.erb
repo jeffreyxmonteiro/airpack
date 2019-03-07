@@ -29,26 +29,40 @@
 <!--           <i class="fas fa-cart-arrow-down dropdown-toggle" id="navbar-wagon-menu"></i>
  -->        <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <h4 class="dropdown-margin">Your Cart</h4>
-              <div class="navbar-card">
-                <div class="navbar-card-photo" style="background-image: url('<%= image_path 'pack_sample.jpg' %>')">
-                </div>
-                <div class="navbar-card-details">
-                  <p class="card-category">@pack.style · @pack.duration</p>
-                  <p class="card-name">Sample 1 @pack.name</p>
-                  <p class="card-size">@pack.size</p>
-                  <p class="navbar-card-price">$@pack.price</p>
-                </div>
-              </div>
-              <div class="navbar-card">
-                <div class="navbar-card-photo" style="background-image: url('<%= image_path 'pack_sample.jpg' %>')">
-                </div>
-                <div class="navbar-card-details">
-                  <p class="card-category">@pack.style · @pack.duration</p>
-                  <p class="card-name">Sample 2 @pack.name</p>
-                  <p class="card-size">@pack.size</p>
-                  <p class="navbar-card-price">$@pack.price</p>
-                </div>
-              </div>
+              <% current_traveler.cart.cart_items.each do |cart_item| %>
+                <% cart_object = cart_item.cartable %>
+                <% if cart_object.class == Pack %>
+                  <%= link_to pack_path(cart_object) do %>
+                    <div class="navbar-card">
+                      <div class="navbar-card-photo" style="background-image: url('<%= cart_object.photo_url %>')">
+                      </div>
+                      <div class="navbar-card-details">
+                        <p class="card-category"><%= cart_object.style %></p>
+                        <p class="card-name"><%= cart_object.name %></p>
+                        <p class="card-size"><%= cart_object.size %></p>
+                        <p class="navbar-card-price"><%= cart_object.price %></p>
+                        <%= link_to "delete", cart_item_path(cart_item), method: :delete %>
+                      </div>
+                    </div>
+                  <% end %>
+                <% elsif cart_object.class == Item %>
+                  <%= link_to pack_path(cart_object) do %>
+                    <div class="navbar-card">
+                      <div class="navbar-card-photo" style="background-image: url('<%= cart_object.photo_url %>')">
+                      </div>
+                      <div class="navbar-card-details">
+                        <p class="card-category"><%= cart_object.style %></p>
+                        <p class="card-name"><%= cart_object.name %></p>
+                        <p class="card-size"><%= cart_object.size %></p>
+                        <p class="navbar-card-price"><%= cart_object.price %></p>
+                        <%= link_to "delete", cart_item_path(cart_item), method: :delete %>
+                      </div>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+              <%= link_to "create booking", new_booking_path %>
+              <%= link_to "clear cart", cart_path(current_traveler.cart), method: :delete %>
             <!-- <li>
               <%#= link_to "#" do %>
                 <i class="fa fa-cog"></i>  <%#= t(".settings", default: "Settings") %>
