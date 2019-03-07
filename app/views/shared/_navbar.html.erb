@@ -7,7 +7,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-      <form class="form-inline" action="/action_page.php">
+      <form class="form-inline left-form" action="/action_page.php">
         <div class="form-group">
           <input type="email" class="form-control" id="email" placeholder="Location">
         </div>
@@ -22,7 +22,7 @@
         </div>
       </form>
 
-    <span class="pack-btn">
+    <span class="find-btn">
       <%= link_to "FIND PACKS", packs_path %>
     </span>
 
@@ -33,9 +33,6 @@
       <%#= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%#= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
-      <div class="navbar-wagon-item navbar-airpack-link">
-          <a href="#">Bookings</a>
-      </div>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag 'cart-icon.png', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
@@ -45,16 +42,18 @@
               <% current_traveler.cart.cart_items.each do |cart_item| %>
                 <% cart_object = cart_item.cartable %>
                 <% if cart_object.class == Pack %>
-                  <%= link_to pack_path(cart_object) do %>
+                  <%= link_to pack_path(cart_object), class: "card-linkee" do %>
                     <div class="navbar-card">
                       <div class="navbar-card-photo" style="background-image: url('<%= cart_object.photo_url %>')">
                       </div>
                       <div class="navbar-card-details">
+                        <%= link_to cart_item_path(cart_item), method: :delete do %>
+                          <i class="fas fa-minus-circle navbar-card-delete"></i>
+                        <% end %>
                         <p class="card-category"><%= cart_object.style %></p>
                         <p class="card-name"><%= cart_object.name %></p>
                         <p class="card-size"><%= cart_object.size %></p>
                         <p class="navbar-card-price"><%= cart_object.price %></p>
-                        <%= link_to "delete", cart_item_path(cart_item), method: :delete %>
                       </div>
                     </div>
                   <% end %>
@@ -74,8 +73,11 @@
                   <% end %>
                 <% end %>
               <% end %>
-              <%= link_to "create booking", new_booking_path %>
-              <%= link_to "clear cart", cart_path(current_traveler.cart), method: :delete %>
+              <div class="btn-line">
+                <%= link_to "create booking", new_booking_path, class: "booking-btn" %>
+                <%= link_to "clear cart", cart_path(current_traveler.cart), method: :delete, class: "clear-btn" %>
+              </div>
+
             <!-- <li>
               <%#= link_to "#" do %>
                 <i class="fa fa-cog"></i>  <%#= t(".settings", default: "Settings") %>
