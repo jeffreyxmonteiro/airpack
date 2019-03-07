@@ -319,9 +319,9 @@ Packer.all.each do |packer|
     Pack.create!(
       size: SIZES.sample,
       duration: DURATIONS.sample,
-      name: "Millenial Traveler Kit",
+      name: PACKNAMES.sample,
       style: STYLES.sample,
-      description: "This pack is really good for an international trip.",
+      description: PACKDESCRIPTIONS.sample,
       photo_url: PACKIMAGES.sample,
       price: rand(100),
       packer_id: packer.id
