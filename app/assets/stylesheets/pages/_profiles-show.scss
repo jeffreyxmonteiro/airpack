@@ -63,6 +63,11 @@
   width: 30vw;
   padding-top: 15px;
   padding-bottom: 25px;
+  p {
+    margin: 0;
+    padding: 10px 15px;
+    border-bottom: 1px solid black !important;
+  }
 }
 
 .profile-show-bottom-headings-right {
@@ -84,7 +89,7 @@
 
 .profile-show-bottom-right-bookings-cards {
   overflow: hidden;
-  height: 120px;
+
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -122,4 +127,27 @@
 .profile-show-bottom-right-bookings-cards-container-spacer {
   padding-bottom: 15px;
   width: 50vw;
+}
+
+.profile-show-bottom-headings-right {
+  li {
+    a {
+      background: transparent !important;
+      color: black;
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+    }
+    a:hover {
+      background: transparent !important;
+      color: black;
+    }
+    a:focus {
+      background: transparent !important;
+      color: black;
+    }
+  }
+  li.active {
+    border-bottom: 1px solid black !important;
+  }
 }

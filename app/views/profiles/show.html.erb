@@ -1,4 +1,4 @@
-<div class="profile-show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+<div class="profile-show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/358485/pexels-photo-358485.jpeg)">
 
   <div class="profile-show-banner-left-picture">
     <img class="profile-show-banner-avatar-square" alt="avatar-square" src=<%= @user.photo_url %> />
@@ -13,7 +13,7 @@
 
 <div class="profile-show-bottom">
   <div class="profile-show-bottom-left-profile-details-left">
-    <div class="profile-show-bottom-headings-left"><h3>Profile Details</h3></div>
+    <div class="profile-show-bottom-headings-left"><p>Profile Details</p></div>
 
     <div class="profile-show-bottom-left-profile-details-card">
       <p><strong>Email: </strong><%= @user.email  %></p>
@@ -26,16 +26,95 @@
 
   <div class="profile-show-bottom-right-bookings">
 
-    <div class="profile-show-bottom-headings-right"><h3>Upcoming / Completed Bookings</h3></div>
+    <!-- heading goes here -->
+
+    <div class="profile-show-bottom-headings-right">
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#upcoming" aria-controls="upcoming" role="tab" data-toggle="tab">Upcoming</a></li>
+        <li role="presentation"><a href="#completed" aria-controls="completed" role="tab" data-toggle="tab">Completed</a></li>
+      </ul>
+
+    </div>
+
+    <!-- heading goes here^^  -->
+
+
+
+
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="upcoming">
+    <!-- Upcoming Trip Cards goes here -->
     <div class="profile-show-bottom-right-bookings-cards-container-spacer">
       <div class="profile-show-bottom-right-bookings-cards">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-        <div class="profile-show-bottom-right-bookings-cards-infos">
-          <h2>Product name</h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+        <% @user.bookings.each do |booking| %>
+        <% booking.booking_items.each do |item| %>
+
+        <% if item.bookable.class == Pack && booking.completed == false %>
+
+          <img src=<%= item.bookable.photo_url %>>
+          <div class="profile-show-bottom-right-bookings-cards-infos">
+            <h2><%= item.bookable.name %></h2>
+            <p><%= item.bookable.description %></p>
+
+        <% elsif item.bookable.class == Item && booking.completed == false %>
+
+          <img src=<%= item.bookable.photo_url %>>
+          <div class="profile-show-bottom-right-bookings-cards-infos">
+            <h2><%= item.bookable.name %></h2>
+            <p><%= item.bookable.description %></p>
+
+            <% end %>
+
+        <% end %>
+        <% end %>
+
         </div>
       </div>
     </div>
+
+    <!-- Upcoming Card Trip Cards goes here ^^ -->
+  </div>
+
+
+  <div role="tabpanel" class="tab-pane fade" id="completed">
+    <!-- Completed Trip Cards goes here -->
+
+    <div class="profile-show-bottom-right-bookings-cards-container-spacer">
+      <div class="profile-show-bottom-right-bookings-cards">
+        <% @user.bookings.each do |booking| %>
+        <% booking.booking_items.each do |item| %>
+
+        <% if item.bookable.class == Pack && booking.completed == true %>
+
+          <img src=<%= item.bookable.photo_url %>>
+          <div class="profile-show-bottom-right-bookings-cards-infos">
+            <h2><%= item.bookable.name %></h2>
+            <p><%= item.bookable.description %></p>
+
+        <% elsif item.bookable.class == Item && booking.completed == true %>
+
+          <img src=<%= item.bookable.photo_url %>>
+          <div class="profile-show-bottom-right-bookings-cards-infos">
+            <h2><%= item.bookable.name %></h2>
+            <p><%= item.bookable.description %></p>
+
+            <% end %>
+
+        <% end %>
+        <% end %>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Completed Card Trip Cards goes here ^^ -->
+  </div>
+</div>
+
+
+
 
 
 
@@ -43,30 +122,31 @@
   </div>
 </div>
 
-    <% user_items = @user.bookings.each do |booking| %>
-      <% booking.booking_items.each do |item| %>
-        <% if item.bookable.class == Pack %>
-          <% item.bookable.name %>
-          <% item.bookable.description %>
-          <% item.bookable.photo_url %>
-          <% item.bookable.description %>
-          <% item.bookable.price %>
-          <% item.bookable.style %>
-          <% item.bookable.size %>
-          <% booking.delivery_address  %>
-        <% elsif item.bookable.class == Item  %>
-          <% item.bookable.name %>
-          <% item.bookable.description %>
-          <% item.bookable.photo_url %>
-          <% item.bookable.description %>
-          <% item.bookable.price %>
-          <% item.bookable.style %>
-          <% item.bookable.size %>
-        <% end %>
-      <% end %>
-    <% end %>
 
-    <%= user_items.select {|item| item.completed == false } %>
+
+
+
+        <%# if item.bookable.class == Pack && booking.completed == false %>
+          <%# item.bookable.name %>
+          <%# item.bookable.description %>
+          <%# item.bookable.photo_url %>
+          <%# item.bookable.description %>
+          <%# item.bookable.price %>
+          <%# item.bookable.style %>
+          <%# item.bookable.size %>
+          <%# booking.delivery_address  %>
+        <%# elsif item.bookable.class == Item && booking.completed == false %>
+          <%# item.bookable.name %>
+          <%# item.bookable.description %>
+          <%# item.bookable.photo_url %>
+          <%# item.bookable.description %>
+          <%# item.bookable.price %>
+          <%# item.bookable.style %>
+          <%# item.bookable.size %>
+        <%# end %>
+
+
+
 
 <!--
 >>  @user.bookings.last
