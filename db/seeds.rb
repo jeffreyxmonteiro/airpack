@@ -38,6 +38,25 @@ USERIMAGES = [
 
 PACKIMAGES = [
 "https://images.pexels.com/photos/57750/pexels-photo-57750.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/1639729/pexels-photo-1639729.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/8434/holiday-trip-packaging-8434.jpg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/934069/pexels-photo-934069.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/250288/pexels-photo-250288.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/1282316/pexels-photo-1282316.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/404171/pexels-photo-404171.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/1670770/pexels-photo-1670770.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/581087/pexels-photo-581087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://www.americaninno.com/wp-content/uploads/wpallimport/files/3/files/2017/01/Screen-Shot-2017-01-09-at-5.57.51-PM.png",
+"https://urbantastebud.com/wp-content/uploads/2017/05/17547022_1504936966205632_2742459576914367218_o.jpg",
+"https://images.askmen.com/1080x540/entertainment/guy_gear/five-four-comes-to-canada-1089351-TwoByOne.jpg",
+"https://images.askmen.com/hombre_vivo/fashion/0-reasons-to-subscribe-to-five-four-138662214357.jpg",
 ]
 
 TOKYOLOCATIONS = [
@@ -99,6 +118,90 @@ ITEMCATEGORY = [
 "New Underwear",
 "New Socks",
 "Miscellaneous :)"
+]
+
+PACKNAMES = [
+"Globe Trekker",
+"Don Draper",
+"Minimalist Millenial",
+"Hotline Bling",
+"Jet-Setter",
+"The Dandy",
+"The Rebel",
+"Mr. Fundamentals",
+"Street Artist",
+"Prepster Package",
+"The Playboy",
+"Corporate Powerhouse",
+"Jiving Jock",
+"All-American Throwback"
+]
+
+PACKDESCRIPTIONS = [
+"Function, fashion, and comfort in one package. Clothing that's going to perform.",
+"Neither Ward Cleaver nor Don Draper have anything on you, as you don your masculine, well-cut, classic American suit with the effortless formality of a bygone era still relevant today.",
+"It’s not just about looking respectable, it’s about creating the ultimate refinement — no matter if you’re at work or off-duty.",
+"It’s not that you don’t care about fashion, you just would rather be (a) backpacking across Europe (b) climbing Mt. Kilimanjaro or (c) rappelling  the Grand Canyon.",
+"Navigating the jungle of life with canvas jackets, twill, plaid flannel, and corduroy in natural tones.",
+"Performing your daily duties in a pair of close-fitting, ripped jeans or an edgy-luxe, grunge-touched bomber coat finished with a pair of perfectly worn and distressed buckle boots.",
+"Technical sportswear, such as nylon vests, jerseys, and joggers, get mixed with denim and button-downs — and maybe even a blazer on occasion for the ultimate work-play combination.",
+"Inspired by: H&M, Topman, Kenzo, Public School, Supreme, Converse, Adidas.",
+"The layered parkas, distressed denim, jogger pants, snapbacks, and high-tops speak volumes.",
+"There is such thing as too much Vineyard Vines and pastel-checkered button-downs: Tommy Hilfiger, J. Crew, Cole Haan, Ralph Lauren, Michael Kors",
+"At the end of the day, you don’t dress for pleasure, you dress for results: Hugo Boss, Giorgio Armani, Brioni, Ermenegildo Zegna, Salvatore Ferragamo",
+"A full-fledged classic spirit is the philosophy by which you live, which means you’re always dressed well for the occasion: Ralph Lauren, Brooks Brothers, Hickey Freeman, Bonobos, Sperry",
+"The North Face, Patagonia, GANT Rugger, Ben Sherman, Polo by Ralph Lauren, Levi’s, Hunter Boots - END OF STORY",
+"You may have grown out of your Guitar Hero phase, but one thing that will never change is the inner rocker child within you: Rick Owens, Saint Laurent, John Varvatos, Versace, rag & bone",
+"“Just do it” has always been your mantra — on and off the field: Nike, Reebok, J Brand, Diesel, Under Armour, Moncler, Junya Watanabe, Jack Spade"
+]
+
+TOPSNAMES = [
+"Easy-iron Shirt",
+"Viscose Shirt",
+"Stretch Shirt",
+"Oxford Shirt Regular Fit",
+"Flannel Shirt",
+"Twill Shirt Regular",
+"Denim Shirt",
+"Muscle Fit Shirt",
+"Corduroy Shirt",
+"Premium Cotton Shirt",
+""
+]
+
+TOPSDESCRIPTIONS = [
+"Long-sleeved shirt in woven fabric with an easy-iron finish. Turn-down collar, classic button placket, and darts and yoke at back. Narrow cuffs with adjustable buttoning. Rounded hem. Slim fit with narrow shoulders and tapered waist. SIZE Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm (Size L) Long sleeve",
+"Shirt in airy, woven viscose fabric with a turn-down collar. Smooth button placket, long sleeves with adjustable buttoning at cuffs, and yoke at back. Rounded hem. Slim fit – narrow shoulders and tapered waist for a tailored silhouette. SIZE Back: Length: 76.0 cm (Size L) Sleeve: Length: 67.5 cm (Size L) Shoulder: Width: 48.0 cm (Size L) Long sleeve",
+"Slim fit with tapered waist and narrow shoulders for a tailored silhouette. SIZE Long sleeve  FIT Slim fit  COMPOSITION Cotton 74%, Polyamide 23%, Elastane 3%",
+"Regular fit – a classic fit with good room for movement and gently shaped waist for a comfortable, tailored silhouette. SIZE Long sleeve  FIT Regular fit  COMPOSITION Cotton 100% ",
+"Shirt in a cotton twill weave with a turn-down collar, classic front and yoke at the back. SIZE Back: Length: 79.0 cm (Size M) Shoulder: Width: 48.5 cm (Size M) Sleeve: Length: 65.5 cm (Size M) Long sleeve",
+"Buttons at front, yoke at back, and open chest pocket. Long sleeves with adjustable buttoning at cuffs. SIZE Back: Length: 79.0 cm (Size M) Shoulder: Width: 48.5 cm (Size M) Sleeve: Length: 65.25 cm (Size M)",
+"Turn-down collar, classic button placket, and open chest pocket. Yoke at back, long sleeves with buttons at cuffs, and rounded hem. SIZE Back: Length: 79.0 cm (Size M) Shoulder: Width: 48.5 cm (Size M) Sleeve: Length: 65.5 cm (Size M) Long sleeve.",
+"Shirt in washed denim with a turn-down collar, classic front with snap fasteners, and long sleeves with snap fasteners at cuffs. SIZE Sleeve: Length: 67.25 cm (Size L) Back: Length: 77.5 cm (Size L) Long sleeve",
+"Muscle fit - designed to showcase physique. SIZE Sleeve: Length: 69.0 cm (Size L) Shoulder: Width: 46.0 cm (Size L) Back: Length: 76.5 cm (Size L) Long sleeve",
+"Regular fit – a classic fit with good room for movement and a gently tapered waist for a comfortable, tailored silhouette. SIZE Long sleeve  FIT Regular fit  COMPOSITION Cotton 100%"
+]
+
+BOTTOMSNAMES = [
+"Skinny Fit Suit Pants",
+"Twill Pants",
+"Cotton Joggers",
+"Suit Pants",
+"Cargo Pants",
+"Slim-fit Lightweight Garment-dyed Stretch Chino",
+"Stretch Chambray",
+"Ludlow in Heather Twill"
+]
+
+BOTTOMSDESCRIPTIONS = [
+"Skinny fit – slightly shorter legs with close-fitting thighs, knees, and ankles for a fully tailored silhouette. SIZE Inner leg: Length: 76.0 cm (Size 36R) Waist: Circumference: 93.0 cm (Size 36R)",
+"Regular waist, zip fly, and skinny legs. Skinny fit. SIZE Long Regular waist  FIT Skinny fit",
+"Tapered legs with gathered seams. Zip at hems. COMPOSITION Cotton 98%, Elastane 2%",
+"Skinny Fit – slightly shorter legs, close-fitting thighs, knees, and ankles to for a fully close-fit silhouette. SIZE Inner leg: Length: 74.0 cm (Size 36R) Ankle-length  FIT Skinny fit",
+"Cargo joggers in stretch cotton twill with an elasticized drawstring waistband and mock fly. Side pockets.",
+"These chinos (aka khakis) are cut in our slim 484 fit and made of the same fabric we use for our other chinos, just with a small bit of added flex. Sits below waist. Slim through the hip and thigh, with our narrowest leg. 14 leg opening (based on size 32/33).",
+"Sits below waist. Slim through the hip and thigh, with our narrowest leg. Cut in soft, lightweight chambraySits below waist. Slim through the hip and thigh, with our narrowest leg.",
+"Slim through hip and thigh, with a narrower leg."
 ]
 
 TOPSIMAGES = [
@@ -202,7 +305,7 @@ Packer.create!(
     password: "psecret"
     )
 
-10.times do
+30.times do
   Packer.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -234,10 +337,10 @@ Packer.all.each do |packer|
 end
 
 Pack.all.each do |pack|
-  3.times do
+  20.times do
   Item.create!(
-    name: "Trendy item",
-    description: "This will be very useful in your travels.",
+    name: TOPSNAMES.sample,
+    description: TOPSDESCRIPTIONS.sample,
     category: "Top",
     style: STYLES.sample,
     size: SIZES.sample,
@@ -248,10 +351,10 @@ Pack.all.each do |pack|
   )
   end
 
-  3.times do
+  10.times do
     Item.create!(
-      name: "Trendy item",
-      description: "This will be very useful in your travels.",
+      name: BOTTOMSNAMES.sample,
+      description: BOTTOMSDESCRIPTIONS.sample,
       category: "Bottom",
       style: STYLES.sample,
       size: SIZES.sample,
@@ -262,7 +365,7 @@ Pack.all.each do |pack|
     )
   end
 
-  1.times do
+  10.times do
     Item.create!(
       name: "Trendy item",
       description: "This will be very useful in your travels.",
@@ -278,8 +381,8 @@ Pack.all.each do |pack|
 
   2.times do
     Item.create!(
-      name: "Trendy item",
-      description: "This will be very useful in your travels.",
+      name: "Trendy belt",
+      description: "This belt will be very useful in your travels.",
       category: "Belt",
       style: STYLES.sample,
       size: SIZES.sample,
@@ -292,8 +395,8 @@ Pack.all.each do |pack|
 
   2.times do
     Item.create!(
-      name: "Trendy item",
-      description: "This will be very useful in your travels.",
+      name: "Flex shoes",
+      description: "Fluid shoes great for movement.",
       category: "Shoes",
       style: STYLES.sample,
       size: SIZES.sample,
@@ -312,9 +415,9 @@ puts "Creating Separate Closet Items Seeds"
 Packer.all.each do |packer|
   2.times do
     Item.create!(
-      name: "Trendy item",
-      description: "This will be very useful in your travels.",
-      category: "Shoes",
+      name: "Convenience Pack",
+      description: "A little extra boost to your pack.",
+      category: "Miscellaneous :)",
       style: STYLES.sample,
       size: SIZES.sample,
       price: rand(10),
