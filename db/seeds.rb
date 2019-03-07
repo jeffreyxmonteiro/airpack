@@ -137,21 +137,20 @@ PACKNAMES = [
 ]
 
 PACKDESCRIPTIONS = [
-"Function, fashion, and comfort in one package. Clothing that's going to perform.",
-"Neither Ward Cleaver nor Don Draper have anything on you, as you don your masculine, well-cut, classic American suit with the effortless formality of a bygone era still relevant today.",
-"It’s not just about looking respectable, it’s about creating the ultimate refinement — no matter if you’re at work or off-duty.",
-"It’s not that you don’t care about fashion, you just would rather be (a) backpacking across Europe (b) climbing Mt. Kilimanjaro or (c) rappelling  the Grand Canyon.",
-"Navigating the jungle of life with canvas jackets, twill, plaid flannel, and corduroy in natural tones.",
-"Performing your daily duties in a pair of close-fitting, ripped jeans or an edgy-luxe, grunge-touched bomber coat finished with a pair of perfectly worn and distressed buckle boots.",
-"Technical sportswear, such as nylon vests, jerseys, and joggers, get mixed with denim and button-downs — and maybe even a blazer on occasion for the ultimate work-play combination.",
-"Inspired by: H&M, Topman, Kenzo, Public School, Supreme, Converse, Adidas.",
-"The layered parkas, distressed denim, jogger pants, snapbacks, and high-tops speak volumes.",
-"There is such thing as too much Vineyard Vines and pastel-checkered button-downs: Tommy Hilfiger, J. Crew, Cole Haan, Ralph Lauren, Michael Kors",
-"At the end of the day, you don’t dress for pleasure, you dress for results: Hugo Boss, Giorgio Armani, Brioni, Ermenegildo Zegna, Salvatore Ferragamo",
-"A full-fledged classic spirit is the philosophy by which you live, which means you’re always dressed well for the occasion: Ralph Lauren, Brooks Brothers, Hickey Freeman, Bonobos, Sperry",
-"The North Face, Patagonia, GANT Rugger, Ben Sherman, Polo by Ralph Lauren, Levi’s, Hunter Boots - END OF STORY",
-"You may have grown out of your Guitar Hero phase, but one thing that will never change is the inner rocker child within you: Rick Owens, Saint Laurent, John Varvatos, Versace, rag & bone",
-"“Just do it” has always been your mantra — on and off the field: Nike, Reebok, J Brand, Diesel, Under Armour, Moncler, Junya Watanabe, Jack Spade"
+"Function, fashion, and comfort.",
+"Don Draper doesn't have anything on you.",
+"Create the ultimate refinement.",
+"Would rather be backpacking.",
+"Plaid flannels and corduroys in natural tones.",
+"Technical sportswear.",
+"Inspired by: H&M, Topman, Kenzo.",
+"The layered parkas and high-tops speak volumes.",
+"There is no such thing as too much Vineyard Vines.",
+"Dress for results.",
+"A full-fledged classic spirit .",
+"The North Face and Patagonia - END OF STORY",
+"For the inner rocker child within you.",
+"“Just do it” ."
 ]
 
 TOPSNAMES = [
@@ -169,16 +168,12 @@ TOPSNAMES = [
 ]
 
 TOPSDESCRIPTIONS = [
-"Long-sleeved shirt in woven fabric with an easy-iron finish. Turn-down collar, classic button placket, and darts and yoke at back. Narrow cuffs with adjustable buttoning. Rounded hem. Slim fit with narrow shoulders and tapered waist. SIZE Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm (Size L) Long sleeve",
-"Shirt in airy, woven viscose fabric with a turn-down collar. Smooth button placket, long sleeves with adjustable buttoning at cuffs, and yoke at back. Rounded hem. Slim fit – narrow shoulders and tapered waist for a tailored silhouette. SIZE Back: Length: 76.0 cm (Size L) Sleeve: Length: 67.5 cm (Size L) Shoulder: Width: 48.0 cm (Size L) Long sleeve",
-"Slim fit with tapered waist and narrow shoulders for a tailored silhouette. SIZE Long sleeve  FIT Slim fit  COMPOSITION Cotton 74%, Polyamide 23%, Elastane 3%",
-"Regular fit – a classic fit with good room for movement and gently shaped waist for a comfortable, tailored silhouette. SIZE Long sleeve  FIT Regular fit  COMPOSITION Cotton 100% ",
-"Shirt in a cotton twill weave with a turn-down collar, classic front and yoke at the back. SIZE Back: Length: 79.0 cm (Size M) Shoulder: Width: 48.5 cm (Size M) Sleeve: Length: 65.5 cm (Size M) Long sleeve",
-"Buttons at front, yoke at back, and open chest pocket. Long sleeves with adjustable buttoning at cuffs. SIZE Back: Length: 79.0 cm (Size M) Shoulder: Width: 48.5 cm (Size M) Sleeve: Length: 65.25 cm (Size M)",
-"Turn-down collar, classic button placket, and open chest pocket. Yoke at back, long sleeves with buttons at cuffs, and rounded hem. SIZE Back: Length: 79.0 cm (Size M) Shoulder: Width: 48.5 cm (Size M) Sleeve: Length: 65.5 cm (Size M) Long sleeve.",
-"Shirt in washed denim with a turn-down collar, classic front with snap fasteners, and long sleeves with snap fasteners at cuffs. SIZE Sleeve: Length: 67.25 cm (Size L) Back: Length: 77.5 cm (Size L) Long sleeve",
-"Muscle fit - designed to showcase physique. SIZE Sleeve: Length: 69.0 cm (Size L) Shoulder: Width: 46.0 cm (Size L) Back: Length: 76.5 cm (Size L) Long sleeve",
-"Regular fit – a classic fit with good room for movement and a gently tapered waist for a comfortable, tailored silhouette. SIZE Long sleeve  FIT Regular fit  COMPOSITION Cotton 100%"
+"Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm",
+"Back: Length: 76.0 cm (Size L) Sleeve: Length: 67.5 cm ",
+"Long sleeve  FIT Slim fit  COMPOSITION Cotton 74%",
+"Long sleeve  FIT Regular fit  COMPOSITION Cotton 100% ",
+"Back: Length: 79.0 cm (Size M) Shoulder: Width: 48.5 cm",
+"Back: Length: 79.0 cm (Size M)"
 ]
 
 BOTTOMSNAMES = [
@@ -193,13 +188,11 @@ BOTTOMSNAMES = [
 ]
 
 BOTTOMSDESCRIPTIONS = [
-"Skinny fit – slightly shorter legs with close-fitting thighs, knees, and ankles for a fully tailored silhouette. SIZE Inner leg: Length: 76.0 cm (Size 36R) Waist: Circumference: 93.0 cm (Size 36R)",
-"Regular waist, zip fly, and skinny legs. Skinny fit. SIZE Long Regular waist  FIT Skinny fit",
-"Tapered legs with gathered seams. Zip at hems. COMPOSITION Cotton 98%, Elastane 2%",
-"Skinny Fit – slightly shorter legs, close-fitting thighs, knees, and ankles to for a fully close-fit silhouette. SIZE Inner leg: Length: 74.0 cm (Size 36R) Ankle-length  FIT Skinny fit",
-"Cargo joggers in stretch cotton twill with an elasticized drawstring waistband and mock fly. Side pockets.",
-"These chinos (aka khakis) are cut in our slim 484 fit and made of the same fabric we use for our other chinos, just with a small bit of added flex. Sits below waist. Slim through the hip and thigh, with our narrowest leg. 14 leg opening (based on size 32/33).",
-"Sits below waist. Slim through the hip and thigh, with our narrowest leg. Cut in soft, lightweight chambraySits below waist. Slim through the hip and thigh, with our narrowest leg.",
+"Waist: Circumference: 93.0 cm (Size 36R)",
+"Long Regular waist  FIT Skinny fit",
+"Cotton 98%, Elastane 2%",
+"(Size 36R) Ankle-length  FIT Skinny fit",
+"14 leg opening (based on size 32/33).",
 "Slim through hip and thigh, with a narrower leg."
 ]
 
