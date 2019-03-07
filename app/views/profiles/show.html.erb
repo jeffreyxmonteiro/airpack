@@ -27,7 +27,6 @@
   <div class="profile-show-bottom-right-bookings">
 
     <div class="profile-show-bottom-headings-right"><h3>Upcoming / Completed Bookings</h3></div>
-
     <div class="profile-show-bottom-right-bookings-cards-container-spacer">
       <div class="profile-show-bottom-right-bookings-cards">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
@@ -44,9 +43,52 @@
   </div>
 </div>
 
+    <% user_items = @user.bookings.each do |booking| %>
+      <% booking.booking_items.each do |item| %>
+        <% if item.bookable.class == Pack %>
+          <% item.bookable.name %>
+          <% item.bookable.description %>
+          <% item.bookable.photo_url %>
+          <% item.bookable.description %>
+          <% item.bookable.price %>
+          <% item.bookable.style %>
+          <% item.bookable.size %>
+          <% booking.delivery_address  %>
+        <% elsif item.bookable.class == Item  %>
+          <% item.bookable.name %>
+          <% item.bookable.description %>
+          <% item.bookable.photo_url %>
+          <% item.bookable.description %>
+          <% item.bookable.price %>
+          <% item.bookable.style %>
+          <% item.bookable.size %>
+        <% end %>
+      <% end %>
+    <% end %>
 
-<!-- Traveler id: 22, first_name: "Sang", last_name: "Schowalter", photo_url: "https://images.pexels.com/photos/1239288/pexels-ph...", biography: "What's up! Huge travel junkie, originally from Ber...", created_at: "2019-03-05 06:14:36", updated_at: "2019-03-05 06:14:36", email: "traveler@gmail.com"> -->
+    <%= user_items.select {|item| item.completed == false } %>
 
-<%# if current_user.class == "Owner" %>
+<!--
+>>  @user.bookings.last
+=> #<Booking id: 25, fees: 20, delivery_address: "Impact Hub", delivery_date: "March 7 2018", return_deadline: "March 7 2018", completed: nil, traveler_id: 1, created_at: "2019-03-07 02:32:56", updated_at: "2019-03-07 02:32:56", booking_days: nil> -->
 
-<!-- current_traveler || current_packer -->
+ <!--  >>  @user.bookings.last.booking_items.first.bookable
+=> #<Pack id: 2, name: "Millenial Traveler Kit", style: "Hipster", size: "XXXL", duration: "14 days", price: 96, photo_url: "https://images.pexels.com/photos/57750/pexels-phot...", description: "This pack is really good for an international trip...", created_at: "2019-03-06 07:42:12", updated_at: "2019-03-06 07:42:12", packer_id: 2, booked: false> -->
+
+<!-- packs
+ t.string "name"
+    t.string "style"
+    t.string "size"
+    t.string "duration"
+    t.integer "price"
+    t.string "photo_url"
+    t.string "description" -->
+
+    <!-- items
+    t.string "name"
+    t.string "description"
+    t.string "category"
+    t.string "style"
+    t.string "size"
+    t.integer "price"
+    t.string "photo_url" -->
