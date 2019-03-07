@@ -2,6 +2,7 @@ class Packer < ApplicationRecord
   has_one :temp_closet
   has_many :packs
   has_many :items
+  has_many :bookings
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
