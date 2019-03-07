@@ -9,9 +9,9 @@ class CartItemsController < ApplicationController
   end
 
   def destroy
-    @cart_item = cart_item
+    @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
-    redirect_to packs_path
+    redirect_back(fallback_location: packs_path)
   end
 
   private
