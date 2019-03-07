@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  def add
+  def new
     @item = Item.new
   end
 

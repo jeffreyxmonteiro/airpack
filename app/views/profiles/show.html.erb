@@ -36,37 +36,12 @@
         </div>
       </div>
     </div>
-
-
-
   </div>
 </div>
 
-    <% user_items = @user.bookings.each do |booking| %>
-      <% booking.booking_items.each do |item| %>
-        <% if item.bookable.class == Pack %>
-          <% item.bookable.name %>
-          <% item.bookable.description %>
-          <% item.bookable.photo_url %>
-          <% item.bookable.description %>
-          <% item.bookable.price %>
-          <% item.bookable.style %>
-          <% item.bookable.size %>
-          <% booking.delivery_address  %>
-        <% elsif item.bookable.class == Item  %>
-          <% item.bookable.name %>
-          <% item.bookable.description %>
-          <% item.bookable.photo_url %>
-          <% item.bookable.description %>
-          <% item.bookable.price %>
-          <% item.bookable.style %>
-          <% item.bookable.size %>
-        <% end %>
-      <% end %>
-    <% end %>
-
-    <%= user_items.select {|item| item.completed == false } %>
-
+<% if packer_signed_in? %>
+<%= link_to "Closet", closet_profile_path%>
+<% end %>
 <!--
 >>  @user.bookings.last
 => #<Booking id: 25, fees: 20, delivery_address: "Impact Hub", delivery_date: "March 7 2018", return_deadline: "March 7 2018", completed: nil, traveler_id: 1, created_at: "2019-03-07 02:32:56", updated_at: "2019-03-07 02:32:56", booking_days: nil> -->
