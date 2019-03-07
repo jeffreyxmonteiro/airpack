@@ -94,12 +94,19 @@
 }
 
 .navbar-card-details {
-  padding: 30px 20px 10px 20px;
+  padding: 10px 20px 10px 20px;
   width: 300px;
 }
 
 .navbar-card-price {
   text-align: right;
+  font-size: 10px;
+}
+
+.navbar-card-delete {
+  position: relative;
+  left: 250px;
+  bottom: 40px;
   font-size: 10px;
 }
 
@@ -121,5 +128,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
+}
+
+.left-form {
+  position: absolute;
+  left: 320px;
+}
+
+.btn-line {
+  display: flex;
+  text-align: space-around;
 }
 
