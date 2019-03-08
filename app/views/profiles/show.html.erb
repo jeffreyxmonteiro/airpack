@@ -59,6 +59,8 @@
                 <div class="profile-show-bottom-right-bookings-cards-infos">
                   <h2><%= item.bookable.name %></h2>
                   <p><%= item.bookable.description %></p>
+                  <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
+                  <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
                 </div>
 
               <% elsif item.bookable.class == Item && booking.completed == false %>
@@ -67,6 +69,8 @@
                 <div class="profile-show-bottom-right-bookings-cards-infos">
                   <h2><%= item.bookable.name %></h2>
                   <p><%= item.bookable.description %></p>
+                  <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
+                  <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
                 </div>
 
               <% end %>
@@ -109,7 +113,7 @@
       <% end %>
       <!-- Upcoming Card Trip Cards goes here ^^ -->
     </div>
-    
+
 <% if packer_signed_in? %>
 <%= link_to "Closet", closet_profile_path%>
 <% end %>
