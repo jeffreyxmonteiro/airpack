@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:show, :new, :create, :update, :destroy]
   resources :cart_items, only: [:create, :destroy]
   resource :cart, only: [:show]
-  delete '/carts/:id', to: 'carts#clear'
+  delete '/carts/:id', to: 'cart#clear', as: 'clear_cart'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

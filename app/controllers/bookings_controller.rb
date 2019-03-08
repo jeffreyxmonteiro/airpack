@@ -11,8 +11,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = make_booking
     @cart = current_traveler.cart
+    @booking = make_booking
     if @booking.save
       make_booking_items(@cart, @booking)
       clear_cart(@cart)
@@ -45,6 +45,9 @@ class BookingsController < ApplicationController
     booking.fees = 20
     booking.return_deadline = booking.delivery_date
     booking.traveler = current_traveler
+    # takes packer from first item in the cart
+    # will work if we assume that one booking belongs to one packer
+    booking.packer = current_traveler.cart.cart_items.first.cartable.packer
     return booking
   end
 
