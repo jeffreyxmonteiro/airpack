@@ -130,13 +130,21 @@
   object-fit: cover;
 }
 
-.left-form {
-  position: absolute;
-  left: 320px;
-}
+// .left-form {
+//   position: absolute;
+//   left: 320px;
+// }
 
 .btn-line {
   display: flex;
   text-align: space-around;
+}
+
+.flex {
+  display: flex;
+}
+
+.search {
+  margin-right: 20px;
 }
 
