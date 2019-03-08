@@ -100,10 +100,10 @@ abbr[title="required"] {
 .fadein img {
     -webkit-animation-name: fade;
     -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 24s;
+    -webkit-animation-duration: 30s;
     animation-name: fade;
     animation-iteration-count: infinite;
-    animation-duration: 24s;
+    animation-duration: 30s;
 }
 
 @-webkit-keyframes fade {
@@ -129,23 +129,23 @@ abbr[title="required"] {
     top: 142px;
 }
 #f3 {
-    -webkit-animation-delay: -16s;
+    -webkit-animation-delay: -15s;
     position: absolute;
     top: 142px;
 }
 #f4 {
-    -webkit-animation-delay: -12s;
+    -webkit-animation-delay: -10s;
     position: absolute;
     top: 142px;
 }
 #f5 {
-    -webkit-animation-delay: -8s;
+    -webkit-animation-delay: -5s;
     position: absolute;
     top: 142px;
 }
 // #f6 {
 //     -webkit-animation-delay: -4s;
 //     position: absolute;
-//     top: 140px;
+//     top: 142px;
 // }
 
