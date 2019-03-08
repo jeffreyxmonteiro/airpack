@@ -79,7 +79,7 @@
 .navbar-card {
   height: 180px;
   background-color: white;
-  margin: 30px;
+  margin: 0px 30px 0px 30px;
   display: flex;
 }
 
@@ -106,12 +106,18 @@
 .navbar-card-delete {
   position: relative;
   left: 250px;
-  bottom: 40px;
+  bottom: 10px;
   font-size: 10px;
 }
 
+i.fas.fa-minus-circle.navbar-card-delete::before {
+  color: #cc0000;
+}
+
 .dropdown-margin {
-  margin: 30px;
+  margin: 30px 30px 50px 30px;
+  width: 580px;
+
 }
 
 .navbar-airpack-link a {
@@ -130,14 +136,11 @@
   object-fit: cover;
 }
 
-// .left-form {
-//   position: absolute;
-//   left: 320px;
-// }
 
 .btn-line {
   display: flex;
-  text-align: space-around;
+  justify-content: space-around;
+  padding-bottom: 20px;
 }
 
 .flex {
