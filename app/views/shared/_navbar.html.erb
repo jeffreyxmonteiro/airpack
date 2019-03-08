@@ -5,26 +5,27 @@
   <% end %>
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
+  <div class="navbar-wagon-right hidden-xs hidden-sm flex">
+    <div class="search">
       <form class="form-inline left-form" action="/action_page.php">
         <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Location">
+          <input type="text" class="form-control" id="text" placeholder="Location">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Delivery Date">
+          <input type="text" class="form-control" id="text" placeholder="Delivery Date">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="pwd" placeholder="Trip Duration">
+          <input type="text" class="form-control" id="text" placeholder="Trip Duration">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Style">
+          <input type="text" class="form-control" id="text" placeholder="Style">
         </div>
       </form>
+    </div>
 
-    <span class="find-btn">
+    <div class="find-btn">
       <%= link_to "FIND PACKS", packs_path %>
-    </span>
+    </div>
 
     <% if traveler_signed_in? %>
 
