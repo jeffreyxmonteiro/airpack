@@ -37,6 +37,9 @@
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag 'cart-icon.png', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <% if current_traveler.cart.cart_items.count > 0 %>
+              <span class="badge on-cart-icon"><%= current_traveler.cart.cart_items.count  %></span>
+            <% end %>
 <!--           <i class="fas fa-cart-arrow-down dropdown-toggle" id="navbar-wagon-menu"></i>
  -->        <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <h4 class="dropdown-margin">Your Cart</h4>
