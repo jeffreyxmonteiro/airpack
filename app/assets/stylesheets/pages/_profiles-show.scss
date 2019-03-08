@@ -39,7 +39,7 @@
 .profile-show-bottom {
   display: flex;
   background: #E2ECED;
-  height: 55vh;
+  min-height: 55vh;
   justify-content: space-around;
 
 }
@@ -71,7 +71,6 @@
 }
 
 .profile-show-bottom-headings-right {
-  display: flex;
   width: 50vw;
   padding-top: 15px;
   padding-bottom: 25px;

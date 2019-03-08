@@ -1,5 +1,5 @@
-Booking
+<h1>Bookings Page</h1>
 
 <% @booking.booking_items.each do |booking_item| %>
-<%= booking_item.bookable.name %>
+  <p><%= booking_item.bookable.name %></p>
 <% end %>
