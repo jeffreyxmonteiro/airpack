@@ -1,5 +1,6 @@
 require 'faker'
 
+BookingItem.destroy_all
 Booking.destroy_all
 Item.destroy_all
 Pack.destroy_all
@@ -262,6 +263,15 @@ UPSELLS = [
 puts "Creating seeds."
 
 puts "Creating Traveler Seeds"
+
+Traveler.create!(
+    first_name: "Jeff",
+    last_name: "Monteiro",
+    photo_url: "https://avatars2.githubusercontent.com/u/43455638",
+    biography: "What's up! Huge travel junkie, originally from the DIRTY JERZZZ! Some of my other interests are reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    email: "jsizzle@gmail.com",
+    password: "secret"
+    )
 
 Traveler.create!(
     first_name: Faker::Name.first_name,
