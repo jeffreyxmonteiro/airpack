@@ -54,7 +54,7 @@
                         <p class="card-category"><%= cart_object.style %></p>
                         <p class="card-name"><%= cart_object.name %></p>
                         <p class="card-size"><%= cart_object.size %></p>
-                        <p class="navbar-card-price"><%= cart_object.price %></p>
+                        <p class="navbar-card-price">¥<%= cart_object.price %></p>
                       </div>
                     </div>
                   <% end %>
@@ -67,7 +67,7 @@
                         <p class="card-category"><%= cart_object.style %></p>
                         <p class="card-name"><%= cart_object.name %></p>
                         <p class="card-size"><%= cart_object.size %></p>
-                        <p class="navbar-card-price"><%= cart_object.price %></p>
+                        <p class="navbar-card-price">¥<%= cart_object.price %></p>
                         <%= link_to "delete", cart_item_path(cart_item), method: :delete %>
                       </div>
                     </div>

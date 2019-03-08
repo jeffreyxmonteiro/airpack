@@ -322,7 +322,7 @@ Packer.all.each do |packer|
       style: STYLES.sample,
       description: PACKDESCRIPTIONS.sample,
       photo_url: PACKIMAGES.sample,
-      price: rand(100),
+      price: (rand(5) * 2500) + (rand(9) * 100) + 1000,
       packer_id: packer.id
       )
   end
@@ -336,7 +336,7 @@ Pack.all.each do |pack|
     category: "Top",
     style: STYLES.sample,
     size: SIZES.sample,
-    price: rand(10),
+    price: rand(10) * 100,
     photo_url: TOPSIMAGES.sample,
     pack_id: pack.id,
     packer_id: pack.packer.id
@@ -350,7 +350,7 @@ Pack.all.each do |pack|
       category: "Bottom",
       style: STYLES.sample,
       size: SIZES.sample,
-      price: rand(10),
+      price: rand(10) * 100,
       photo_url: BOTTOMSIMAGES.sample,
       pack_id: pack.id,
       packer_id: pack.packer.id
@@ -364,7 +364,7 @@ Pack.all.each do |pack|
       category: "Hats",
       style: STYLES.sample,
       size: SIZES.sample,
-      price: rand(10),
+      price: rand(10) * 100,
       photo_url: HATS.sample,
       pack_id: pack.id,
       packer_id: pack.packer.id
@@ -378,7 +378,7 @@ Pack.all.each do |pack|
       category: "Belt",
       style: STYLES.sample,
       size: SIZES.sample,
-      price: rand(10),
+      price: rand(10) * 100,
       photo_url: BELTS.sample,
       pack_id: pack.id,
       packer_id: pack.packer.id
@@ -392,7 +392,7 @@ Pack.all.each do |pack|
       category: "Shoes",
       style: STYLES.sample,
       size: SIZES.sample,
-      price: rand(10),
+      price: rand(10) * 100 ,
       photo_url: SHOES.sample,
       pack_id: pack.id,
       packer_id: pack.packer.id
@@ -412,7 +412,7 @@ Packer.all.each do |packer|
       category: "Miscellaneous :)",
       style: STYLES.sample,
       size: SIZES.sample,
-      price: rand(10),
+      price: rand(10) * 100,
       photo_url: UPSELLS.sample,
       packer_id: packer.id
     )
