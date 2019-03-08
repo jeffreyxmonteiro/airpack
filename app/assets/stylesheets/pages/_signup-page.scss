@@ -8,6 +8,7 @@
   background-color: #E2ECED;
   background-size: cover;
   padding: 0px 75px;
+  overflow: auto;
 }
 .sign-up-form-container {
   box-shadow: 0.2px 0.2px 2px 2px rgba(0, 0, 0, 0.1);
@@ -15,8 +16,7 @@
   background-color: white;
   padding: 30px 50px;
   overflow: auto;
-  height: calc(100vh - 150px);
-  margin-top: 15px;
+  margin: auto 0;
 }
 .sign-up-form-container a {
   color: black;
