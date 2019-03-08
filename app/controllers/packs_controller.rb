@@ -14,8 +14,6 @@ class PacksController < ApplicationController
   end
   def create
     @pack = Pack.new(pack_params)
-#     @pack.style
-#     @pack.size
   end
 
   private
