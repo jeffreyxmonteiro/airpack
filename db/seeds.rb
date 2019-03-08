@@ -38,6 +38,25 @@ USERIMAGES = [
 
 PACKIMAGES = [
 "https://images.pexels.com/photos/57750/pexels-photo-57750.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/1639729/pexels-photo-1639729.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://images.pexels.com/photos/934063/pexels-photo-934063.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/8434/holiday-trip-packaging-8434.jpg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/934069/pexels-photo-934069.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/250288/pexels-photo-250288.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/1282316/pexels-photo-1282316.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/404171/pexels-photo-404171.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/1670770/pexels-photo-1670770.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/581087/pexels-photo-581087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+"https://www.americaninno.com/wp-content/uploads/wpallimport/files/3/files/2017/01/Screen-Shot-2017-01-09-at-5.57.51-PM.png",
+"https://urbantastebud.com/wp-content/uploads/2017/05/17547022_1504936966205632_2742459576914367218_o.jpg",
+"https://images.askmen.com/1080x540/entertainment/guy_gear/five-four-comes-to-canada-1089351-TwoByOne.jpg",
+"https://images.askmen.com/hombre_vivo/fashion/0-reasons-to-subscribe-to-five-four-138662214357.jpg",
 ]
 
 TOKYOLOCATIONS = [
@@ -99,6 +118,83 @@ ITEMCATEGORY = [
 "New Underwear",
 "New Socks",
 "Miscellaneous :)"
+]
+
+PACKNAMES = [
+"Globe Trekker",
+"Don Draper",
+"Minimalist Millenial",
+"Hotline Bling",
+"Jet-Setter",
+"The Dandy",
+"The Rebel",
+"Mr. Fundamentals",
+"Street Artist",
+"Prepster Package",
+"The Playboy",
+"Corporate Powerhouse",
+"Jiving Jock",
+"All-American Throwback"
+]
+
+PACKDESCRIPTIONS = [
+"Function, fashion, and comfort.",
+"Don Draper doesn't have anything on you.",
+"Create the ultimate refinement.",
+"Would rather be backpacking.",
+"Plaid flannels and corduroys in natural tones.",
+"Technical sportswear.",
+"Inspired by: H&M, Topman, Kenzo.",
+"The layered parkas and high-tops speak volumes.",
+"There is no such thing as too much Vineyard Vines.",
+"Dress for results.",
+"A full-fledged classic spirit .",
+"The North Face and Patagonia - END OF STORY",
+"For the inner rocker child within you.",
+"“Just do it” ."
+]
+
+TOPSNAMES = [
+"Easy-iron Shirt",
+"Viscose Shirt",
+"Stretch Shirt",
+"Oxford Shirt Regular Fit",
+"Flannel Shirt",
+"Twill Shirt Regular",
+"Denim Shirt",
+"Muscle Fit Shirt",
+"Corduroy Shirt",
+"Premium Cotton Shirt",
+""
+]
+
+TOPSDESCRIPTIONS = [
+"Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm",
+"Back: Length: 76.0 cm (Size L) Sleeve: Length: 67.5 cm ",
+"Long sleeve  FIT Slim fit  COMPOSITION Cotton 74%",
+"Long sleeve  FIT Regular fit  COMPOSITION Cotton 100% ",
+"Back: Length: 79.0 cm (Size M) Shoulder: Width: 48.5 cm",
+"Back: Length: 79.0 cm (Size M)"
+]
+
+BOTTOMSNAMES = [
+"Skinny Fit Suit Pants",
+"Twill Pants",
+"Cotton Joggers",
+"Suit Pants",
+"Cargo Pants",
+"Slim-fit Lightweight Garment-dyed Stretch Chino",
+"Stretch Chambray",
+"Ludlow in Heather Twill"
+]
+
+BOTTOMSDESCRIPTIONS = [
+"Waist: Circumference: 93.0 cm (Size 36R)",
+"Long Regular waist  FIT Skinny fit",
+"Cotton 98%, Elastane 2%",
+"(Size 36R) Ankle-length  FIT Skinny fit",
+"14 leg opening (based on size 32/33).",
+"Slim through hip and thigh, with a narrower leg."
 ]
 
 TOPSIMAGES = [
@@ -202,7 +298,7 @@ Packer.create!(
     password: "psecret"
     )
 
-10.times do
+30.times do
   Packer.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -223,9 +319,9 @@ Packer.all.each do |packer|
     Pack.create!(
       size: SIZES.sample,
       duration: DURATIONS.sample,
-      name: "Millenial Traveler Kit",
+      name: PACKNAMES.sample,
       style: STYLES.sample,
-      description: "This pack is really good for an international trip.",
+      description: PACKDESCRIPTIONS.sample,
       photo_url: PACKIMAGES.sample,
       price: rand(100),
       packer_id: packer.id
@@ -234,10 +330,10 @@ Packer.all.each do |packer|
 end
 
 Pack.all.each do |pack|
-  3.times do
+  5.times do
   Item.create!(
-    name: "Trendy item",
-    description: "This will be very useful in your travels.",
+    name: TOPSNAMES.sample,
+    description: TOPSDESCRIPTIONS.sample,
     category: "Top",
     style: STYLES.sample,
     size: SIZES.sample,
@@ -248,10 +344,10 @@ Pack.all.each do |pack|
   )
   end
 
-  3.times do
+  5.times do
     Item.create!(
-      name: "Trendy item",
-      description: "This will be very useful in your travels.",
+      name: BOTTOMSNAMES.sample,
+      description: BOTTOMSDESCRIPTIONS.sample,
       category: "Bottom",
       style: STYLES.sample,
       size: SIZES.sample,
@@ -262,7 +358,7 @@ Pack.all.each do |pack|
     )
   end
 
-  1.times do
+  2.times do
     Item.create!(
       name: "Trendy item",
       description: "This will be very useful in your travels.",
@@ -278,8 +374,8 @@ Pack.all.each do |pack|
 
   2.times do
     Item.create!(
-      name: "Trendy item",
-      description: "This will be very useful in your travels.",
+      name: "Trendy belt",
+      description: "This belt will be very useful in your travels.",
       category: "Belt",
       style: STYLES.sample,
       size: SIZES.sample,
@@ -292,8 +388,8 @@ Pack.all.each do |pack|
 
   2.times do
     Item.create!(
-      name: "Trendy item",
-      description: "This will be very useful in your travels.",
+      name: "Flex shoes",
+      description: "Fluid shoes great for movement.",
       category: "Shoes",
       style: STYLES.sample,
       size: SIZES.sample,
@@ -312,9 +408,9 @@ puts "Creating Separate Closet Items Seeds"
 Packer.all.each do |packer|
   2.times do
     Item.create!(
-      name: "Trendy item",
-      description: "This will be very useful in your travels.",
-      category: "Shoes",
+      name: "Convenience Pack",
+      description: "A little extra boost to your pack.",
+      category: "Miscellaneous :)",
       style: STYLES.sample,
       size: SIZES.sample,
       price: rand(10),
@@ -334,6 +430,7 @@ puts "Creating Bookings Seeds"
       fees: rand(10),
       delivery_address: "Impact HUB Tokyo, 2 Chome-11-３ Meguro, Tokyo 153-0063",
       traveler_id: traveler.id,
+      packer: Packer.all.sample,
       completed: [true, false].sample,
       delivery_date: "15-3-2019",
       return_deadline: "20-3-2019"
