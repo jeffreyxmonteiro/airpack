@@ -2,13 +2,16 @@
   <div class="new-bookings-left-items">
 
     <div class="new-bookings-left-pack">
-      <% @cart.cart_items.each do |item| %>
+      <% @cart.cart_items.each do |cart_item| %>
         <div class="container-spacer">
           <div class="new-bookings-card-product">
-            <img src=<%= item.cartable.photo_url  %>>
+            <img src=<%= cart_item.cartable.photo_url  %>>
             <div class="new-bookings-card-product-infos">
-              <h2><%= item.cartable.name %> | <%= item.cartable.price %></h2>
-              <p><%= item.cartable.description %></p>
+              <h2><%= cart_item.cartable.name %> | <%= cart_item.cartable.price %></h2>
+              <p><%= cart_item.cartable.description %></p>
+              <%= link_to cart_item_path(cart_item), method: :delete do %>
+                <i class="fas fa-minus-circle navbar-card-delete"></i>
+              <% end %>
             </div>
           </div>
         </div>
