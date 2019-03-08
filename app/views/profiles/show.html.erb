@@ -50,28 +50,34 @@
       <!-- Upcoming Trip Cards goes here -->
       <% @user.bookings.each do |booking| %>
         <% booking.booking_items.each do |item| %>
-          <div class="profile-show-bottom-right-bookings-cards-container-spacer">
-            <div class="profile-show-bottom-right-bookings-cards">
 
-              <% if item.bookable.class == Pack && booking.completed == false %>
+          <% if item.bookable.class == Pack && booking.completed == false %>
 
+            <div class="profile-show-bottom-right-bookings-cards-container-spacer">
+              <div class="profile-show-bottom-right-bookings-cards">
                 <img src=<%= item.bookable.photo_url %>>
                 <div class="profile-show-bottom-right-bookings-cards-infos">
                   <h2><%= item.bookable.name %></h2>
-                  <p><%= item.bookable.description %></p>
+                  <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
+                  <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
                 </div>
-
-              <% elsif item.bookable.class == Item && booking.completed == false %>
-
-                <img src=<%= item.bookable.photo_url %>>
-                <div class="profile-show-bottom-right-bookings-cards-infos">
-                  <h2><%= item.bookable.name %></h2>
-                  <p><%= item.bookable.description %></p>
-                </div>
-
-              <% end %>
+              </div>
             </div>
-          </div>
+
+          <% elsif item.bookable.class == Item && booking.completed == false %>
+
+            <div class="profile-show-bottom-right-bookings-cards-container-spacer">
+              <div class="profile-show-bottom-right-bookings-cards">
+                <img src=<%= item.bookable.photo_url %>>
+                <div class="profile-show-bottom-right-bookings-cards-infos">
+                  <h2><%= item.bookable.name %></h2>
+                  <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
+                  <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
         <% end %>
       <% end %>
       <!-- Upcoming Card Trip Cards goes here ^^ -->
@@ -83,33 +89,39 @@
 
       <% @user.bookings.each do |booking| %>
         <% booking.booking_items.each do |item| %>
-          <div class="profile-show-bottom-right-bookings-cards-container-spacer">
-            <div class="profile-show-bottom-right-bookings-cards">
 
               <% if item.bookable.class == Pack && booking.completed == true %>
 
-                <img src=<%= item.bookable.photo_url %>>
-                <div class="profile-show-bottom-right-bookings-cards-infos">
-                  <h2><%= item.bookable.name %></h2>
-                  <p><%= item.bookable.description %></p>
+                <div class="profile-show-bottom-right-bookings-cards-container-spacer">
+                  <div class="profile-show-bottom-right-bookings-cards">
+                    <img src=<%= item.bookable.photo_url %>>
+                    <div class="profile-show-bottom-right-bookings-cards-infos">
+                      <h2><%= item.bookable.name %></h2>
+                      <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
+                      <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
+                    </div>
+                  </div>
                 </div>
 
               <% elsif item.bookable.class == Item && booking.completed == true %>
 
-                <img src=<%= item.bookable.photo_url %>>
-                <div class="profile-show-bottom-right-bookings-cards-infos">
-                  <h2><%= item.bookable.name %></h2>
-                  <p><%= item.bookable.description %></p>
+                <div class="profile-show-bottom-right-bookings-cards-container-spacer">
+                  <div class="profile-show-bottom-right-bookings-cards">
+                    <img src=<%= item.bookable.photo_url %>>
+                    <div class="profile-show-bottom-right-bookings-cards-infos">
+                      <h2><%= item.bookable.name %></h2>
+                      <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
+                      <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
+                    </div>
+                  </div>
                 </div>
 
               <% end %>
-            </div>
-          </div>
         <% end %>
       <% end %>
       <!-- Upcoming Card Trip Cards goes here ^^ -->
     </div>
-    
+
 <% if packer_signed_in? %>
 <%= link_to "Closet", closet_profile_path%>
 <% end %>
