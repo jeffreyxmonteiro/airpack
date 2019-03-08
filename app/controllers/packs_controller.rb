@@ -3,8 +3,9 @@ class PacksController < ApplicationController
 
   def index
     @packs = Pack.all
-    @cart_items = current_traveler.cart.cart_items.map {|cart_item| cart_item.cartable}
-    @filtered_packs = @packs.reject{ |pack| @cart_items.include? pack }
+    @cart_items = []
+    @cart_items = current_traveler.cart.cart_items.map { |cart_item| cart_item.cartable } if traveler_signed_in?
+    @filtered_packs = @packs.reject { |pack| @cart_items.include? pack }
   end
 
   def show
