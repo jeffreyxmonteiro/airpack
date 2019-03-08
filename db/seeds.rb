@@ -164,8 +164,7 @@ TOPSNAMES = [
 "Denim Shirt",
 "Muscle Fit Shirt",
 "Corduroy Shirt",
-"Premium Cotton Shirt",
-""
+"Premium Cotton Shirt"
 ]
 
 TOPSDESCRIPTIONS = [
