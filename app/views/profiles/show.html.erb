@@ -45,7 +45,6 @@
 
     <!-- heading goes here^^  -->
 
-
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="upcoming">
       <!-- Upcoming Trip Cards goes here -->
@@ -110,3 +109,7 @@
       <% end %>
       <!-- Upcoming Card Trip Cards goes here ^^ -->
     </div>
+    
+<% if packer_signed_in? %>
+<%= link_to "Closet", closet_profile_path%>
+<% end %>
