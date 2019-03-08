@@ -49,14 +49,18 @@
 }
 
 .show-pack-btn {
-    background-image: linear-gradient(#42B6C5, #0C8B9C);
-    border-radius: 50px;
-    font-weight: bold;
-    padding: 10px 30px;
+  background-image: linear-gradient(#42B6C5, #0C8B9C);
+  border-radius: 50px;
+  font-weight: bold;
+  padding: 10px 30px;
 }
 
 .show-pack-btn a {
   color: white;
+}
+
+.show-pack-btn a:hover {
+  text-decoration: none;
 }
 
 .body-of-cards {

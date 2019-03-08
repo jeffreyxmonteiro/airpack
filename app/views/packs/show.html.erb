@@ -8,7 +8,7 @@
         <p class="card-name"><%= @pack.name %></p>
         <p class="card-size"><%= @pack.size %></p>
         <p><%= @pack.description %></p>
-        <p class="card-price">$<%= @pack.price %></p>
+        <p class="card-price">¥<%= @pack.price %></p>
       </div>
     </div>
     <div class="container sm-profile">
@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="container body-of-cards">
-    <% @pack.items.each do |item| %>
+    <% @pack.items.first(15).each do |item| %>
       <div class="col-xs-12 col-md-4">
         <div class="card">
           <div class="card-photo" style="background-image: url(<%= item.photo_url %>);">
