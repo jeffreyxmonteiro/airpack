@@ -328,12 +328,13 @@ puts "Finished Creating Separate Closet Items Seeds"
 
 puts "Creating Bookings Seeds"
 
-  Traveler.all.each do |traveler|
+Traveler.all.each do |traveler|
   2.times do
     Booking.create!(
       fees: rand(10),
       delivery_address: "Impact HUB Tokyo, 2 Chome-11-３ Meguro, Tokyo 153-0063",
       traveler_id: traveler.id,
+      packer: Packer.all.sample,
       completed: [true, false].sample,
       delivery_date: "15-3-2019",
       return_deadline: "20-3-2019"
