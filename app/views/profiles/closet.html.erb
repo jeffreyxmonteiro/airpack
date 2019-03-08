@@ -1,47 +1,4 @@
-<div class="wrapper">
-  <div class="container banner" style="background-image: linear-gradient(rgba(0, 0, 0, .33), rgba(0, 0, 0, 0.33)), url('<%= image_path 'closet-banner.jpg' %>')">
-    <div class="container bnr-card">
+<div class="profile-closet-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/358485/pexels-photo-358485.jpeg)">
 
-      <div class="container bc-details">
-        <p class="card-category"><%#= @pack.style %> · <%#= @pack.duration %></p>
-        <p class="card-name"><%#= @pack.name %></p>
-        <p class="card-size"><%#= @pack.size %></p>
-        <p><%#= @pack.description %></p>
-        <p class="card-price">$<%#= @pack.price %></p>
-      </div>
-    </div>
-    <div class="container sm-profile">
-      <%#= image_tag @pack.packer.photo_url, class: "img-circle" %>
-      <div><%#=  @pack.packer.first_name %></div>
-      <span class="show-pack-btn">
-        <%#= link_to "Add to Cart", cart_items_path(cartable_id: @pack.id, cartable_type: @pack.class), method: :create %>
-      </span>
-    </div>
-  </div>
-  <div class="container body-of-cards">
-    <%# @pack.items.each do |item| %>
-      <div class="col-xs-12 col-md-4">
-        <div class="card">
 
-          <div class="card-details">
-            <p class="card-name"><%#= item.name %></p>
-            <p><%#= item.description %></p>
-            <p class="card-type"><%#= item.category %></p>
-          </div>
-        </div>
-      </div>
-    <%# end %>
-  </div>
 </div>
-
-
-
-closet
-
-<%= link_to new_pack_path do%>
-  Create Pack
-<% end %>
-
-<%= link_to new_item_path do%>
-  Add Items
-<% end %>

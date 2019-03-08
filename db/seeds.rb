@@ -424,7 +424,7 @@ puts "Finished Creating Separate Closet Items Seeds"
 
 puts "Creating Bookings Seeds"
 
-  Traveler.all.each do |traveler|
+Traveler.all.each do |traveler|
   2.times do
     Booking.create!(
       fees: rand(10),

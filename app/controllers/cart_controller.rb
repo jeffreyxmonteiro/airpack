@@ -6,7 +6,7 @@ class CartController < ApplicationController
 
   def clear
     # This clears the cart, but does not destroy it
-    cart.cart_items.each(&:destroy)
+    current_traveler.cart.cart_items.each(&:destroy)
     redirect_back(fallback_location: packs_path)
   end
 end
