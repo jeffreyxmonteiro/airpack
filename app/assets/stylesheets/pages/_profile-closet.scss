@@ -1,0 +1,37 @@
+.profile-closet-banner {
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.profile-closet-banner-left-picture {
+  display: flex;
+  align-items: center;
+  width: 30vw;
+  justify-content: flex-end;
+  padding-right: 2vw;
+
+}
+
+.profile-closet-banner-avatar-square {
+  width: 200px;
+  height: 35vh;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white .25px solid;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.profile-closet-banner-right-content {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  justify-content: center;
+}
