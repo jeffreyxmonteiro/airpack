@@ -5,6 +5,7 @@ class CartItemsController < ApplicationController
       cartable_type: params[:cartable_type],
       cartable_id: params[:cartable_id]
     )
+    flash[:notice] = "Added to Cart!"
     redirect_to packs_path
   end
 
