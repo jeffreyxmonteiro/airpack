@@ -151,7 +151,7 @@ PACKDESCRIPTIONS = [
 "A full-fledged classic spirit .",
 "The North Face and Patagonia - END OF STORY",
 "For the inner rocker child within you.",
-"“Just do it” ."
+"“Just do it.”"
 ]
 
 TOPSNAMES = [

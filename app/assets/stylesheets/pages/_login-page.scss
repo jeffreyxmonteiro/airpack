@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-around;
   background-color: #E2ECED;
+  overflow: auto;
   padding: 0px 75px;
 }
 .log-in-image {
@@ -13,15 +14,15 @@
   width: 35vw;
   background-size: cover;
   border-radius: 10px;
+  margin-left: 20px;
 }
 .log-in-form-container {
   box-shadow: 0.2px 0.2px 2px 2px rgba(0, 0, 0, 0.1);
   width: 35vw;
   background-color: white;
   padding: 50px;
+  margin: auto 0;
   overflow: auto;
-  height: calc(100vh - 350px);
-  margin-top: 15px;
 }
 .log-in-form-container a {
   color: black;
