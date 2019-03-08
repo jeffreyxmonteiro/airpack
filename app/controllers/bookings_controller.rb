@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def show
     @booking = Booking.find(params[:id])
   end
@@ -12,11 +11,17 @@ class BookingsController < ApplicationController
 
   def create
     @cart = current_traveler.cart
+    # Cannot book if cart is empty
+    if @cart.cart_items.empty?
+      flash[:alert] = "Cart is Empty!"
+      redirect_to new_booking_path
+      return
+    end
     @booking = make_booking
     if @booking.save
       make_booking_items(@cart, @booking)
       clear_cart(@cart)
-      redirect_to booking_path(@booking)
+      redirect_to profile_path
     else
       render :new
     end
