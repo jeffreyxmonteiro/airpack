@@ -97,7 +97,8 @@ ITEMCATEGORY = [
 "Blazer",
 "Miscellaneous :)",
 "Extras",
-"Outerwear"
+"Outerwear",
+"Hygiene",
 ]
 
 PACKNAMES = [
@@ -201,28 +202,6 @@ BOTTOMSIMAGES = [
               "https://im.uniqlo.com/images/jp/pc/goods/416459/item/06_416459_middles.jpg",
               "https://im.uniqlo.com/images/jp/pc/goods/414654/item/64_414654_middles.jpg"
               ]
-HATS = [
-        "https://im.uniqlo.com/images/jp/pc/goods/408922/item/43_408922_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/416496/item/34_416496_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/413074/item/56_413074_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/410857/item/69_410857_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/413075/item/35_413075_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/413076/item/62_413076_middles.jpg"
-]
-
-SCARVES = [
-        "https://im.uniqlo.com/images/jp/pc/goods/414302/item/13_414302_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/408918/item/09_408918_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/413107/item/21_413107_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/414303/item/69_414303_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/416409/item/69_416409_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/417740/item/15_417740_middles.jpg"
-]
-
-SHOES = [
-  "https://im.uniqlo.com/images/jp/pc/goods/410860/item/08_410860_middles.jpg",
-  "https://im.uniqlo.com/images/jp/pc/goods/416497/item/00_416497_middles.jpg"
-]
 
 BELTS = [
   "https://im.uniqlo.com/images/jp/pc/goods/413069/item/09_413069_middles.jpg",
@@ -239,6 +218,26 @@ UPSELLS = [
 "https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/204/original/1350X1350_BoxerBrief_Throwback_10P.jpg",
 "https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwaa4f896c/prod_images/MD18PKMAR_MUL_ALT_02.jpg",
 "https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwe3984e85/prod_images/MD17PKTHR_MUL_ALT_02.jpg"
+]
+
+TRAVELTOILETRIES = [
+"https://static.independent.co.uk/s3fs-public/thumbnails/image/2012/09/02/19/10-best-9.jpg",
+"https://static.independent.co.uk/s3fs-public/thumbnails/image/2012/09/02/21/10-best-10.jpg",
+"https://static.independent.co.uk/s3fs-public/thumbnails/image/2012/09/02/19/10best-4.jpg",
+"https://www.conveniencekits.com/blog/picts/blog/139-2.jpg",
+"https://www.conveniencekits.com/picts/products/500.jpg",
+"https://www.conveniencekits.com/picts/products/1014.jpg"
+]
+
+CULTURAL = [
+"https://www.dhresource.com/0x0s/f2-albu-g8-M01-E9-43-rBVaVFwi-82Acy53AABno7TAYtM891.jpg/male-cool-traditional-japanese-kimono-men.jpg",
+"https://www.dhresource.com/0x0s/f2-albu-g7-M01-AB-C4-rBVaSVq5FBmAfijaAAHb6O_5YAA906.jpg/autumn-traditional-japanese-kimono-pajamas.jpg",
+"http://www.thejasperz.com/wp-content/uploads/2017/02/Akira-Leather-Jacket-Back-1.jpg",
+"https://cdn.shopify.com/s/files/1/0758/2735/products/77954a74a1bf64c1e45a18c71c2458c5_1024x1024.jpg",
+"http://images.primark.com/productsimages/R35397147199366-large.jpg",
+"https://images-na.ssl-images-amazon.com/images/I/61cjGTNqnjL._SL1177_.jpg",
+"http://derf9v1xhwwx1.cloudfront.net/image/upload/q_60/cprd/catalog/product//d/r/dragon-ball-z-orange-black-bom-sm_1.jpg",
+"https://www.ambassadors-japan.com/img/asakusa-tsujiya-honten/430/000002117303793.jpg",
 ]
 
 puts "Creating seeds."
@@ -389,15 +388,29 @@ Pack.all.each do |pack|
       )
     end
 
-    1.times do
+    1.times do  #change this to hygiene
       Item.create!(
-        name: "Trendy item",
-        description: "This hat is super nifty.",
-        category: "Hats",
+        name: "Hygiene Kit",
+        description: "Stay fresh on your travels.",
+        category: "Hygiene",
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: HATS.sample,
+        photo_url: TRAVELTOILETRIES.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    1.times do
+      Item.create!(
+        name: "Wildcard Item",
+        description: "XD",
+        category: "Extras",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: CULTURAL.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -445,21 +458,35 @@ Pack.all.each do |pack|
       )
     end
 
-    2.times do
+    1.times do  #change this to hygiene
       Item.create!(
-        name: "Trendy item",
-        description: "This hat is super nifty.",
-        category: "Hats",
+        name: "Hygiene Kit",
+        description: "Stay fresh on your travels.",
+        category: "Hygiene",
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: HATS.sample,
+        photo_url: TRAVELTOILETRIES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
     end
 
-    2.times do
+    1.times do
+      Item.create!(
+        name: "Wildcard Item",
+        description: "XD",
+        category: "Extras",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: CULTURAL.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    1.times do
       Item.create!(
         name: "Trendy belt",
         description: "This belt will be very useful in your travels.",
@@ -501,21 +528,35 @@ Pack.all.each do |pack|
       )
     end
 
-    4.times do
+    2.times do #change this to hygiene
       Item.create!(
-        name: "Trendy item",
-        description: "This hat is super nifty.",
-        category: "Hats",
+        name: "Hygiene Kit",
+        description: "Stay fresh on your travels.",
+        category: "Hygiene",
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: HATS.sample,
+        photo_url: TRAVELTOILETRIES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
     end
 
-    4.times do
+    2.times do
+      Item.create!(
+        name: "Wildcard Item",
+        description: "XD",
+        category: "Extras",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: CULTURAL.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    3.times do
       Item.create!(
         name: "Trendy belt",
         description: "This belt will be very useful in your travels.",
