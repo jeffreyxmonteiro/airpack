@@ -88,37 +88,17 @@ SIZES = [
 'S',
 'M',
 'L',
-'XL',
-'XXL',
-'XXXL'
+'XL'
 ]
 
 ITEMCATEGORY = [
 "Top",
 "Bottom",
-"Casual Shirt Short Sleeve",
-"Casual Shirt Long Sleeve",
-"Casual Button Down",
 "Blazer",
-"Formal Button Down",
-"Hats",
-"Casual Pants",
-"Formal Pants",
-"Gloves",
-"Scarf",
-"Shoes",
-"Belt",
-"Formal Shorts",
-"Athletic Shorts",
-"Atheltic Top",
-"Sweater",
-"Outerwear Jacket",
-"Hoodie",
-"Bathing Suit",
-"New Toiletries",
-"New Underwear",
-"New Socks",
-"Miscellaneous :)"
+"Miscellaneous :)",
+"Extras",
+"Outerwear",
+"Hygiene",
 ]
 
 PACKNAMES = [
@@ -128,13 +108,13 @@ PACKNAMES = [
 "Hotline Bling",
 "Jet-Setter",
 "The Dandy",
-"The Rebel",
-"Mr. Fundamentals",
+"Rebel Rockstar",
+"Mr. Fundamental",
 "Street Artist",
 "Prepster Package",
 "The Playboy",
 "Corporate Powerhouse",
-"Jiving Jock",
+"The Jock",
 "All-American Throwback"
 ]
 
@@ -222,28 +202,6 @@ BOTTOMSIMAGES = [
               "https://im.uniqlo.com/images/jp/pc/goods/416459/item/06_416459_middles.jpg",
               "https://im.uniqlo.com/images/jp/pc/goods/414654/item/64_414654_middles.jpg"
               ]
-HATS = [
-        "https://im.uniqlo.com/images/jp/pc/goods/408922/item/43_408922_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/416496/item/34_416496_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/413074/item/56_413074_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/410857/item/69_410857_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/413075/item/35_413075_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/413076/item/62_413076_middles.jpg"
-]
-
-SCARVES = [
-        "https://im.uniqlo.com/images/jp/pc/goods/414302/item/13_414302_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/408918/item/09_408918_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/413107/item/21_413107_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/414303/item/69_414303_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/416409/item/69_416409_middles.jpg",
-        "https://im.uniqlo.com/images/jp/pc/goods/417740/item/15_417740_middles.jpg"
-]
-
-SHOES = [
-  "https://im.uniqlo.com/images/jp/pc/goods/410860/item/08_410860_middles.jpg",
-  "https://im.uniqlo.com/images/jp/pc/goods/416497/item/00_416497_middles.jpg"
-]
 
 BELTS = [
   "https://im.uniqlo.com/images/jp/pc/goods/413069/item/09_413069_middles.jpg",
@@ -251,13 +209,35 @@ BELTS = [
   "https://im.uniqlo.com/images/jp/pc/goods/416101/item/38_416101_middles.jpg"
 ]
 
-DURATIONS = ["3 days", "7 days", "14 days"]
+DURATIONS = ["3-4 days", "7-8 days", "14-15 days"]
+
+PACKPRICES = [6000, 10000, 18000]
 
 UPSELLS = [
 "https://thedailywant.com/wp-content/uploads/2017/06/harrys-travel-shave-kit.jpg",
 "https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/204/original/1350X1350_BoxerBrief_Throwback_10P.jpg",
 "https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwaa4f896c/prod_images/MD18PKMAR_MUL_ALT_02.jpg",
 "https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwe3984e85/prod_images/MD17PKTHR_MUL_ALT_02.jpg"
+]
+
+TRAVELTOILETRIES = [
+"https://static.independent.co.uk/s3fs-public/thumbnails/image/2012/09/02/19/10-best-9.jpg",
+"https://static.independent.co.uk/s3fs-public/thumbnails/image/2012/09/02/21/10-best-10.jpg",
+"https://static.independent.co.uk/s3fs-public/thumbnails/image/2012/09/02/19/10best-4.jpg",
+"https://www.conveniencekits.com/blog/picts/blog/139-2.jpg",
+"https://www.conveniencekits.com/picts/products/500.jpg",
+"https://www.conveniencekits.com/picts/products/1014.jpg"
+]
+
+CULTURAL = [
+"https://www.dhresource.com/0x0s/f2-albu-g8-M01-E9-43-rBVaVFwi-82Acy53AABno7TAYtM891.jpg/male-cool-traditional-japanese-kimono-men.jpg",
+"https://www.dhresource.com/0x0s/f2-albu-g7-M01-AB-C4-rBVaSVq5FBmAfijaAAHb6O_5YAA906.jpg/autumn-traditional-japanese-kimono-pajamas.jpg",
+"http://www.thejasperz.com/wp-content/uploads/2017/02/Akira-Leather-Jacket-Back-1.jpg",
+"https://cdn.shopify.com/s/files/1/0758/2735/products/77954a74a1bf64c1e45a18c71c2458c5_1024x1024.jpg",
+"http://images.primark.com/productsimages/R35397147199366-large.jpg",
+"https://images-na.ssl-images-amazon.com/images/I/61cjGTNqnjL._SL1177_.jpg",
+"http://derf9v1xhwwx1.cloudfront.net/image/upload/q_60/cprd/catalog/product//d/r/dragon-ball-z-orange-black-bom-sm_1.jpg",
+"https://www.ambassadors-japan.com/img/asakusa-tsujiya-honten/430/000002117303793.jpg",
 ]
 
 puts "Creating seeds."
@@ -298,6 +278,16 @@ puts "Finished Creating Traveler Seeds"
 puts "Creating Packer Seeds"
 
 Packer.create!(
+    first_name: "Yuki",
+    last_name: "Mori",
+    photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/wzq20vmxjrjfpjlsvlnl.jpg",
+    biography: "Living that good life in Tokyo! My other interests are reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    location: "Meguro, Tokyo",
+    email: "jazzyuki@gmail.com",
+    password: "secret"
+    )
+
+Packer.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     photo_url: USERIMAGES.sample,
@@ -312,7 +302,7 @@ Packer.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     photo_url: USERIMAGES.sample,
-    biography: "Living that good life in Tokyo! My other interests are reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    biography: "Living that good life in Tokyo! I enjoy reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
     location: TOKYOLOCATIONS.sample,
     email: "#{rand(1000)}#{Faker::Internet.email}",
     password: "psecret"
@@ -323,90 +313,262 @@ puts "Finished Packer Traveler Seeds"
 
 puts "Creating Initial Packs Seeds"
 
+# DURATIONS = ["3-4 days", "7-8 days", "14-15 days"]
+
+# PACKPRICES = [6000, 10000, 18000]
+
 Packer.all.each do |packer|
   1.times do
     Pack.create!(
       size: SIZES.sample,
-      duration: DURATIONS.sample,
+      duration: "3-4 days",
       name: PACKNAMES.sample,
       style: STYLES.sample,
       description: PACKDESCRIPTIONS.sample,
       photo_url: PACKIMAGES.sample,
-      price: (rand(5) * 2500) + (rand(9) * 100) + 1000,
+      price: 6000,
+      packer_id: packer.id
+      )
+  end
+
+  1.times do
+    Pack.create!(
+      size: SIZES.sample,
+      duration: "7-8 days",
+      name: PACKNAMES.sample,
+      style: STYLES.sample,
+      description: PACKDESCRIPTIONS.sample,
+      photo_url: PACKIMAGES.sample,
+      price: 10000,
+      packer_id: packer.id
+      )
+  end
+
+  1.times do
+    Pack.create!(
+      size: SIZES.sample,
+      duration: "14-15 days",
+      name: PACKNAMES.sample,
+      style: STYLES.sample,
+      description: PACKDESCRIPTIONS.sample,
+      photo_url: PACKIMAGES.sample,
+      price: 18000,
       packer_id: packer.id
       )
   end
 end
 
 Pack.all.each do |pack|
-  5.times do
-  Item.create!(
-    name: TOPSNAMES.sample,
-    description: TOPSDESCRIPTIONS.sample,
-    category: "Top",
-    style: STYLES.sample,
-    size: SIZES.sample,
-    price: rand(10) * 100,
-    photo_url: TOPSIMAGES.sample,
-    pack_id: pack.id,
-    packer_id: pack.packer.id
-  )
-  end
+  if pack.duration == "3-4 days"
+      4.times do
+      Item.create!(
+        name: TOPSNAMES.sample,
+        description: TOPSDESCRIPTIONS.sample,
+        category: "Top",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: TOPSIMAGES.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
 
-  5.times do
-    Item.create!(
-      name: BOTTOMSNAMES.sample,
-      description: BOTTOMSDESCRIPTIONS.sample,
-      category: "Bottom",
-      style: STYLES.sample,
-      size: SIZES.sample,
-      price: rand(10) * 100,
-      photo_url: BOTTOMSIMAGES.sample,
-      pack_id: pack.id,
-      packer_id: pack.packer.id
-    )
-  end
+    2.times do
+      Item.create!(
+        name: BOTTOMSNAMES.sample,
+        description: BOTTOMSDESCRIPTIONS.sample,
+        category: "Bottom",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: BOTTOMSIMAGES.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
 
-  2.times do
-    Item.create!(
-      name: "Trendy item",
-      description: "This will be very useful in your travels.",
-      category: "Hats",
-      style: STYLES.sample,
-      size: SIZES.sample,
-      price: rand(10) * 100,
-      photo_url: HATS.sample,
-      pack_id: pack.id,
-      packer_id: pack.packer.id
-    )
-  end
+    1.times do  #change this to hygiene
+      Item.create!(
+        name: "Hygiene Kit",
+        description: "Stay fresh on your travels.",
+        category: "Hygiene",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: TRAVELTOILETRIES.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
 
-  2.times do
-    Item.create!(
-      name: "Trendy belt",
-      description: "This belt will be very useful in your travels.",
-      category: "Belt",
-      style: STYLES.sample,
-      size: SIZES.sample,
-      price: rand(10) * 100,
-      photo_url: BELTS.sample,
-      pack_id: pack.id,
-      packer_id: pack.packer.id
-    )
-  end
+    1.times do
+      Item.create!(
+        name: "Wildcard Item",
+        description: "XD",
+        category: "Extras",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: CULTURAL.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
 
-  2.times do
-    Item.create!(
-      name: "Flex shoes",
-      description: "Fluid shoes great for movement.",
-      category: "Shoes",
-      style: STYLES.sample,
-      size: SIZES.sample,
-      price: rand(10) * 100 ,
-      photo_url: SHOES.sample,
-      pack_id: pack.id,
-      packer_id: pack.packer.id
-    )
+    1.times do
+      Item.create!(
+        name: "Trendy belt",
+        description: "This belt will be very useful in your travels.",
+        category: "Belt",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: BELTS.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+  elsif pack.duration == "7-8 days"
+    7.times do
+      Item.create!(
+        name: TOPSNAMES.sample,
+        description: TOPSDESCRIPTIONS.sample,
+        category: "Top",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: TOPSIMAGES.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    5.times do
+      Item.create!(
+        name: BOTTOMSNAMES.sample,
+        description: BOTTOMSDESCRIPTIONS.sample,
+        category: "Bottom",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: BOTTOMSIMAGES.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    1.times do  #change this to hygiene
+      Item.create!(
+        name: "Hygiene Kit",
+        description: "Stay fresh on your travels.",
+        category: "Hygiene",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: TRAVELTOILETRIES.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    1.times do
+      Item.create!(
+        name: "Wildcard Item",
+        description: "XD",
+        category: "Extras",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: CULTURAL.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    1.times do
+      Item.create!(
+        name: "Trendy belt",
+        description: "This belt will be very useful in your travels.",
+        category: "Belt",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: BELTS.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+  elsif pack.duration == "14-15 days"
+      14.times do
+      Item.create!(
+        name: TOPSNAMES.sample,
+        description: TOPSDESCRIPTIONS.sample,
+        category: "Top",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: TOPSIMAGES.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    8.times do
+      Item.create!(
+        name: BOTTOMSNAMES.sample,
+        description: BOTTOMSDESCRIPTIONS.sample,
+        category: "Bottom",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: BOTTOMSIMAGES.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    2.times do #change this to hygiene
+      Item.create!(
+        name: "Hygiene Kit",
+        description: "Stay fresh on your travels.",
+        category: "Hygiene",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: TRAVELTOILETRIES.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    2.times do
+      Item.create!(
+        name: "Wildcard Item",
+        description: "XD",
+        category: "Extras",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: CULTURAL.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
+
+    3.times do
+      Item.create!(
+        name: "Trendy belt",
+        description: "This belt will be very useful in your travels.",
+        category: "Belt",
+        style: STYLES.sample,
+        size: SIZES.sample,
+        price: rand(10) * 100,
+        photo_url: BELTS.sample,
+        pack_id: pack.id,
+        packer_id: pack.packer.id
+      )
+    end
   end
 end
 
