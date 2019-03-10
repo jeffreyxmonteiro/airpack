@@ -1,37 +1,87 @@
-<div class="profile-closet-banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/102129/pexels-photo-102129.jpeg)">
+<div class="profile-closet-banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg)">
   <h1> <%= @user.first_name  %>'s Closet</h1>
   <div class="profile-closet-numbers">
     <p>Number of Available Packs: <%= @user.packs.count  %></p>
     <p>Number of Available Items: <%= @user.items.count  %></p>
   </div>
   <div class="profile-closet-buttons">
-    <%= link_to "CREATE PACK", packs_path, class: "closet-pack-btn" %>
-    <%= link_to "ADD ITEM", packs_path, class: "closet-pack-btn" %>
+    <%= link_to "CREATE PACK", packs_path, class: "closet-pack-btn" %> <!-- This link needs to be fixed. -->
+    <%= link_to "ADD ITEM", packs_path, class: "closet-pack-btn" %> <!-- This link needs to be fixed. Need to remove the hyperlink format on buttons too -->
   </div>
 </div>
 
-  <div class="packs-container">
-    <div class="pack-row">
-      <% @user.packs.each do |pack| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="pack-card">
-            <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= pack.photo_url %>);"></div>
-            <div class="pack-description">
-              <div><h6><%= pack.style %> · <%= pack.duration %></h6></div>
-              <div class="pack-name"><h2><%= pack.name %></h2></div>
-              <div class="pack-size"><h6><%= pack.size %></h6></div>
-            </div>
-            <div class="description-and-price">
-              <div class="inner-pack-description">
-                <h6><%= pack.description %></h6>
+<!-- Tab headings  -->
+<div class="profile-cards-tabs-headings">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#packs" aria-controls="packs" role="tab" data-toggle="tab">Packs</a></li>
+        <li role="presentation"><a href="#items" aria-controls="items" role="tab" data-toggle="tab">Items</a></li>
+      </ul>
+</div>
+<!-- Tab headings ^^ -->
+
+
+<!-- Tab content  -->
+ <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="packs">
+      <!-- Packs go here -->
+      <div class="profile-cards-container">
+        <div class="profile-card-row">
+          <% @user.packs.each do |pack| %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="pack-card">
+                <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= pack.photo_url %>);"></div>
+                <div class="pack-description">
+                  <div><h6><%= pack.style %> · <%= pack.duration %></h6></div>
+                  <div class="pack-name"><h2><%= pack.name %></h2></div>
+                  <div class="pack-size"><h6><%= pack.size %></h6></div>
+                </div>
+                <div class="description-and-price">
+                  <div class="inner-pack-description">
+                    <h6><%= pack.description %></h6>
+                  </div>
+                  <div class="pack-price">
+                  <h6>¥<%= pack.price %></h6>
+                  </div>
+                </div>
+                 <%= link_to "", pack_path(pack), class: "card-link" %>
               </div>
-              <div class="pack-price">
-              <h6>¥<%= pack.price %></h6>
-              </div>
             </div>
-             <%= link_to "", pack_path(pack), class: "card-link" %>
-          </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
+      <!-- Packs go here ^^ -->
+    </div>
+
+
+    <div role="tabpanel" class="tab-pane fade" id="items">
+      <!-- Items go here -->
+      <div class="profile-cards-container">
+        <div class="profile-card-row">
+          <% @user.items.each do |item| %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="pack-card">
+                <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo_url %>);"></div>
+                <div class="pack-description">
+                  <div><h6><%= item.style %></h6></div>
+                  <div class="pack-name"><h2><%= item.name %></h2></div>
+                  <div class="pack-size"><h6><%= item.size %></h6></div>
+                </div>
+                <div class="description-and-price">
+                  <div class="inner-pack-description">
+                    <h6><%= item.description %></h6>
+                  </div>
+                  <div class="pack-price">
+                  <h6>¥<%= item.price %></h6>
+                  </div>
+                </div>
+                 <%= link_to "", pack_path(item), class: "card-link" %> <!-- This link needs to be fixed. -->
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <!-- Items go here ^^ -->
     </div>
   </div>
+
+  <!-- Tab content ^^ -->

@@ -42,3 +42,43 @@
 .closet-pack-btn a:hover {
   text-decoration: none;
 }
+
+.profile-cards-tabs-headings {
+  padding-top: 20px;
+  background: #E2ECED;
+  h1 {
+  text-align: center;
+  // background: #E2ECED;
+  margin: 0;
+  }
+  li {
+    a {
+      background: transparent !important;
+      color: black;
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+    }
+    a:hover {
+      background: transparent !important;
+      color: black;
+    }
+    a:focus {
+      background: transparent !important;
+      color: black;
+    }
+  }
+  li.active {
+    border-bottom: 1px solid black !important;
+  }
+}
+
+.profile-cards-container {
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  background: #E2ECED;
+}
+.profile-card-row {
+  padding: 15px 50px 50px 50px;
+}
