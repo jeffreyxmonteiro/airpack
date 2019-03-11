@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to profile
