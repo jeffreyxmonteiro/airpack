@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :packs, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :items, only: :update
   end
-  resources :bookings, only: [:show, :new, :create, :destroy]
+  resources :items, only: [:index, :show, :new, :create, :destroy]
+  resources :bookings, only: [:show, :new, :create, :update, :destroy]
   resources :cart_items, only: [:create, :destroy]
   delete '/carts/:id', to: 'cart#clear', as: 'clear_cart'
   resources :temp_closet_items, only: [:create, :destroy]
