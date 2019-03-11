@@ -1,0 +1,3 @@
+<% if current_traveler.cart.cart_items.count > 0 %>
+  <span class="badge on-cart-icon" id="cart_icon"><%= current_traveler.cart.cart_items.count  %></span>
+<% end %>
