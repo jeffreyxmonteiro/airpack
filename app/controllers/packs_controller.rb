@@ -18,6 +18,12 @@ class PacksController < ApplicationController
 
   def create
     @pack = Pack.new(pack_params)
+    @pack.packer = current_packer
+    if @pack.save
+      redirect_to pack_path(@pack)
+    else
+      render :new
+    end
   end
 
   private

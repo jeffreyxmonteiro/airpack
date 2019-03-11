@@ -1,1 +1,32 @@
-Add new item
+<div class="newpack-form-container">
+  <div class="newpack-form">
+
+    <%= simple_form_for [@pack, @item] do |f|%>
+    <div class="newpack-heading">
+      <h4>Fill New Item Details</h4>
+    </div>
+      <%= f.input :name, label: 'Item Name' %>
+      <%= f.input :category, label: 'Category', collection: %w(Top Bottom Blazer Miscellaneous Extras Outwerwear Hygiene) %>
+      <%= f.input :style, label: 'Style', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage) %>
+      <%= f.input :size, label: 'Size', collection: %w(XS S M L XL) %>
+      <%= f.input :price, label: 'Price(¥)' %>
+      <%= f.input :description, label: 'Item Description', wrapper_html: { class: 'new-item-description' } %>
+      <%#= f.input :image, label: 'Pack Image'  %>
+      <div class="create-pack-btns">
+        <div class="form-actions create-pack-btn">
+          <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn btn-default"} %>
+        </div>
+        <div class="form-actions create-pack-btn">
+          <%= f.button :submit, "CREATE" %>
+        </div>
+      </div>
+
+    <%# unless @pack.image.nil? %>
+
+        <%#= image_tag @pack.image, width: 300 %>
+
+
+    <% end %>
+
+  </div>
+</div>
