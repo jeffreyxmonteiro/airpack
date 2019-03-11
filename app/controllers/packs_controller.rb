@@ -4,7 +4,7 @@ class PacksController < ApplicationController
   def index
     @packs = Pack.all
     @cart_items = []
-    @cart_items = current_traveler.cart.cart_items.map { |cart_item| cart_item.cartable } if traveler_signed_in?
+    @cart_items = current_traveler.cart.cart_items.map(&:cartable) if traveler_signed_in?
     @filtered_packs = @packs.reject { |pack| @cart_items.include? pack }
   end
 
@@ -13,13 +13,18 @@ class PacksController < ApplicationController
   end
 
   def new
+    @items = Item.all
+    @filtered_items = @items.select { |item| item.packer == current_packer && item.pack_id.nil?}
     @pack = Pack.new
   end
 
   def create
+    @closet = current_packer.temp_closet
     @pack = Pack.new(pack_params)
     @pack.packer = current_packer
     if @pack.save
+      add_item_to_pack(@closet)
+      @closet.clear_closet
       redirect_to pack_path(@pack)
     else
       render :new
@@ -30,5 +35,10 @@ class PacksController < ApplicationController
 
   def pack_params
     params.require(:pack).permit(:name, :style, :duration, :price, :photo_url, :description)
+  end
+
+  def add_item_to_pack(closet)
+    pack_items = closet.temp_closet_items.map(&:item)
+    pack_items.each { |item| item.update(pack: @pack) }
   end
 end
