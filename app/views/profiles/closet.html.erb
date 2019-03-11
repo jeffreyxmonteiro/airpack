@@ -26,10 +26,10 @@
       <!-- Packs go here -->
       <div class="profile-cards-container">
         <div class="profile-card-row">
-          <% @user.packs.each do |pack| %>
+          <% @user.packs.reverse.each do |pack| %>
             <div class="col-xs-12 col-sm-6 col-md-4">
               <div class="pack-card">
-                <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= pack.photo_url %>);"></div>
+                <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pack.photo, height: 300, width: 400, crop: :fill %>')"></div>
                 <div class="pack-description">
                   <div><h6><%= pack.style %> · <%= pack.duration %></h6></div>
                   <div class="pack-name"><h2><%= pack.name %></h2></div>

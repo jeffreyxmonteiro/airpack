@@ -325,7 +325,7 @@ Packer.all.each do |packer|
       name: PACKNAMES.sample,
       style: STYLES.sample,
       description: PACKDESCRIPTIONS.sample,
-      photo_url: PACKIMAGES.sample,
+      remote_photo_url: PACKIMAGES.sample,
       price: 6000,
       packer_id: packer.id
       )
@@ -338,7 +338,7 @@ Packer.all.each do |packer|
       name: PACKNAMES.sample,
       style: STYLES.sample,
       description: PACKDESCRIPTIONS.sample,
-      photo_url: PACKIMAGES.sample,
+      remote_photo_url: PACKIMAGES.sample,
       price: 10000,
       packer_id: packer.id
       )
@@ -351,7 +351,7 @@ Packer.all.each do |packer|
       name: PACKNAMES.sample,
       style: STYLES.sample,
       description: PACKDESCRIPTIONS.sample,
-      photo_url: PACKIMAGES.sample,
+      remote_photo_url: PACKIMAGES.sample,
       price: 18000,
       packer_id: packer.id
       )

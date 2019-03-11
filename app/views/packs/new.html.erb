@@ -11,7 +11,8 @@
       <h5><%= f.input :duration, label: 'Duration', collection: ["3-4 days", "7-8 days", "14-15 days"] %></h5>
       <h5><%= f.input :price, label: 'Price(¥)' %></h5>
       <h5><%= f.input :description, label: 'Pack Description', wrapper_html: { class: 'new-pack-description' } %></h5>
-      <%#= f.input :image, label: 'Pack Image'  %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
       <div class="create-pack-btns">
         <div class="form-actions create-pack-btn">
           <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn btn-default"} %>
@@ -20,11 +21,6 @@
           <%= f.button :submit, "CREATE" %>
         </div>
       </div>
-
-    <%# unless @pack.image.nil? %>
-
-        <%#= image_tag @pack.image, width: 300 %>
-
 
     <% end %>
 
