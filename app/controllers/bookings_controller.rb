@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking = make_booking
     if @booking.save
       make_booking_items(@cart, @booking)
-      clear_cart(@cart)
+      @cart.clear_cart
       redirect_to profile_path
     else
       render :new
@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.completed = true
+    @booking.update(completed: true)
     unmark_booked_items(@booking)
   end
 
@@ -56,23 +56,23 @@ class BookingsController < ApplicationController
     return booking
   end
 
+  def mark_as_booked(cart_item)
+    cart_item.cartable.update(booked: true)
+  end
+
   def make_booking_items(my_cart, my_booking)
     my_cart.cart_items.each do |cart_item|
       BookingItem.create!(
         booking: my_booking,
         bookable: cart_item.cartable
       )
-      cart_item.cartable.booked = true
+      mark_as_booked(cart_item)
     end
-  end
-
-  def clear_cart(cart)
-    cart.cart_items.each(&:destroy)
   end
 
   def unmark_booked_items(booking)
     booking.booking_items.each do |booking_item|
-      booking_item.bookable.booked = false
+      booking_item.bookable.update(booked: false)
     end
   end
 end

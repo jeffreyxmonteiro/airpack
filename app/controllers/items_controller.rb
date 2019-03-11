@@ -3,6 +3,16 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def update
+    @item = Item.find[params(:id)]
+    @pack = Pack.find[params(:pack_id)]
+    if @item.pack.nil?
+      @item.update(pack: @pack)
+    else
+      @item.update(pack: nil)
+    end
+  end
+
   def delete
     @item = Item.find(params[:id])
     @item.destroy
