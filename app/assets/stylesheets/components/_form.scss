@@ -1,0 +1,50 @@
+.create-pack-btns {
+  display: flex;
+  justify-content: space-around;
+  margin: 45px 0px;
+  padding: 0px 20px;
+}
+.create-pack-btn input{
+  padding: 10px 30px;
+  font-weight: bold;
+  background: linear-gradient(#42B6C5, #0C8B9C);
+  border-radius: 50px;
+  color: white;
+}
+.create-pack-btn a {
+  padding: 10px 30px;
+  font-weight: bold;
+  background: linear-gradient(#42B6C5, #0C8B9C);
+  border-radius: 50px;
+  color: white;
+}
+.newpack-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.newpack-form {
+  display: flex;
+  width: 40vw;
+  justify-content: center;
+  color: black;
+  background: white;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 30px;
+}
+.newpack-form h5 {
+  font-size: 22px;
+}
+.newpack-heading {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.newpack-heading h4 {
+  font-size: 30px;
+}
+#new_pack {
+  width: 75%;
+}
