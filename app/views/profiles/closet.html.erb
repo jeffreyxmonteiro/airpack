@@ -55,7 +55,7 @@
 
     <div role="tabpanel" class="tab-pane fade" id="items">
       <!-- Items go here -->
-      <div class="profile-cards-container">
+    <div class="profile-cards-container">
         <div class="profile-card-row">
           <% @user.items.each do |item| %>
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -74,7 +74,7 @@
                   <h6>¥<%= item.price %></h6>
                   </div>
                 </div>
-                <!-- This link needs to be fixed. -->
+
               </div>
             </div>
           <% end %>
