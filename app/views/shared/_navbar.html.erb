@@ -37,61 +37,10 @@
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag 'cart-icon.png', class: "icon dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-            <% if current_traveler.cart.cart_items.count > 0 %>
-              <span class="badge on-cart-icon"><%= current_traveler.cart.cart_items.count  %></span>
-            <% end %>
+          <%= render "shared/cart_icon" %>
 <!--           <i class="fas fa-cart-arrow-down dropdown-toggle" id="navbar-wagon-menu"></i>
- -->        <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <h4 class="dropdown-margin">Your Cart</h4>
-              <% current_traveler.cart.cart_items.each do |cart_item| %>
-                <% cart_object = cart_item.cartable %>
-                <% if cart_object.class == Pack %>
-                  <%= link_to pack_path(cart_object), class: "card-linkee" do %>
-                    <div class="navbar-card">
-                      <div class="navbar-card-photo" style="background-image: url('<%= cart_object.photo_url %>')">
-                      </div>
-                      <div class="navbar-card-details">
-                        <%= link_to cart_item_path(cart_item), method: :delete do %>
-                            <i class="fas fa-minus-circle navbar-card-delete"></i>
-                        <% end %>
-                        <p class="card-category"><%= cart_object.style %></p>
-                        <p class="card-name"><%= cart_object.name %></p>
-                        <p class="card-size"><%= cart_object.size %></p>
-                        <p class="navbar-card-price">¥<%= cart_object.price %></p>
-                      </div>
-                    </div>
-                  <% end %>
-                <% elsif cart_object.class == Item %>
-                  <%= link_to pack_path(cart_object) do %>
-                    <div class="navbar-card">
-                      <div class="navbar-card-photo" style="background-image: url('<%= cart_object.photo_url %>')">
-                      </div>
-                      <div class="navbar-card-details">
-                        <p class="card-category"><%= cart_object.style %></p>
-                        <p class="card-name"><%= cart_object.name %></p>
-                        <p class="card-size"><%= cart_object.size %></p>
-                        <p class="navbar-card-price">¥<%= cart_object.price %></p>
-                        <%= link_to "delete", cart_item_path(cart_item), method: :delete %>
-                      </div>
-                    </div>
-                  <% end %>
-                <% end %>
-              <% end %>
-              <div class="btn-line">
-                <%= link_to "BOOK", new_booking_path, class: "cart-btn" %>
-                <%= link_to "CLEAR",  clear_cart_path(current_traveler.cart), method: :delete, class: "cart-btn" %>
-              </div>
-
-            <!-- <li>
-              <%#= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%#= t(".settings", default: "Settings") %>
-              <#% end %>
-            </li>
-            <li>
-              <%#= link_to destroy_traveler_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%#= t(".sign_out", default: "Log out") %>
-              <#% end %>
-            </li> -->
+-->        <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu" id="cart_dropdown">
+            <%= render "shared/cart_dropdown" %>
           </div>
         </div>
       </div>
