@@ -297,7 +297,7 @@ Packer.create!(
     password: "psecret"
     )
 
-30.times do
+10.times do
   Packer.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -313,46 +313,20 @@ puts "Finished Packer Traveler Seeds"
 
 puts "Creating Initial Packs Seeds"
 
-# DURATIONS = ["3-4 days", "7-8 days", "14-15 days"]
+DURATIONS = ["3-4 days", "7-8 days", "14-15 days"]
 
-# PACKPRICES = [6000, 10000, 18000]
+PACKPRICES = [6000, 10000, 18000]
 
 Packer.all.each do |packer|
   1.times do
     Pack.create!(
       size: SIZES.sample,
-      duration: "3-4 days",
+      duration: DURATIONS.sample,
       name: PACKNAMES.sample,
       style: STYLES.sample,
       description: PACKDESCRIPTIONS.sample,
       remote_photo_url: PACKIMAGES.sample,
-      price: 6000,
-      packer_id: packer.id
-      )
-  end
-
-  1.times do
-    Pack.create!(
-      size: SIZES.sample,
-      duration: "7-8 days",
-      name: PACKNAMES.sample,
-      style: STYLES.sample,
-      description: PACKDESCRIPTIONS.sample,
-      remote_photo_url: PACKIMAGES.sample,
-      price: 10000,
-      packer_id: packer.id
-      )
-  end
-
-  1.times do
-    Pack.create!(
-      size: SIZES.sample,
-      duration: "14-15 days",
-      name: PACKNAMES.sample,
-      style: STYLES.sample,
-      description: PACKDESCRIPTIONS.sample,
-      remote_photo_url: PACKIMAGES.sample,
-      price: 18000,
+      price: PACKPRICES.sample,
       packer_id: packer.id
       )
   end
@@ -368,7 +342,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: TOPSIMAGES.sample,
+        remote_photo_url: TOPSIMAGES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -382,7 +356,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: BOTTOMSIMAGES.sample,
+        remote_photo_url: BOTTOMSIMAGES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -396,7 +370,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: TRAVELTOILETRIES.sample,
+        remote_photo_url: TRAVELTOILETRIES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -410,7 +384,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: CULTURAL.sample,
+        remote_photo_url: CULTURAL.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -424,7 +398,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: BELTS.sample,
+        remote_photo_url: BELTS.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -438,7 +412,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: TOPSIMAGES.sample,
+        remote_photo_url: TOPSIMAGES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -452,7 +426,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: BOTTOMSIMAGES.sample,
+        remote_photo_url: BOTTOMSIMAGES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -466,7 +440,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: TRAVELTOILETRIES.sample,
+        remote_photo_url: TRAVELTOILETRIES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -480,7 +454,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: CULTURAL.sample,
+        remote_photo_url: CULTURAL.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -494,7 +468,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: BELTS.sample,
+        remote_photo_url: BELTS.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -508,7 +482,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: TOPSIMAGES.sample,
+        remote_photo_url: TOPSIMAGES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -522,7 +496,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: BOTTOMSIMAGES.sample,
+        remote_photo_url: BOTTOMSIMAGES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -536,7 +510,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: TRAVELTOILETRIES.sample,
+        remote_photo_url: TRAVELTOILETRIES.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -550,7 +524,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: CULTURAL.sample,
+        remote_photo_url: CULTURAL.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -564,7 +538,7 @@ Pack.all.each do |pack|
         style: STYLES.sample,
         size: SIZES.sample,
         price: rand(10) * 100,
-        photo_url: BELTS.sample,
+        remote_photo_url: BELTS.sample,
         pack_id: pack.id,
         packer_id: pack.packer.id
       )
@@ -585,7 +559,7 @@ Packer.all.each do |packer|
       style: STYLES.sample,
       size: SIZES.sample,
       price: rand(10) * 100,
-      photo_url: UPSELLS.sample,
+      remote_photo_url: UPSELLS.sample,
       packer_id: packer.id
     )
   end

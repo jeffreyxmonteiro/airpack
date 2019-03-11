@@ -11,7 +11,7 @@
       <h5><%= f.input :duration, label: 'Duration', collection: ["3-4 days", "7-8 days", "14-15 days"] %></h5>
       <h5><%= f.input :price, label: 'Price(¥)' %></h5>
       <h5><%= f.input :description, label: 'Pack Description', wrapper_html: { class: 'new-pack-description' } %></h5>
-      <%= f.input :photo %>
+      <%= f.input :photo, label: 'Pack Photo' %>
       <%= f.input :photo_cache, as: :hidden %>
       <div class="create-pack-btns">
         <div class="form-actions create-pack-btn">
@@ -28,26 +28,28 @@
 
 <div class="packs-container">
   <div class="pack-row">
-    <% @filtered_items.first(18).each do |item| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="pack-card">
-          <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo_url %>);"></div>
-          <div class="pack-description">
-            <div><h6><%= item.style %></h6></div>
-            <div class="pack-name"><h2><%= item.name %></h2></div>
-            <div class="pack-size"><h6><%= item.size %></h6></div>
-          </div>
-          <div class="description-and-price">
-            <div class="inner-pack-description">
-              <h6><%= item.description %></h6>
+    <% unless @filtered_items.nil? %>
+      <% @filtered_items.first(18).each do |item| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="pack-card">
+            <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo_url %>);"></div>
+            <div class="pack-description">
+              <div><h6><%= item.style %></h6></div>
+              <div class="pack-name"><h2><%= item.name %></h2></div>
+              <div class="pack-size"><h6><%= item.size %></h6></div>
             </div>
-            <div class="pack-price">
-            <h6>¥<%= item.price %></h6>
+            <div class="description-and-price">
+              <div class="inner-pack-description">
+                <h6><%= item.description %></h6>
+              </div>
+              <div class="pack-price">
+              <h6>¥<%= item.price %></h6>
+              </div>
             </div>
+             <%= link_to "", temp_closet_items_path(item: item), method: :post, class: "card-link" %>
           </div>
-           <%= link_to "", temp_closet_items_path(item: item), method: :post, class: "card-link" %>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
