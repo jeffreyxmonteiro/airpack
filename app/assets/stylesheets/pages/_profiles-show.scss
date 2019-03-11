@@ -151,3 +151,22 @@
     border-bottom: 1px solid black !important;
   }
 }
+
+.profile-closet-pack-btn {
+  background-image: linear-gradient(#42B6C5, #0C8B9C);
+  border-radius: 50px;
+  font-weight: bold;
+  padding: 10px 30px;
+  right: 400px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  width: 8vw;
+  opacity: .8;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+
+  }
+}
