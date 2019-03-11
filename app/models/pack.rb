@@ -5,4 +5,6 @@ class Pack < ApplicationRecord
   has_many :booking_items, as: :bookable
 
   mount_uploader :photo, PhotoUploader
+
+  validates :photo, presence: true
 end
