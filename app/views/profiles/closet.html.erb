@@ -1,20 +1,20 @@
 <div class="profile-closet-banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg)">
   <h1> <%= @user.first_name  %>'s Closet</h1>
   <div class="profile-closet-numbers">
-    <p>Number of Available Packs: <%= @user.packs.count  %></p>
-    <p>Number of Available Items: <%= @user.items.count  %></p>
+    <p>Number of Available Packs: <strong><%= @user.packs.count  %></strong> </p>
+    <p>Number of Available Items: <strong><%= @user.items.count  %></strong> </p>
   </div>
   <div class="profile-closet-buttons">
-    <%= link_to "CREATE PACK", packs_path, class: "closet-pack-btn" %> <!-- This link needs to be fixed. -->
-    <%= link_to "ADD ITEM", packs_path, class: "closet-pack-btn" %> <!-- This link needs to be fixed. Need to remove the hyperlink format on buttons too -->
+    <%= link_to "CREATE PACK", new_pack_path, class: "closet-pack-btn" %> <!-- This link needs to be fixed. -->
+    <%= link_to "ADD ITEM", new_item_path, class: "closet-pack-btn" %> <!-- This link needs to be fixed. Need to remove the hyperlink format on buttons too -->
   </div>
 </div>
 
 <!-- Tab headings  -->
 <div class="profile-cards-tabs-headings">
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#packs" aria-controls="packs" role="tab" data-toggle="tab">Packs</a></li>
-        <li role="presentation"><a href="#items" aria-controls="items" role="tab" data-toggle="tab">Items</a></li>
+        <li role="presentation" class="active"><a href="#packs" aria-controls="packs" role="tab" data-toggle="tab">Available Packs</a></li>
+        <li role="presentation"><a href="#items" aria-controls="items" role="tab" data-toggle="tab">Available Items</a></li>
       </ul>
 </div>
 <!-- Tab headings ^^ -->
@@ -74,14 +74,13 @@
                   <h6>¥<%= item.price %></h6>
                   </div>
                 </div>
-                 <%= link_to "", pack_path(item), class: "card-link" %> <!-- This link needs to be fixed. -->
+                <!-- This link needs to be fixed. -->
               </div>
             </div>
           <% end %>
         </div>
       </div>
       <!-- Items go here ^^ -->
-    </div>
-  </div>
 
   <!-- Tab content ^^ -->
+  </div>

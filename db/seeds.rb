@@ -132,7 +132,7 @@ PACKDESCRIPTIONS = [
 "A full-fledged classic spirit .",
 "The North Face and Patagonia - END OF STORY",
 "For the inner rocker child within you.",
-"“Just do it.”"
+"Just do it."
 ]
 
 TOPSNAMES = [
@@ -163,9 +163,9 @@ BOTTOMSNAMES = [
 "Cotton Joggers",
 "Suit Pants",
 "Cargo Pants",
-"Slim-fit Lightweight Garment-dyed Stretch Chino",
+"Stretch Chino",
 "Stretch Chambray",
-"Ludlow in Heather Twill"
+"Ludlow Heather Twill"
 ]
 
 BOTTOMSDESCRIPTIONS = [
