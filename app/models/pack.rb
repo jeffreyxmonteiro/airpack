@@ -3,4 +3,6 @@ class Pack < ApplicationRecord
   has_many :items
   has_many :cart_items, as: :cartable
   has_many :booking_items, as: :bookable
+
+  mount_uploader :photo, PhotoUploader
 end

@@ -34,7 +34,7 @@ class PacksController < ApplicationController
   private
 
   def pack_params
-    params.require(:pack).permit(:name, :style, :duration, :price, :photo_url, :description)
+    params.require(:pack).permit(:name, :style, :size, :duration, :price, :description, :photo)
   end
 
   def add_item_to_pack(closet)

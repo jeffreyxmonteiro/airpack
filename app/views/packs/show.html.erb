@@ -1,13 +1,8 @@
 <div class="wrapper">
   <div class="container banner" style="background-image: linear-gradient(rgba(0, 0, 0, .33), rgba(0, 0, 0, 0.33)), url('<%= image_path 'pack_banner.jpg' %>')">
     <div class="container bnr-card">
-      <% if @pack.photo_url.nil? %>
-      <div class="container bc-photo" style="background-image: url('<%= image_path 'clothes.jpg' %>')">
+      <div class="container bc-photo" style="background-image: url('<%= cl_image_path @pack.photo, height: 300, width: 400, crop: :fill %>')">
       </div>
-      <% else %>
-      <div class="container bc-photo" style="background-image: url('<%= image_path @pack.photo_url %>')">
-      </div>
-      <% end %>
       <div class="container bc-details">
         <p class="card-category"><%= @pack.style %> · <%= @pack.duration %></p>
         <p class="card-name"><%= @pack.name %></p>
