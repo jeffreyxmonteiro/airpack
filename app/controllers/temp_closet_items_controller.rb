@@ -9,7 +9,8 @@ class TempClosetItemsController < ApplicationController
   end
 
   def destroy
-    @tc_item = TempClosetItem.find(params[:id])
+    @item = Item.find(params[:id])
+    @tc_item = TempClosetItem.find_by(item: @item)
     @tc_item.destroy
     redirect_back(fallback_location: packs_path)
   end
