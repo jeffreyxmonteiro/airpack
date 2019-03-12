@@ -22,18 +22,18 @@
       </div>
     </div>
     <div class="home-content">
-      <h1>Travel without the baggage</h1>
-      <div class="form-content">
-        <%= simple_form_for [@pack] do |f| %>
-          <%= simple_fields_for :other do |o| %>
-           <h5><%= o.input :location, label: 'LOCATION', placeholder: 'Shinjuku, Tokyo', input_html: { class: 'form-headers' }%></h5>
-           <h5><%= o.input :delivery_date, label: 'DELIVERY DATE', placeholder: 'March 15, 2019', input_html: { class: 'form-headers' }%></h5>
-          <% end %>
-          <h5><%= f.input :duration, label: 'TRIP DURATION', placeholder: '7 Days', input_html: { class: 'form-headers' } %></h5>
-          <h5><%= f.input :style, label: 'STYLE', placeholder: 'Hipster', input_html: { class: 'form-headers' } %></h5>
-        <% end %>
+      <div class="main-description">
+        <h1>Rent travel essentials packed</h1>
+        <h1>and delivered by locals</h1>
       </div>
-      <%= link_to "FIND PACKS", packs_path, class: "packs-btn btn-lg" %>
+      <div class="homepage-content">
+        <h2>1. Select destination and trip duration</h2>
+        <h2>2. Choose size and style</h2>
+        <h2>3. Book the perfect pack</h2>
+      </div>
+      <div class="discoverbutton">
+        <%= link_to "DISCOVER PACKS", packs_path, class: "packs-btn btn-lg" %>
+      </div>
     </div>
   </div>
 </div>
