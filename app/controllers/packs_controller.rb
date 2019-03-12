@@ -32,6 +32,34 @@ class PacksController < ApplicationController
     end
   end
 
+  def edit
+    current_packer.temp_closet.clear_closet
+    @pack = Pack.find(params[:id])
+    @pack.items.each do |item|
+      TempClosetItem.create!(
+        item: item,
+        temp_closet: current_packer.temp_closet
+      )
+    end
+    @tempcloset = current_packer.temp_closet.temp_closet_items.map(&:item)
+    @filtered_items = Item.all.select do |item|
+      item.packer == current_packer && (item.pack.nil? || item.pack == @pack)
+    end
+  end
+
+  def update
+    @tempcloset = current_packer.temp_closet
+    @pack = Pack.find(params[:id])
+    if @pack.update(pack_params)
+      @pack.clear_pack
+      add_item_to_pack(@tempcloset)
+      @tempcloset.clear_closet
+      redirect_to pack_path(@pack)
+    else
+      render :new
+    end
+  end
+
   private
 
   def pack_params

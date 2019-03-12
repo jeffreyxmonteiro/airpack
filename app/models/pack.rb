@@ -7,4 +7,10 @@ class Pack < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validates :photo, presence: true
+
+  def clear_pack
+    items.each do |item|
+      items.delete(item)
+    end
+  end
 end

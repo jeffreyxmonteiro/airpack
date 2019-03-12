@@ -1,0 +1,39 @@
+<div class="newpackpage-container">
+  <div class="newpack-form-container">
+    <div class="newpack-form">
+
+      <%= simple_form_for [@pack] do |f|%>
+      <div class="newpack-heading">
+        <h4>Fill New Pack Details</h4>
+      </div>
+        <h5><%= f.input :name, label: 'Pack Name' %></h5>
+        <h5><%= f.input :style, label: 'Style', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage) %></h5>
+        <h5><%= f.input :size, label: 'Size', collection: %w(XS S M L XL) %></h5>
+        <h5><%= f.input :duration, label: 'Duration', collection: ["3-4 days", "7-8 days", "14-15 days"] %></h5>
+        <h5><%= f.input :price, label: 'Price(¥)' %></h5>
+        <h5><%= f.input :description, label: 'Pack Description', wrapper_html: { class: 'new-pack-description' } %></h5>
+        <%= f.input :photo, label: 'Pack Photo' %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="create-pack-btns">
+          <div class="form-actions create-pack-btn">
+            <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn btn-default"} %>
+          </div>
+          <div class="form-actions create-pack-btn">
+            <%= f.button :submit, "CREATE" %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class="packs-items-container">
+    <div class="pack-item-row">
+      <% unless @filtered_items.nil? %>
+        <% @filtered_items.first(18).each do |item| %>
+          <%= render 'temp_closet_items/item', tempcloset: @tempcloset, item: item %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
