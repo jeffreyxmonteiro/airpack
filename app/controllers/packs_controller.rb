@@ -14,6 +14,7 @@ class PacksController < ApplicationController
 
   def new
     @items = Item.all
+    @tempcloset = current_packer.temp_closet.temp_closet_items.map(&:item)
     @filtered_items = @items.select { |item| item.packer == current_packer && item.pack_id.nil?}
     @pack = Pack.new
   end
