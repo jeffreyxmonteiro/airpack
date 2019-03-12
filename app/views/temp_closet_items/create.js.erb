@@ -1,0 +1,5 @@
+(() => {
+  const html = "<%= j render 'item', tempcloset: @tempcloset, item: @item %>";
+  const node = document.getElementById("item-<%= @item.id %>");
+  node.outerHTML = html;
+})();
