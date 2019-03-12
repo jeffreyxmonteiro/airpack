@@ -8,4 +8,9 @@ class Booking < ApplicationRecord
     objects = booking_items.map(&:bookable)
     objects.each { |object| object.update(booked: false) }
   end
+
+  def cost
+    booking_objects = booking_items.map(&:bookable)
+    return booking_objects.map(&:price).sum
+  end
 end
