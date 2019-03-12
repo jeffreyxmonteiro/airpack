@@ -26,10 +26,15 @@
         <h1>Rent travel essentials packed</h1>
         <h1>and delivered by locals</h1>
       </div>
-      <div class="homepage-content">
-        <h2>1. Select destination and trip duration</h2>
-        <h2>2. Choose size and style</h2>
-        <h2>3. Book the perfect pack</h2>
+      <div class="form-content">
+        <%= simple_form_for [@pack] do |f| %>
+          <%= simple_fields_for :other do |o| %>
+           <h5><%= o.input :location, label: 'TRAVEL DESTINATION', collection: ["Shibuya, Tokyo", "Ginza, Tokyo", "Shinjuku, Tokyo", "Meguro, Tokyo", "Roppongi, Tokyo", "Minato, Tokyo", "Gotanda, Tokyo", "Shinagawa, Tokyo", "Shin-Okubo, Tokyo", "Chiba, Tokyo"], input_html: { class: 'form-headers' }%></h5>
+          <% end %>
+          <h5><%= f.input :duration, label: 'TRIP DURATION', collection: ["3-4 days", "7-8 days", "14-15 days"], input_html: { class: 'form-headers' }%></h5>
+          <h5><%= f.input :size, label: 'PACK SIZE', collection: %w(XS S M L XL), input_html: { class: 'form-headers' } %></h5>
+          <h5><%= f.input :style, label: 'PACK STYLE', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage), input_html: { class: 'form-headers' } %></h5>
+        <% end %>
       </div>
       <div class="discoverbutton">
         <%= link_to "DISCOVER PACKS", packs_path, class: "packs-btn btn-lg" %>
