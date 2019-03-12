@@ -70,6 +70,14 @@
   color: white;
 }
 
+.new-bookings-right-policy-content {
+  padding-top: 10px;
+  li {
+    padding-top: 2px;
+    font-size: 19px;
+  }
+}
+
 .new-bookings-form-card {
   // margin-top: 25px;
   background-color: white;
@@ -86,6 +94,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .new-bookings-card-product img {
@@ -117,3 +126,18 @@
 .new-bookings-card-product .new-bookings-card-product-infos {
   padding: 16px;
 }
+
+.new-bookings-card-delete {
+    position: absolute;
+    top: 153px;
+    left: 753px
+    }
+
+    .new-bookings-button-color {
+      color: #cc0000;
+      opacity: .6;
+      &:hover {
+        color: #cc0000;
+        opacity: 1;
+      }
+    }
