@@ -51,12 +51,14 @@ class PacksController < ApplicationController
 
   def update
     @tempcloset = current_packer.temp_closet
-    @pack = Pack.find(params[:id])
-    if @pack.update(pack_params)
-      @pack.clear_pack
-      @pack.save!
 
+    @pack = Pack.find(params[:id])
+
+    if @pack.update(pack_params)
+      @pack.clear_pack!
+      # raise
       add_item_to_pack(@tempcloset)
+
       @tempcloset.clear_closet
 
       redirect_to pack_path(@pack)
