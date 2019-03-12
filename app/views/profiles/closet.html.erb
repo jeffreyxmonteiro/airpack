@@ -1,4 +1,4 @@
-<div class="profile-closet-banner" style="background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg)">
+<div class="profile-closet-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path 'clothes1.jpg' %>')">
   <h1> <%= @user.first_name  %>'s Closet</h1>
   <div class="profile-closet-numbers">
     <p>Number of Available Packs: <strong><%= @user.packs.count  %></strong> </p>
@@ -57,7 +57,7 @@
       <!-- Items go here -->
     <div class="profile-cards-container">
         <div class="profile-card-row">
-          <% @user.items.each do |item| %>
+          <% @user.items.sort.reverse.each do |item| %>
             <div class="col-xs-12 col-sm-6 col-md-4">
               <div class="pack-card">
                 <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>')"></div>

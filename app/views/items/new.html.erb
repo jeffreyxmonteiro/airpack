@@ -1,34 +1,31 @@
-<div class="new-item-container">
-<div class="new-item-spacer">
-  <div class="newpack-form">
 
-    <%= simple_form_for [@pack, @item] do |f|%>
-    <div class="newpack-heading">
-      <h4>Fill New Item Details</h4>
-    </div>
-      <%= f.input :name, label: 'Item Name' %>
-      <%= f.input :category, label: 'Category', collection: %w(Top Bottom Blazer Miscellaneous Extras Outwerwear Hygiene) %>
-      <%= f.input :style, label: 'Style', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage) %>
-      <%= f.input :size, label: 'Size', collection: %w(XS S M L XL) %>
-      <%= f.input :price, label: 'Price(¥)' %>
-      <%= f.input :description, label: 'Item Description', wrapper_html: { class: 'new-item-description' } %>
-      <%= f.input :photo, label: 'Item Photo' %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <div class="create-pack-btns">
-        <div class="form-actions create-pack-btn">
-          <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn btn-default"} %>
-        </div>
-        <div class="form-actions create-pack-btn">
-          <%= f.button :submit, "CREATE" %>
-        </div>
+<div class="newitempage-container">
+  <div class="newitem-form-container">
+    <div class="newitem-form">
+
+
+      <%= simple_form_for [@pack, @item] do |f|%>
+      <div class="newitem-heading">
+        <h4>Fill New Item Details</h4>
       </div>
 
-    <%# unless @pack.image.nil? %>
-
-        <%#= image_tag @pack.image, width: 300 %>
-
-
-    <% end %>
-</div>
+        <%= f.input :name, label: 'Item Name' %>
+        <%= f.input :category, label: 'Category', collection: %w(Top Bottom Blazer Miscellaneous Extras Outwerwear Hygiene) %>
+        <%= f.input :style, label: 'Style', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage) %>
+        <%= f.input :size, label: 'Size', collection: %w(XS S M L XL) %>
+        <%= f.input :price, label: 'Price(¥)' %>
+        <%= f.input :description, label: 'Item Description', wrapper_html: { class: 'new-item-description' } %>
+        <%= f.input :photo, label: 'Item Photo' %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="create-item-btns">
+          <div class="form-actions create-item-btn">
+            <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn btn-default"} %>
+          </div>
+          <div class="form-actions create-item-btn">
+            <%= f.button :submit, "CREATE" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
