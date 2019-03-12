@@ -1,11 +1,14 @@
+
 <div class="newitempage-container">
   <div class="newitem-form-container">
     <div class="newitem-form">
+
 
       <%= simple_form_for [@pack, @item] do |f|%>
       <div class="newitem-heading">
         <h4>Fill New Item Details</h4>
       </div>
+
         <%= f.input :name, label: 'Item Name' %>
         <%= f.input :category, label: 'Category', collection: %w(Top Bottom Blazer Miscellaneous Extras Outwerwear Hygiene) %>
         <%= f.input :style, label: 'Style', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage) %>
