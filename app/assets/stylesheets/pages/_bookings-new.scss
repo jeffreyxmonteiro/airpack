@@ -56,6 +56,11 @@
   text-align: left;
 }
 
+.new-bookings-form-total {
+  text-align: left;
+  padding-bottom: 15px;
+}
+
 .new-bookings-form-buttons-container {
   padding-top: 10px;
   display: flex;
@@ -128,10 +133,12 @@
 }
 
 .new-bookings-card-delete {
-    position: absolute;
-    top: 153px;
-    left: 753px
-    }
+  position: absolute;
+    top: 5px;
+    right: 8px;
+}
+
+
 
     .new-bookings-button-color {
       color: #cc0000;
