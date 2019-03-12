@@ -2,10 +2,10 @@ require 'faker'
 
 BookingItem.destroy_all
 Booking.destroy_all
+TempCloset.destroy_all
 Item.destroy_all
 Pack.destroy_all
 Cart.destroy_all
-TempCloset.destroy_all
 Traveler.destroy_all
 Packer.destroy_all
 
@@ -312,10 +312,6 @@ end
 puts "Finished Packer Traveler Seeds"
 
 puts "Creating Initial Packs Seeds"
-
-DURATIONS = ["3-4 days", "7-8 days", "14-15 days"]
-
-PACKPRICES = [6000, 10000, 18000]
 
 Packer.all.each do |packer|
   1.times do
