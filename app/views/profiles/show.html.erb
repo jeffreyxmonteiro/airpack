@@ -2,7 +2,7 @@
 <% if current_traveler %>
 
 
-<div class="profile-show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/358485/pexels-photo-358485.jpeg)">
+<div class="profile-show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.45)), url('<%= image_path 'travelerbanner.jpg' %>')">
 
   <div class="profile-show-banner-left-picture">
     <img class="profile-show-banner-avatar-square" alt="avatar-square" src=<%= @user.photo_url %> />
@@ -137,7 +137,7 @@
 <% if current_packer %>
 
 
-<div class="profile-show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/358485/pexels-photo-358485.jpeg)">
+<div class="profile-show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path 'packerbanner.jpg' %>')">
 
   <div class="profile-show-banner-left-picture">
     <img class="profile-show-banner-avatar-square" alt="avatar-square" src=<%= @user.photo_url %> />
