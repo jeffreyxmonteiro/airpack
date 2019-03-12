@@ -1,6 +1,6 @@
 .new-bookings-background {
   color: black;
-  text-align: center;
+  // text-align: center;
   height: 100vh;
   background: #E2ECED;
   background-size: cover;
@@ -148,3 +148,11 @@
         opacity: 1;
       }
     }
+
+
+
+#map {
+  height: 50vh;
+  width: 50vw;
+}
+
