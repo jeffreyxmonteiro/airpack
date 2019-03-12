@@ -21,7 +21,6 @@
           <%= f.button :submit, "CREATE" %>
         </div>
       </div>
-
     <% end %>
   </div>
 </div>
@@ -29,6 +28,7 @@
 <div class="packs-container">
   <div class="pack-row">
     <% @filtered_items.first(18).each do |item| %>
+      <% if item %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="pack-card">
           <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo_url %>);"></div>
