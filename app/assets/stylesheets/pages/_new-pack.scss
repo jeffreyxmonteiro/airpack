@@ -12,12 +12,15 @@
   display: flex;
   justify-content: space-around;
   background: #E2ECED;
+}
+.pack-item-row {
   width: 60vw;
 }
 .newpack-form-container {
   width: 40vw;
   margin-left: 35px;
 }
+
 .pack-item-card {
   height: 430px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
