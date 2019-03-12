@@ -67,6 +67,12 @@ class PacksController < ApplicationController
     end
   end
 
+  def delete
+    @pack = Pack.find(params[:id])
+    @pack.destroy
+    redirect_to profile_path
+  end
+
   private
 
   def pack_params
