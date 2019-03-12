@@ -7,7 +7,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm flex">
     <div class="search">
-      <form class="form-inline left-form" action="/action_page.php">
+      <!-- <form class="form-inline left-form" action="/action_page.php">
         <div class="form-group">
           <input type="text" class="form-control" id="text" placeholder="Location">
         </div>
@@ -20,7 +20,16 @@
         <div class="form-group">
           <input type="text" class="form-control" id="text" placeholder="Style">
         </div>
-      </form>
+      </form> -->
+      <%= form_tag packs_path, method: :get do %>
+        <%= select_tag :size,
+          options_for_select(SIZES, params[:size]),
+          include_blank: true,
+          class: "form-control",
+          placeholder: "Select Size"
+        %>
+        <%= submit_tag "search" %>
+      <% end %>
     </div>
 
     <div class="find-btn">
