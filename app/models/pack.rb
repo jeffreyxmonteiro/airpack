@@ -8,9 +8,7 @@ class Pack < ApplicationRecord
 
   validates :photo, presence: true
 
-  def clear_pack
-    items.each do |item|
-      items.delete(item)
-    end
+  def clear_pack!
+    items.clear
   end
 end
