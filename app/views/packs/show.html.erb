@@ -4,9 +4,15 @@
       <div class="container bc-photo" style="background-image: url('<%= cl_image_path @pack.photo, height: 300, width: 400, crop: :fill %>')">
       </div>
       <div class="container bc-details">
-        <span class="card-price show-pack-btn right">
+        <% if traveler_signed_in? %>
+          <span class="card-price show-pack-btn right">
           <%= link_to "Add to Cart", cart_items_path(cartable_id: @pack.id, cartable_type: @pack.class), method: :create %>
-        </span>
+          </span>
+        <% else %>
+          <span class="card-price show-pack-btn right">
+          <%= link_to "Edit Pack", edit_pack_path(@pack) %>
+          </span>
+        <% end %>
         <p class="card-category"><%= @pack.style %> · <%= @pack.duration %></p>
         <p class="card-name"><%= @pack.name %></p>
         <p class="card-size"><%= @pack.size %></p>
