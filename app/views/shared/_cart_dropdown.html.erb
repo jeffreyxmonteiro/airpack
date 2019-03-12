@@ -1,4 +1,4 @@
-<h4 class="dropdown-margin">Your Cart</h4>
+<h4 class="dropdown-margin">Cart Total ¥<%= current_traveler.cart.cost %></h4>
 <% current_traveler.cart.cart_items.each do |cart_item| %>
   <% cart_object = cart_item.cartable %>
   <% if cart_object.class == Pack %>
