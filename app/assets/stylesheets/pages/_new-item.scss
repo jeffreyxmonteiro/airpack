@@ -1,0 +1,60 @@
+.newitempage-container {
+  display: flex;
+  background: #E2ECED;
+  height: calc(100vh - 70px);
+  background-size: cover;
+  overflow: auto;
+  justify-content: space-around;
+}
+.newitem-form-container {
+  margin-top: 50px;
+}
+
+.create-item-btns {
+  display: flex;
+  justify-content: space-around;
+  margin: 45px 0px;
+  padding: 0px 20px;
+}
+.create-item-btn input{
+  padding: 10px 30px;
+  font-weight: bold;
+  background: linear-gradient(#42B6C5, #0C8B9C);
+  border-radius: 50px;
+  color: white;
+}
+.create-item-btn a {
+  padding: 10px 30px;
+  font-weight: bold;
+  background: linear-gradient(#42B6C5, #0C8B9C);
+  border-radius: 50px;
+  color: white;
+}
+.newitem-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40vw;
+  justify-content: center;
+  color: black;
+  background: white;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 30px;
+  margin-bottom: 50px;
+}
+.newitem-form h5 {
+  font-size: 22px;
+}
+.newitem-heading {
+  text-align: center;
+  padding-bottom: 15px;
+}
+.newitem-heading h4 {
+  font-size: 30px;
+}
+#new_item {
+  width: 75%;
+}
