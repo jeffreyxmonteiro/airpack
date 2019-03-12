@@ -6,4 +6,6 @@ class Item < ApplicationRecord
   has_many :temp_closet_items
 
   mount_uploader :photo, PhotoUploader
+
+  validates :photo, presence: true
 end

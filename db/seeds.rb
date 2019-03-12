@@ -2,6 +2,7 @@ require 'faker'
 
 BookingItem.destroy_all
 Booking.destroy_all
+TempClosetItem.destroy_all
 TempCloset.destroy_all
 Item.destroy_all
 Pack.destroy_all
