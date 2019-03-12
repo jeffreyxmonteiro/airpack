@@ -5,14 +5,26 @@ class TempClosetItemsController < ApplicationController
       item: @item,
       temp_closet: current_packer.temp_closet
     )
-    redirect_back(fallback_location: new_pack_path)
+
+    @tempcloset = current_packer.temp_closet.temp_closet_items.map(&:item)
+
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: new_pack_path) }
+      format.js
+    end
   end
 
   def destroy
     @item = Item.find(params[:id])
     @tc_item = TempClosetItem.find_by(item: @item)
     @tc_item.destroy
-    redirect_back(fallback_location: packs_path)
+
+    @tempcloset = current_packer.temp_closet.temp_closet_items.map(&:item)
+
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: packs_path) }
+      format.js { render 'create' }
+    end
   end
 
   private
