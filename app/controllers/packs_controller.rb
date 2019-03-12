@@ -9,6 +9,7 @@ class PacksController < ApplicationController
   end
 
   def show
+    # raise
     @pack = Pack.find(params[:id])
   end
 
@@ -36,15 +37,16 @@ class PacksController < ApplicationController
     current_packer.temp_closet.clear_closet
     @pack = Pack.find(params[:id])
     @pack.items.each do |item|
-      TempClosetItem.create!(
-        item: item,
-        temp_closet: current_packer.temp_closet
-      )
+      current_packer.temp_closet.temp_closet_items.create!(item: item)
+      # TempClosetItem.create!(
+      #   item: item,
+      #   temp_closet: current_packer.temp_closet
+      # )
     end
-    @tempcloset = current_packer.temp_closet.temp_closet_items.map(&:item)
     @filtered_items = Item.all.select do |item|
       item.packer == current_packer && (item.pack.nil? || item.pack == @pack)
     end
+    @tempcloset = current_packer.temp_closet.temp_closet_items.map(&:item)
   end
 
   def update
@@ -52,8 +54,11 @@ class PacksController < ApplicationController
     @pack = Pack.find(params[:id])
     if @pack.update(pack_params)
       @pack.clear_pack
+      @pack.save!
+
       add_item_to_pack(@tempcloset)
       @tempcloset.clear_closet
+
       redirect_to pack_path(@pack)
     else
       render :new
@@ -68,6 +73,7 @@ class PacksController < ApplicationController
 
   def add_item_to_pack(closet)
     pack_items = closet.temp_closet_items.map(&:item)
+    # raise
     pack_items.each { |item| item.update(pack: @pack) }
   end
 end
