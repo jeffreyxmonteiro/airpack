@@ -1,7 +1,7 @@
 <div class="new-bookings-background">
   <div class="new-bookings-left-items">
-
     <div class="new-bookings-left-pack">
+      <% total = 0 %>
       <% @cart.cart_items.each do |cart_item| %>
         <div class="container-spacer">
           <div class="new-bookings-card-product">
@@ -9,8 +9,9 @@
             <div class="new-bookings-card-product-infos">
               <h2><%= cart_item.cartable.name %> | ¥<%= cart_item.cartable.price %></h2>
               <p><%= cart_item.cartable.description %></p>
-              <%= link_to cart_item_path(cart_item), method: :delete do %>
-                <i class="fas fa-minus-circle navbar-card-delete"></i>
+              <%= link_to cart_item_path(cart_item), method: :delete, class: "new-bookings-card-delete" do %>
+                <i class="fas fa-minus-circle new-bookings-button-color"></i>
+                <% total += cart_item.cartable.price%>
               <% end %>
             </div>
           </div>
@@ -20,10 +21,12 @@
     </div>
   </div>
 
+
   <div class="new-bookings-right-items">
     <div class="new-bookings-right-form">
       <div class="new-bookings-form-card">
         <%= simple_form_for [@booking] do |f| %>
+          <h3 class="new-bookings-form-total">TOTAL ¥<%= total + 5000  %> </h3>
           <p class="new-bookings-form-labels">CONFIRM DELIVERY LOCATION</p>
           <%= f.input :delivery_address, label: false %>
           <p class="new-bookings-form-labels">CONFIRM DELIVERY DATE</p>
@@ -46,8 +49,8 @@
         <ul>
           <li>Peel sticker off pack for prepaid return shipping label - drop off at any post.</li>
           <li>All items/packs must be returned to packer before return deadline.</li>
-          <li>Cleaning Fee: ¥5,000 (Based on size of pack)</li>
-          <li>Delivery Fee: ¥5,000 (Based on delivery distance)</li>
+          <li>Cleaning Fee: ¥2,500 (Based on size of pack)</li>
+          <li>Delivery Fee: ¥2,500 (Based on delivery distance)</li>
           <li>Penalty Fees will be assessed for any damaged or lost items.</li>
         </ul>
       </div>
