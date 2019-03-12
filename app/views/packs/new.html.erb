@@ -1,37 +1,39 @@
-<div class="newpack-form-container">
-  <div class="newpack-form">
+<div class="newpackpage-container">
+  <div class="newpack-form-container">
+    <div class="newpack-form">
 
-    <%= simple_form_for [@packer, @pack] do |f|%>
-    <div class="newpack-heading">
-      <h4>Fill New Pack Details</h4>
-    </div>
-      <h5><%= f.input :name, label: 'Pack Name' %></h5>
-      <h5><%= f.input :style, label: 'Style', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage) %></h5>
-      <h5><%= f.input :size, label: 'Size', collection: %w(XS S M L XL) %></h5>
-      <h5><%= f.input :duration, label: 'Duration', collection: ["3-4 days", "7-8 days", "14-15 days"] %></h5>
-      <h5><%= f.input :price, label: 'Price(¥)' %></h5>
-      <h5><%= f.input :description, label: 'Pack Description', wrapper_html: { class: 'new-pack-description' } %></h5>
-      <%= f.input :photo, label: 'Pack Photo' %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <div class="create-pack-btns">
-        <div class="form-actions create-pack-btn">
-          <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn btn-default"} %>
-        </div>
-        <div class="form-actions create-pack-btn">
-          <%= f.button :submit, "CREATE" %>
-        </div>
+      <%= simple_form_for [@packer, @pack] do |f|%>
+      <div class="newpack-heading">
+        <h4>Fill New Pack Details</h4>
       </div>
-    <% end %>
-  </div>
-</div>
+        <h5><%= f.input :name, label: 'Pack Name' %></h5>
+        <h5><%= f.input :style, label: 'Style', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage) %></h5>
+        <h5><%= f.input :size, label: 'Size', collection: %w(XS S M L XL) %></h5>
+        <h5><%= f.input :duration, label: 'Duration', collection: ["3-4 days", "7-8 days", "14-15 days"] %></h5>
+        <h5><%= f.input :price, label: 'Price(¥)' %></h5>
+        <h5><%= f.input :description, label: 'Pack Description', wrapper_html: { class: 'new-pack-description' } %></h5>
+        <%= f.input :photo, label: 'Pack Photo' %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <div class="create-pack-btns">
+          <div class="form-actions create-pack-btn">
+            <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn btn-default"} %>
+          </div>
+          <div class="form-actions create-pack-btn">
+            <%= f.button :submit, "CREATE" %>
+          </div>
+        </div>
 
-<div class="packs-container">
-  <div class="pack-row">
+      <% end %>
+    </div>
+  </div>
+
+<div class="packs-items-container">
+  <div class="pack-item-row">
     <% unless @filtered_items.nil? %>
       <% @filtered_items.first(18).each do |item| %>
         <% if @tempcloset.include? item %>
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="pack-card" style="filter: grayscale(100%) brightness(50%);">
+            <div class="pack-item-card" style="filter: grayscale(100%) brightness(50%);">
               <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo_url %>);"></div>
               <div class="pack-description">
                 <div><h6><%= item.style %></h6></div>
@@ -51,7 +53,7 @@
           </div>
         <% else %>
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="pack-card">
+            <div class="pack-item-card">
               <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo_url %>);"></div>
               <div class="pack-description">
                 <div><h6><%= item.style %></h6></div>
@@ -71,6 +73,6 @@
           </div>
         <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
