@@ -1,4 +1,4 @@
 const cart = document.querySelector('#cart_dropdown')
 const cart_icon = document.querySelector('#cart_icon')
 cart.innerHTML = '<%= j render "shared/cart_dropdown" %>'
-cart_icon.innerHTML = '<%= j render "shared/cart_icon" %>'
+cart_icon.outerHTML = '<%= j render "shared/cart_icon" %>'

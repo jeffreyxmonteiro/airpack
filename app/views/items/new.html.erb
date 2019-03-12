@@ -11,7 +11,8 @@
       <%= f.input :size, label: 'Size', collection: %w(XS S M L XL) %>
       <%= f.input :price, label: 'Price(¥)' %>
       <%= f.input :description, label: 'Item Description', wrapper_html: { class: 'new-item-description' } %>
-      <%#= f.input :image, label: 'Pack Image'  %>
+      <%= f.input :photo, label: 'Item Photo' %>
+      <%= f.input :photo_cache, as: :hidden %>
       <div class="create-pack-btns">
         <div class="form-actions create-pack-btn">
           <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn btn-default"} %>

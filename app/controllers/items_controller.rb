@@ -3,6 +3,16 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def create
+    @item = Item.new(item_params)
+    @item.packer = current_packer
+    if @item.save
+      redirect_to closet_profile_path
+    else
+      render :new
+    end
+  end
+
   def update
     @item = Item.find[params(:id)]
     @pack = Pack.find[params(:pack_id)]
@@ -17,5 +27,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to profile
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :category, :style, :size, :price, :description, :photo)
   end
 end
