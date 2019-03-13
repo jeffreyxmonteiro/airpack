@@ -21,8 +21,7 @@
 
     <div class="profile-show-bottom-left-profile-details-card">
       <p><strong>Email: </strong><%= @user.email  %></p>
-      <p><strong>First Name: </strong><%= @user.first_name  %></p>
-      <p><strong>Last Name: </strong><%= @user.last_name  %></p>
+      <p><strong>Name: </strong><%= @user.first_name  %> <%= @user.last_name  %></p>
       <p><strong>Profile Created: </strong><%= @user.created_at.strftime("%B %d, %Y")  %></p>
 
     </div>
@@ -41,8 +40,8 @@
     <div class="profile-show-bottom-headings-right">
 
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#upcoming" aria-controls="upcoming" role="tab" data-toggle="tab">Upcoming</a></li>
-        <li role="presentation"><a href="#completed" aria-controls="completed" role="tab" data-toggle="tab">Completed</a></li>
+        <li role="presentation" class="active"><a href="#upcoming" aria-controls="upcoming" role="tab" data-toggle="tab">Upcoming Bookings</a></li>
+        <li role="presentation"><a href="#completed" aria-controls="completed" role="tab" data-toggle="tab">Completed Bookings</a></li>
       </ul>
 
     </div>
@@ -61,10 +60,10 @@
               <div class="profile-show-bottom-right-bookings-cards">
                 <img src=<%= item.bookable.photo_url %>>
                 <div class="profile-show-bottom-right-bookings-cards-infos">
-                  <h2>Pack: <%= item.bookable.name %><strong>   |   </strong> <%= item.bookable.duration %></h2>
+                  <h2>Pack: <%= item.bookable.name %><strong>   |   </strong> <%= booking.delivery_date %></h2>
                   <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
-                  <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
-                  <p>Booking #: <%= booking.id %><strong>   |   </strong>Packer: <%= "#{booking.packer.first_name} #{booking.packer.last_name}" %><strong>   |   </strong>Packer Email: <%= "#{booking.packer.email}" %></p>
+                  <p>Booking #: <%= booking.id %> <strong>   |   </strong> ¥<%= item.bookable.price %> <strong>   |   </strong>Return: <%= booking.return_deadline %><strong>   |   </strong> ¥<%= booking.cost %></p>
+                  <p>Packer Name: <%= "#{booking.packer.first_name} #{booking.packer.last_name}" %><strong>   |   </strong>Packer Email: <%= "#{booking.packer.email}" %></p>
                 </div>
               </div>
             </div>
@@ -75,10 +74,10 @@
               <div class="profile-show-bottom-right-bookings-cards">
                 <img src=<%= item.bookable.photo_url %>>
                 <div class="profile-show-bottom-right-bookings-cards-infos">
-                  <h2>Item: <%= item.bookable.name %></h2>
+                  <h2>Item: <%= item.bookable.name %><strong>   |   </strong> <%= booking.delivery_date %></h2>
                   <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
-                  <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
-                  <p>Booking #: <%= booking.id %><strong>   |   </strong>Packer: <%= "#{booking.packer.first_name} #{booking.packer.last_name}" %><strong>   |   </strong>Packer Email: <%= "#{booking.packer.email}" %></p>
+                  <p>Booking #: <%= booking.id %> <strong>   |   </strong> ¥<%= item.bookable.price %> <strong>   |   </strong>Return: <%= booking.return_deadline %></p>
+                  <p>Packer Name: <%= "#{booking.packer.first_name} #{booking.packer.last_name}" %><strong>   |   </strong>Packer Email: <%= "#{booking.packer.email}" %></p>
                 </div>
               </div>
             </div>
@@ -157,8 +156,7 @@
 
     <div class="profile-show-bottom-left-profile-details-card">
       <p><strong>Email: </strong><%= @user.email  %></p>
-      <p><strong>First Name: </strong><%= @user.first_name  %></p>
-      <p><strong>Last Name: </strong><%= @user.last_name  %></p>
+      <p><strong>Name: </strong><%= @user.first_name  %> <%= @user.last_name  %></p>
       <p><strong>Profile Created: </strong><%= @user.created_at.strftime("%B %d, %Y")  %></p>
       <p><strong>Number of Packs: </strong><%= @user.packs.count  %></p>
       <p><strong>Number of Items: </strong><%= @user.items.count  %></p>
@@ -179,8 +177,8 @@
     <div class="profile-show-bottom-headings-right">
 
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#upcoming" aria-controls="upcoming" role="tab" data-toggle="tab">Upcoming</a></li>
-        <li role="presentation"><a href="#completed" aria-controls="completed" role="tab" data-toggle="tab">Completed</a></li>
+        <li role="presentation" class="active"><a href="#upcoming" aria-controls="upcoming" role="tab" data-toggle="tab">Upcoming Bookings</a></li>
+        <li role="presentation"><a href="#completed" aria-controls="completed" role="tab" data-toggle="tab">Completed Bookings</a></li>
       </ul>
 
     </div>
@@ -199,10 +197,10 @@
               <div class="profile-show-bottom-right-bookings-cards">
                 <img src=<%= item.bookable.photo_url %>>
                 <div class="profile-show-bottom-right-bookings-cards-infos">
-                  <h2>Pack: <%= item.bookable.name %><strong>   |   </strong> <%= item.bookable.duration %></h2>
-                  <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
-                  <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
-                  <p>Booking #: <%= booking.id %><strong>   |   </strong>Traveler: <%= "#{booking.traveler.first_name} #{booking.traveler.last_name}" %><strong>   |   </strong>Traveler Email: <%= "#{booking.traveler.email}" %></p>
+                  <h2><%= item.bookable.name %><strong>   |   </strong> Deliver On: <%= booking.delivery_date %></h2>
+                  <p>Delivery Address: <%= booking.delivery_address %></p>
+                  <p>Booking #: <%= booking.id %><strong>   |   </strong>¥<%= item.bookable.price %> <strong>   |   </strong>Return Date: <%= booking.return_deadline %></p>
+                  <p>Traveler Name: <%= "#{booking.traveler.first_name} #{booking.traveler.last_name}" %><strong>   |   </strong>Traveler Email: <%= "#{booking.traveler.email}" %></p>
                 </div>
               </div>
             </div>
@@ -213,10 +211,10 @@
               <div class="profile-show-bottom-right-bookings-cards">
                 <img src=<%= item.bookable.photo_url %>>
                 <div class="profile-show-bottom-right-bookings-cards-infos">
-                  <h2>Item: <%= item.bookable.name %></h2>
-                  <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
-                  <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
-                  <p>Booking #: <%= booking.id %><strong>   |   </strong>Traveler: <%= "#{booking.traveler.first_name} #{booking.traveler.last_name}" %><strong>   |   </strong>Traveler Email: <%= "#{booking.traveler.email}" %></p>
+                  <h2><%= item.bookable.name %><strong>   |   </strong> Deliver On: <%= booking.delivery_date %></h2>
+                  <p>Delivery Address: <%= booking.delivery_address %></p>
+                  <p>Booking #: <%= booking.id %><strong>   |   </strong>¥<%= item.bookable.price %> <strong>   |   </strong>Return Date: <%= booking.return_deadline %></p>
+                  <p>Traveler Name: <%= "#{booking.traveler.first_name} #{booking.traveler.last_name}" %><strong>   |   </strong>Traveler Email: <%= "#{booking.traveler.email}" %></p>
                 </div>
               </div>
             </div>
@@ -240,7 +238,7 @@
                   <div class="profile-show-bottom-right-bookings-cards">
                     <img src=<%= item.bookable.photo_url %>>
                     <div class="profile-show-bottom-right-bookings-cards-infos">
-                      <h2>Pack: <%= item.bookable.name %></h2>
+                      <h2><%= item.bookable.name %></h2>
                       <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
                       <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
                       <p>Booking #: <%= booking.id %><strong>   |   </strong>Traveler: <%= "#{booking.traveler.first_name} #{booking.traveler.last_name}" %><strong>   |   </strong>Traveler Email: <%= "#{booking.traveler.email}" %></p>
@@ -254,7 +252,7 @@
                   <div class="profile-show-bottom-right-bookings-cards">
                     <img src=<%= item.bookable.photo_url %>>
                     <div class="profile-show-bottom-right-bookings-cards-infos">
-                      <h2>Item: <%= item.bookable.name %></h2>
+                      <h2><%= item.bookable.name %></h2>
                       <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
                       <p>¥<%= item.bookable.price %> <strong>   |   </strong>Delivery: <%= booking.delivery_date %><strong>   |   </strong>Return: <%= booking.return_deadline %></p>
                       <p>Booking #: <%= booking.id %><strong>   |   </strong>Traveler: <%= "#{booking.traveler.first_name} #{booking.traveler.last_name}" %><strong>   |   </strong>Traveler Email: <%= "#{booking.traveler.email}" %></p>

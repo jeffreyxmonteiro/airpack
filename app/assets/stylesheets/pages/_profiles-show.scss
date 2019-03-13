@@ -87,24 +87,28 @@
 
 .profile-show-bottom-right-bookings-cards {
   overflow: hidden;
-
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   // align-items: center;
   width: 50vw;
   border-radius: 5px;
-  height: 14vh
+  height: 18vh;
 }
+
+
+.profile-show-bottom-right-bookings-cards p {
+    font-size: 16px !important;
+  }
 
 .profile-show-bottom-right-bookings-cards img {
   height: 100%;
-  width: 175px;
+  width: 200px;
   object-fit: cover;
 }
 
 .profile-show-bottom-right-bookings-cards h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
   text-align: left;
@@ -121,6 +125,9 @@
 
 .profile-show-bottom-right-bookings-cards .profile-show-bottom-right-bookings-cards-infos {
   padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .profile-show-bottom-right-bookings-cards-container-spacer {
