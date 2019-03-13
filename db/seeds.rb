@@ -96,7 +96,7 @@ ITEMCATEGORY = [
 "Top",
 "Bottom",
 "Blazer",
-"Miscellaneous :)",
+"Miscellaneous",
 "Extras",
 "Outerwear",
 "Hygiene",

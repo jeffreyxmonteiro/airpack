@@ -23,16 +23,16 @@
           <input type="text" class="form-control" id="text" placeholder="Style">
         </div>
       </form> -->
-      <%= simple_form_for @search, html: {class: 'form-inline'} do |f|%>
+      <%= simple_form_for @search, html: { class: 'form-inline' }, defaults: { input_html: { class: 'form-inline-items' } } do |f|%>
       <%= f.input :size, collection: Search.sizes %>
       <%= f.input :style, collection: Search.styles %>
-      <%= f.submit "Search" %>
+      <%= f.submit "Find Packs", class: 'find-btn'%>
       <% end %>
     </div>
 
-    <div class="find-btn">
-      <%= link_to "FIND PACKS", packs_path %>
-    </div>
+<!--     <div class="find-btn">
+      <%#= link_to "FIND PACKS", packs_path %>
+    </div> -->
 
     <% if traveler_signed_in? %>
 
