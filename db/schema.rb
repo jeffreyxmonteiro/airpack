@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_081008) do
+ActiveRecord::Schema.define(version: 2019_03_13_074448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,15 @@ ActiveRecord::Schema.define(version: 2019_03_11_081008) do
     t.index ["packer_id"], name: "index_items_on_packer_id"
   end
 
+  create_table "packer_reviews", force: :cascade do |t|
+    t.string "review"
+    t.integer "rating"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_packer_reviews_on_booking_id"
+  end
+
   create_table "packers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -104,6 +113,15 @@ ActiveRecord::Schema.define(version: 2019_03_11_081008) do
     t.boolean "booked", default: false
     t.string "photo"
     t.index ["packer_id"], name: "index_packs_on_packer_id"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string "size"
+    t.string "style"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "date"
+    t.string "location"
   end
 
   create_table "temp_closet_items", force: :cascade do |t|
@@ -143,6 +161,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_081008) do
   add_foreign_key "carts", "travelers"
   add_foreign_key "items", "packers"
   add_foreign_key "items", "packs"
+  add_foreign_key "packer_reviews", "bookings"
   add_foreign_key "packs", "packers"
   add_foreign_key "temp_closet_items", "items"
   add_foreign_key "temp_closet_items", "temp_closets"

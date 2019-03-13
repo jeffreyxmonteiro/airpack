@@ -9,11 +9,3 @@ class ApplicationController < ActionController::Base
     end
   end
 end
-
-SIZES = [
-  'XS',
-  'S',
-  'M',
-  'L',
-  'XL'
-]

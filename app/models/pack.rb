@@ -11,4 +11,16 @@ class Pack < ApplicationRecord
   def clear_pack!
     items.clear
   end
+
+  def top_count
+    return items.where(category: "Top").count
+  end
+
+  def bottom_count
+    return items.where(category: "Bottom").count
+  end
+
+  def misc_count
+    return items.where("category not in (?)", %w[Top Bottom]).count
+  end
 end
