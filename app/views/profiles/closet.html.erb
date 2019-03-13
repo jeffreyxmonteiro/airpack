@@ -40,7 +40,7 @@
                     <h6><%= pack.description %></h6>
                   </div>
                   <div class="pack-price">
-                  <h6>¥<%= pack.price %></h6>
+                  <h6>¥<%= number_with_delimiter(pack.price, :delimiter => ',') %></h6>
                   </div>
                 </div>
                 <%= link_to "", pack_path(pack), class: "card-link" %>
@@ -71,7 +71,7 @@
                     <h6><%= item.description %></h6>
                   </div>
                   <div class="pack-price">
-                  <h6>¥<%= item.price %></h6>
+                  <h6>¥<%= number_with_delimiter(item.price, :delimiter => ',') %></h6>
                   </div>
                 </div>
 

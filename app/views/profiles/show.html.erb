@@ -62,7 +62,7 @@
                 <div class="profile-show-bottom-right-bookings-cards-infos">
                   <h2>Pack: <%= item.bookable.name %><strong>   |   </strong> <%= booking.delivery_date %></h2>
                   <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
-                  <p>Booking #: <%= booking.id %> <strong>   |   </strong> ¥<%= item.bookable.price %> <strong>   |   </strong>Return: <%= booking.return_deadline %><strong>   |   </strong> ¥<%= booking.cost %></p>
+                  <p>Booking #: <%= booking.id %> <strong>   |   </strong> ¥<%= number_with_delimiter(item.bookable.price, :delimiter => ',') %> <strong>   |   </strong>Return: <%= booking.return_deadline %><strong>   |   </strong> ¥<%= number_with_delimiter(booking.cost, :delimiter => ',') %></p>
                   <p>Packer Name: <%= "#{booking.packer.first_name} #{booking.packer.last_name}" %><strong>   |   </strong>Packer Email: <%= "#{booking.packer.email}" %></p>
                 </div>
               </div>
