@@ -5,25 +5,27 @@
   <div class="packs-container">
     <div class="pack-row">
       <% @filtered_packs.sort.reverse.first(18).each do |pack| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="pack-card">
-            <div class="pack-image" style="background-image: url(<%= pack.photo %>);"></div>
-            <div class="pack-description">
-              <div><h6><%= pack.style %> · <%= pack.duration %></h6></div>
-              <div class="pack-name"><h2><%= pack.name %></h2></div>
-              <div class="pack-size"><h6><%= pack.size %></h6></div>
-            </div>
-            <div class="description-and-price">
-              <div class="inner-pack-description">
-                <h6><%= pack.description %></h6>
+<!--         <div class="card-padding">
+ -->          <div class="col-xs-12 col-md-6 col-lg-4">
+            <div class="pack-card">
+              <div class="pack-image" style="background-image: url(<%= pack.photo %>);"></div>
+              <div class="pack-description">
+                <div><h6><%= pack.style %> · <%= pack.duration %></h6></div>
+                <div class="pack-name"><h2><%= pack.name %></h2></div>
+                <div class="pack-size"><h6><%= pack.size %></h6></div>
               </div>
-              <div class="pack-price">
-              <h6>¥<%= pack.price %></h6>
+              <div class="description-and-price">
+                <div class="inner-pack-description">
+                  <h6><%= pack.description %></h6>
+                </div>
+                <div class="pack-price">
+                <h6>¥<%= pack.price %></h6>
+                </div>
               </div>
+               <%= link_to "", pack_path(pack), class: "card-link" %>
             </div>
-             <%= link_to "", pack_path(pack), class: "card-link" %>
           </div>
-        </div>
+      <!--   </div> -->
       <% end %>
     </div>
   </div>
