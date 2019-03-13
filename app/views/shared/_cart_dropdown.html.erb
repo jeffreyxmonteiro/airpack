@@ -1,4 +1,4 @@
-<h4 class="dropdown-margin">Cart Total ¥<%= current_traveler.cart.cost %></h4>
+<h4 class="dropdown-margin">Cart Total ¥<%= number_with_delimiter(current_traveler.cart.cost, :delimiter => ',') %></h4>
 <% current_traveler.cart.cart_items.each do |cart_item| %>
   <% cart_object = cart_item.cartable %>
   <% if cart_object.class == Pack %>
@@ -13,7 +13,7 @@
           <p class="card-category"><%= cart_object.style %></p>
           <p class="card-name"><%= cart_object.name %></p>
           <p class="card-size"><%= cart_object.size %></p>
-          <p class="navbar-card-price">¥<%= cart_object.price %></p>
+          <p class="navbar-card-price">¥<%= number_with_delimiter(cart_object.price, :delimiter => ',') %></p>
         </div>
       </div>
     <% end %>

@@ -7,7 +7,7 @@
           <div class="new-bookings-card-product">
             <img src=<%= cart_item.cartable.photo_url  %>>
             <div class="new-bookings-card-product-infos">
-              <h2><%= cart_item.cartable.name %> | ¥<%= cart_item.cartable.price %></h2>
+              <h2><%= cart_item.cartable.name %> | ¥<%= number_with_delimiter(cart_item.cartable.price, :delimiter => ',') %></h2>
               <p><%= cart_item.cartable.description %></p>
               <%= link_to cart_item_path(cart_item), method: :delete, class: "new-bookings-card-delete" do %>
                 <i class="fas fa-minus-circle new-bookings-button-color"></i>
@@ -31,7 +31,7 @@
       <div class="new-bookings-form-card">
         <div id="search-form">
           <%= simple_form_for [@booking] do |f| %>
-            <h3 class="new-bookings-form-total">TOTAL ¥<%= total + 5000  %> </h3>
+            <h3 class="new-bookings-form-total">TOTAL ¥<%= number_with_delimiter(total + 5000, :delimiter => ',') %></h3>
             <div class="deliveryaddress-container">
               <p class="new-bookings-form-labels">INPUT DELIVERY ADDRESS</p>
               <%= f.input :delivery_address, label: false, input_html: { id: 'search-input' } %>
