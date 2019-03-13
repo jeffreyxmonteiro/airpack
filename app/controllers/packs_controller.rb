@@ -1,15 +1,22 @@
 class PacksController < ApplicationController
   # skip_before_action :authenticate_traveler!, only: [:index, :show]
 
+  SIZES = [
+  'XS',
+  'S',
+  'M',
+  'L',
+  'XL'
+  ]
+
   def index
-    @packs = Pack.all
+    pack_search
     @cart_items = []
     @cart_items = current_traveler.cart.cart_items.map(&:cartable) if traveler_signed_in?
     @filtered_packs = @packs.reject { |pack| @cart_items.include? pack }
   end
 
   def show
-    # raise
     @pack = Pack.find(params[:id])
   end
 
@@ -56,7 +63,6 @@ class PacksController < ApplicationController
 
     if @pack.update(pack_params)
       @pack.clear_pack!
-      # raise
       add_item_to_pack(@tempcloset)
 
       @tempcloset.clear_closet
@@ -75,13 +81,24 @@ class PacksController < ApplicationController
 
   private
 
+  def search_params
+    params.permit(:size)
+  end
+
   def pack_params
     params.require(:pack).permit(:name, :style, :size, :duration, :price, :description, :photo)
   end
 
+  def pack_search
+    if params[:size].present?
+      @packs = Pack.where(size: search_params[:size])
+    else
+      @packs = Pack.all
+    end
+  end
+
   def add_item_to_pack(closet)
     pack_items = closet.temp_closet_items.map(&:item)
-    # raise
     pack_items.each { |item| item.update(pack: @pack) }
   end
 end
