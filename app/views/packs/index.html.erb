@@ -6,7 +6,7 @@
     <div class="pack-row">
       <% @filtered_packs.sort.reverse.first(18).each do |pack| %>
 <!--         <div class="card-padding">
- -->          <div class="col-xs-12 col-md-6 col-lg-4">
+ -->      <div class="col-xs-12 col-md-6 col-lg-4">
             <div class="pack-card">
               <div class="pack-image" style="background-image: url(<%= pack.photo %>);"></div>
               <div class="pack-description">
@@ -23,6 +23,9 @@
                 </div>
               </div>
                <%= link_to "", pack_path(pack), class: "card-link" %>
+            </div>
+            <div class="packer-avatar" style="background-image: url(<%= pack.packer.photo_url %>);">
+              <p class="packer-name"><%= pack.packer.first_name %></p>
             </div>
           </div>
       <!--   </div> -->
