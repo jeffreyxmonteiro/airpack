@@ -9,7 +9,7 @@ class PacksController < ApplicationController
     @cart_items = []
     @cart_items = current_traveler.cart.cart_items.map(&:cartable) if traveler_signed_in?
     @filtered_packs = @packs.reject { |pack| @cart_items.include? pack }
-    empty_messages
+    empty_messages if @filtered_packs.empty?
   end
 
   def show
@@ -107,14 +107,12 @@ class PacksController < ApplicationController
   end
 
   def empty_messages
-    if @filtered_packs.empty?
-      if @packer.nil? && search_params.empty?
-        @pack_message = "There are currently no available packs"
-      elsif @packer.nil?
-        @pack_message = "No results match your search"
-      else
-        @pack_message = "#{@packer.fullname} does not have any other bookable packs"
-      end
+    if @packer.nil? && search_params.empty?
+      @pack_message = "There are currently no available packs"
+    elsif @packer.nil?
+      @pack_message = "No results match your search"
+    else
+      @pack_message = "#{@packer.fullname} does not have any other bookable packs"
     end
   end
 
