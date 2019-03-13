@@ -1,0 +1,2 @@
+class PackerReviewsController < ApplicationController
+end

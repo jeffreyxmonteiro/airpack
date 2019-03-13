@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   delete '/carts/:id', to: 'cart#clear', as: 'clear_cart'
   resources :temp_closet_items, only: [:create, :destroy]
   post '/search', to: 'search#create', as: 'searches'
+  resources :packer_reviews, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
