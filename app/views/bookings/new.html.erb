@@ -18,24 +18,32 @@
         </div>
       <% end %>
 
+    <div class="map-container">
+      <div id="map">
+      </div>
     </div>
   </div>
+</div>
 
 
   <div class="new-bookings-right-items">
     <div class="new-bookings-right-form">
       <div class="new-bookings-form-card">
-        <%= simple_form_for [@booking] do |f| %>
-          <h3 class="new-bookings-form-total">TOTAL ¥<%= total + 5000  %> </h3>
-          <p class="new-bookings-form-labels">CONFIRM DELIVERY LOCATION</p>
-          <%= f.input :delivery_address, label: false %>
-          <p class="new-bookings-form-labels">CONFIRM DELIVERY DATE</p>
-          <%= f.input :delivery_date, as: :string, placeholder: "Click to Select Date", label: false, input_html: {class: "datepicker"}%>
-          <div class="new-bookings-form-buttons-container">
-            <%= f.button :button, 'BACK', type: :reset, class: "new-bookings-form-buttons" %>
-            <%= f.button :submit, "CONFIRM", class: "new-bookings-form-buttons" %>
-          </div>
-        <% end %>
+        <div id="search-form">
+          <%= simple_form_for [@booking] do |f| %>
+            <h3 class="new-bookings-form-total">TOTAL ¥<%= total + 5000  %> </h3>
+            <div class="deliveryaddress-container">
+              <p class="new-bookings-form-labels">INPUT DELIVERY ADDRESS</p>
+              <%= f.input :delivery_address, label: false, input_html: { id: 'search-input' } %>
+            </div>
+            <p class="new-bookings-form-labels">CONFIRM DELIVERY DATE</p>
+            <%= f.input :delivery_date, as: :string, placeholder: "Click to Select Date", label: false, input_html: {class: "datepicker"}%>
+            <div class="new-bookings-form-buttons-container">
+              <%= f.button :button, 'BACK', type: :reset, class: "new-bookings-form-buttons" %>
+              <%= f.button :submit, "CONFIRM", class: "new-bookings-form-buttons" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
 
