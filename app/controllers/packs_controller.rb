@@ -1,14 +1,6 @@
 class PacksController < ApplicationController
   # skip_before_action :authenticate_traveler!, only: [:index, :show]
 
-  SIZES = [
-  'XS',
-  'S',
-  'M',
-  'L',
-  'XL'
-  ]
-
   def index
     pack_search
     @cart_items = []
@@ -82,7 +74,7 @@ class PacksController < ApplicationController
   private
 
   def search_params
-    params.permit(:size)
+    params.permit(:size, :style)
   end
 
   def pack_params
@@ -90,8 +82,12 @@ class PacksController < ApplicationController
   end
 
   def pack_search
-    if params[:size].present?
+    if params[:size].present? && params[:style].present?
+      @packs = Pack.where(size: search_params[:size], style: search_params[:style])
+    elsif params[:size].present?
       @packs = Pack.where(size: search_params[:size])
+    elsif params[:style].present?
+      @packs = Pack.where(style: search_params[:style])
     else
       @packs = Pack.all
     end
