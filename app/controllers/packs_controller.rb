@@ -2,8 +2,9 @@ class PacksController < ApplicationController
   # skip_before_action :authenticate_traveler!, only: [:index, :show]
 
   def index
+    @packs = Pack.all
     # If item exists in cart only items/packs from that user is shown
-    cart_item_check
+    cart_item_check if traveler_signed_in?
     pack_search
     # This line is to cover cases where traveler is not logged in (otherwise @cart_items is nil)
     @cart_items = []
@@ -92,7 +93,6 @@ class PacksController < ApplicationController
       # Finds packer of the first item
       @packer = current_traveler.cart.cart_items.first.cartable.packer
       @packs = Pack.where(packer: @packer)
-      @warning = "A booking can only consist of Item from a single packer"
     end
   end
 
