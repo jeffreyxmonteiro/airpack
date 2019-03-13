@@ -1,3 +1,5 @@
+<% @search = Search.new %>
+
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
@@ -21,14 +23,10 @@
           <input type="text" class="form-control" id="text" placeholder="Style">
         </div>
       </form> -->
-      <%= form_tag packs_path, method: :get do %>
-        <%= select_tag :size,
-          options_for_select(SIZES, params[:size]),
-          include_blank: true,
-          class: "form-control",
-          placeholder: "Select Size"
-        %>
-        <%= submit_tag "search" %>
+      <%= simple_form_for @search, html: {class: 'form-inline'} do |f|%>
+      <%= f.input :size, collection: Search.sizes %>
+      <%= f.input :style, collection: Search.styles %>
+      <%= f.submit "Search" %>
       <% end %>
     </div>
 
