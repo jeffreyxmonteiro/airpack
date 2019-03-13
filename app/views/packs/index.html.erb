@@ -1,8 +1,10 @@
 <div class="page-wrapper">
   <div class="index-page-description text-center" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('<%= image_path 'index-banner.jpg' %>')">
-    <h3>Available Packs Near You</h3>
+    <h3>Available Packs</h3>
   </div>
   <div class="packs-container">
+    <p><%= @warning %></p>
+    <p><%= @pack_message %></p>
     <div class="pack-row">
       <% @filtered_packs.sort.reverse.first(18).each do |pack| %>
         <div class="col-xs-12 col-sm-6 col-md-4">

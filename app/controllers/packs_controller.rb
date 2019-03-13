@@ -2,10 +2,14 @@ class PacksController < ApplicationController
   # skip_before_action :authenticate_traveler!, only: [:index, :show]
 
   def index
+    # If item exists in cart only items/packs from that user is shown
+    cart_item_check
     pack_search
+    # This line is to cover cases where traveler is not logged in (otherwise @cart_items is nil)
     @cart_items = []
     @cart_items = current_traveler.cart.cart_items.map(&:cartable) if traveler_signed_in?
     @filtered_packs = @packs.reject { |pack| @cart_items.include? pack }
+    empty_messages
   end
 
   def show
@@ -81,15 +85,36 @@ class PacksController < ApplicationController
     params.require(:pack).permit(:name, :style, :size, :duration, :price, :description, :photo)
   end
 
+  def cart_item_check
+    if current_traveler.cart.cart_items.empty?
+      @packs = Pack.all
+    else
+      # Finds packer of the first item
+      @packer = current_traveler.cart.cart_items.first.cartable.packer
+      @packs = Pack.where(packer: @packer)
+      @warning = "A booking can only consist of Item from a single packer"
+    end
+  end
+
   def pack_search
     if params[:size].present? && params[:style].present?
-      @packs = Pack.where(size: search_params[:size], style: search_params[:style])
+      @packs = @packs.where(size: search_params[:size], style: search_params[:style])
     elsif params[:size].present?
-      @packs = Pack.where(size: search_params[:size])
+      @packs = @packs.where(size: search_params[:size])
     elsif params[:style].present?
-      @packs = Pack.where(style: search_params[:style])
-    else
-      @packs = Pack.all
+      @packs = @packs.where(style: search_params[:style])
+    end
+  end
+
+  def empty_messages
+    if @filtered_packs.empty?
+      if @packer.nil? && search_params.empty?
+        @pack_message = "There are currently no available packs"
+      elsif @packer.nil?
+        @pack_message = "No results match your search"
+      else
+        @pack_message = "#{@packer.fullname} does not have any other bookable packs"
+      end
     end
   end
 
