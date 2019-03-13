@@ -9,6 +9,10 @@ class Packer < ApplicationRecord
          :recoverable, :rememberable, :validatable
   after_create :make_temp_closet
 
+  def fullname
+    return "#{first_name} #{last_name}"
+  end
+
   private
 
   def make_temp_closet
