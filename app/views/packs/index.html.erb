@@ -6,10 +6,9 @@
     <p><%= @pack_message %></p>
     <div class="pack-row">
       <% @filtered_packs.sort.reverse.first(18).each do |pack| %>
-<!--         <div class="card-padding">
- -->      <div class="col-xs-12 col-md-6 col-lg-4">
+          <div class="col-xs-12 col-md-6 col-lg-4">
             <div class="pack-card">
-              <div class="pack-image" style="background-image: url(<%= pack.photo %>);"></div>
+              <div class="pack-image" style="background-image: url('<%= cl_image_path pack.photo, height: 300, width: 400, crop: :fill %>');"></div>
               <div class="pack-description">
                 <div><h6><%= pack.style %> · Tops: <%= pack.top_count %>, Bottoms: <%= pack.bottom_count %>, Misc: <%= pack.misc_count %></h6></div>
                 <div class="pack-name"><h2><%= pack.name %></h2></div>
@@ -25,11 +24,10 @@
               </div>
                <%= link_to "", pack_path(pack), class: "card-link" %>
             </div>
-            <div class="packer-avatar" style="background-image: url(<%= pack.packer.photo_url %>);">
+            <div class="packer-avatar" style="background-image: url('<%= cl_image_path pack.packer.photo_url, height: 300, width: 400, crop: :fill %>');">
               <p class="packer-name"><%= pack.packer.first_name %></p>
             </div>
           </div>
-      <!--   </div> -->
       <% end %>
     </div>
   </div>

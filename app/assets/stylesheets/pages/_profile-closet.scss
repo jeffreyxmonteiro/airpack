@@ -1,3 +1,8 @@
+.closet-wrapper {
+  height: 100vh;
+  background-color: #E2ECED;
+}
+
 .profile-closet-banner {
   background-size: cover;
   background-position: center;
@@ -78,4 +83,25 @@
 }
 .profile-card-row {
   padding: 15px 50px 50px 50px;
+}
+
+.pack-delete a {
+  position: absolute;
+  z-index: 2;
+  bottom: 100px;
+  right: 15px;
+  color: #0FA1A7;
+}
+.closetpack-card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: black;
+  opacity: 0;
+}
+.closetpack-card-link:hover {
+  opacity: 0.1;
 }
