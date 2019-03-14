@@ -10,7 +10,7 @@
   background: #E2ECED;
 }
 .pack-row {
-  padding: 30px 50px 50px 50px;
+  padding: 0px 50px 0px 50px;
 }
 .pack-card {
   height: 390px;
@@ -23,7 +23,7 @@
   border-radius: 10px;
   background: white;
   width: 420px;
-  margin-bottom: 40px;
+  margin: 30px 20px;
   position: relative;
 }
 
@@ -169,12 +169,13 @@
   text-align: center;
   font-size: 12px;
   position: relative;
-  top: 80px;
+  top: 70px;
   }
 
 
 
   .index-page-tabs {
+    padding-bottom: 25px;
   li {
     a {
       background: transparent !important;

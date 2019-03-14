@@ -6,11 +6,12 @@ class PacksController < ApplicationController
     @items = Item.all
     # If item exists in cart only items/packs from that user is shown
     cart_item_check if traveler_signed_in?
-    pack_search
+    pack_item_search
     # This line is to cover cases where traveler is not logged in (otherwise @cart_items is nil)
     @cart_items = []
     @cart_items = current_traveler.cart.cart_items.map(&:cartable) if traveler_signed_in?
     @filtered_packs = @packs.reject { |pack| @cart_items.include? pack }
+    @filtered_items = @items.reject { |item| @cart_items.include? item }
     empty_messages if @filtered_packs.empty?
   end
 
@@ -97,16 +98,20 @@ class PacksController < ApplicationController
       # Finds packer of the first item
       @packer = current_traveler.cart.cart_items.first.cartable.packer
       @packs = Pack.where(packer: @packer)
+      @items = Item.where(packer: @packer)
     end
   end
 
-  def pack_search
+  def pack_item_search
     if params[:size].present? && params[:style].present?
       @packs = @packs.where(size: search_params[:size], style: search_params[:style])
+      @items = @items.where(size: search_params[:size], style: search_params[:style])
     elsif params[:size].present?
       @packs = @packs.where(size: search_params[:size])
+      @items = @items.where(size: search_params[:size])
     elsif params[:style].present?
       @packs = @packs.where(style: search_params[:style])
+      @items = @items.where(style: search_params[:style])
     end
   end
 
