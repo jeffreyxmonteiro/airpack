@@ -11,9 +11,8 @@ class PacksController < ApplicationController
     @cart_items = []
     @cart_items = current_traveler.cart.cart_items.map(&:cartable) if traveler_signed_in?
 
-    @filtered_packs = @packs.reject { |pack| @cart_items.include? pack }.reject { |pack| pack.class == Item }
-
-    @filtered_items = @items.reject { |item| @cart_items.include? item }
+    @filtered_packs = @packs.reject { |pack| @cart_items.include? pack }.select { |p| p.booked == false }
+    @filtered_items = @items.reject { |item| @cart_items.include? item }.select { |i| i.pack.nil? }
 
     empty_messages if @filtered_packs.empty?
   end
