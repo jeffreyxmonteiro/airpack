@@ -13,9 +13,9 @@
           <%= link_to "Edit Pack", edit_pack_path(@pack) %>
           </span>
         <% end %>
-        <p class="card-category"><%= @pack.style %> · <%= @pack.duration %></p>
+        <p class="card-category">Tops: <%= @pack.top_count %>, Bottoms: <%= @pack.bottom_count %>, Misc: <%= @pack.misc_count %></p>
         <p class="card-name"><%= @pack.name %></p>
-        <p class="card-size"><%= @pack.size %></p>
+        <strong><p class="card-name"><%= @pack.style %> · <%= @pack.size %></p></strong>
         <p><%= @pack.description %></p>
         <p class="card-price">¥<%= number_with_delimiter(@pack.price, :delimiter => ',') %></p>
       </div>
