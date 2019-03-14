@@ -3,6 +3,7 @@ class PacksController < ApplicationController
 
   def index
     @packs = Pack.all
+    @items = Item.all
     # If item exists in cart only items/packs from that user is shown
     cart_item_check if traveler_signed_in?
     pack_search

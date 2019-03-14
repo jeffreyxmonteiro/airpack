@@ -170,3 +170,28 @@
   top: 80px;
   }
 
+
+
+  .index-page-tabs {
+  li {
+    a {
+      background: transparent !important;
+      color: black;
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+    }
+    a:hover {
+      background: transparent !important;
+      color: black;
+    }
+    a:focus {
+      background: transparent !important;
+      color: black;
+    }
+  }
+  li.active {
+    border-bottom: 1px solid black !important;
+  }
+}
+

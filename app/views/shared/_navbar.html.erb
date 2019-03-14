@@ -9,20 +9,6 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm flex">
     <div class="search">
-      <!-- <form class="form-inline left-form" action="/action_page.php">
-        <div class="form-group">
-          <input type="text" class="form-control" id="text" placeholder="Location">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="text" placeholder="Delivery Date">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="text" placeholder="Trip Duration">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="text" placeholder="Style">
-        </div>
-      </form> -->
       <%= simple_form_for @search, html: { class: 'form-inline' }, defaults: { input_html: { class: 'form-inline-items' } } do |f|%>
       <%= f.input :size, collection: Search.sizes %>
       <%= f.input :style, collection: Search.styles %>
@@ -30,23 +16,13 @@
       <% end %>
     </div>
 
-<!--     <div class="find-btn">
-      <%#= link_to "FIND PACKS", packs_path %>
-    </div> -->
-
     <% if traveler_signed_in? %>
-
-      <!-- Links when logged in -->
-      <%#= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%#= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%#= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag 'cart-icon.png', class: "icon dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <%= render "shared/cart_icon" %>
-<!--           <i class="fas fa-cart-arrow-down dropdown-toggle" id="navbar-wagon-menu"></i>
--->        <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu" id="cart_dropdown">
+          <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu" id="cart_dropdown">
             <%= render "shared/cart_dropdown" %>
           </div>
         </div>

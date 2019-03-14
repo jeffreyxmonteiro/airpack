@@ -34,7 +34,7 @@
   <% end %>
 <% end %>
 <div class="btn-line">
+  <%= link_to "CLEAR",  clear_cart_path(current_traveler.cart), method: :delete, class: "find-btn" %>
   <%= link_to "BOOK", new_booking_path, class: "cart-btn" %>
-  <%= link_to "CLEAR",  clear_cart_path(current_traveler.cart), method: :delete, class: "cart-btn" %>
 </div>
 
