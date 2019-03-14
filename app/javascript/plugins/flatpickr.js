@@ -9,6 +9,10 @@ flatpickr(".datepicker", {
 })
 
 
+flatpickr(".datepicker_notime", {
+  altInput: true
+})
+
 flatpickr(".timepicker", {
   enableTime: true,
   noCalendar: true,
