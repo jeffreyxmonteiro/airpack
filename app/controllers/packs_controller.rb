@@ -71,10 +71,13 @@ class PacksController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @pack = Pack.find(params[:id])
-    @pack.destroy
-    redirect_to profile_path
+    if current_packer == @pack.packer
+      @pack.clear_pack!
+      @pack.destroy
+    end
+    redirect_to closet_profile_path
   end
 
   private

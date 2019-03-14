@@ -8,7 +8,7 @@
           <span class="card-price show-pack-btn right">
           <%= link_to "Add to Cart", cart_items_path(cartable_id: @pack.id, cartable_type: @pack.class), method: :create %>
           </span>
-        <% elsif packer_signed_in? %>
+        <% elsif @pack.packer == current_packer %>
           <span class="card-price show-pack-btn right">
           <%= link_to "Edit Pack", edit_pack_path(@pack) %>
           </span>
@@ -21,16 +21,16 @@
       </div>
     </div>
     <div class="container sm-profile">
-      <%= image_tag @pack.packer.photo_url, class: "img-circle" %>
+      <div class="img-circle" style="background-image: url('<%= cl_image_path @pack.packer.photo_url, height: 300, width: 400, crop: :fill %>');">
+      </div>
       <div class="packername"><%=  @pack.packer.fullname %></div>
-
     </div>
   </div>
   <div class="container body-of-cards">
     <% @pack.items.first(30).each do |item| %>
       <div class="col-xs-12 col-md-4">
         <div class="card">
-          <div class="card-photo" style="background-image: url(<%= item.photo_url %>);"></div>
+          <div class="card-photo" style="background-image: url('<%= cl_image_path item.photo_url, height: 300, width: 400, crop: :fill %>');"></div>
           <div class="card-details">
             <p class="card-name"><%= item.name %></p>
             <p><%= item.description %></p>

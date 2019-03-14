@@ -25,8 +25,8 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
-    redirect_to profile
+    @item.destroy if current_packer == @item.packer
+    redirect_to closet_profile_path
   end
 
   private

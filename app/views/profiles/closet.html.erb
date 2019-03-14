@@ -1,27 +1,28 @@
-<div class="profile-closet-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path 'clothes1.jpg' %>')">
-  <h1> <%= @user.first_name  %>'s Closet</h1>
-  <div class="profile-closet-numbers">
-    <p>Number of Available Packs: <strong><%= @user.packs.count  %></strong> </p>
-    <p>Number of Available Items: <strong><%= @user.items.count  %></strong> </p>
+<div class="closet-wrapper">
+  <div class="profile-closet-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path 'clothes1.jpg' %>')">
+    <h1> <%= @user.first_name  %>'s Closet</h1>
+    <div class="profile-closet-numbers">
+      <p>Number of Available Packs: <strong><%= @user.packs.count  %></strong> </p>
+      <p>Number of Available Items: <strong><%= @user.items.count  %></strong> </p>
+    </div>
+    <div class="profile-closet-buttons">
+      <%= link_to "CREATE PACK", new_pack_path, class: "closet-pack-btn" %> <!-- This link needs to be fixed. -->
+      <%= link_to "ADD ITEM", new_item_path, class: "closet-pack-btn" %> <!-- This link needs to be fixed. Need to remove the hyperlink format on buttons too -->
+    </div>
   </div>
-  <div class="profile-closet-buttons">
-    <%= link_to "CREATE PACK", new_pack_path, class: "closet-pack-btn" %> <!-- This link needs to be fixed. -->
-    <%= link_to "ADD ITEM", new_item_path, class: "closet-pack-btn" %> <!-- This link needs to be fixed. Need to remove the hyperlink format on buttons too -->
+
+  <!-- Tab headings  -->
+  <div class="profile-cards-tabs-headings">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#packs" aria-controls="packs" role="tab" data-toggle="tab">Available Packs</a></li>
+          <li role="presentation"><a href="#items" aria-controls="items" role="tab" data-toggle="tab">Available Items</a></li>
+        </ul>
   </div>
-</div>
-
-<!-- Tab headings  -->
-<div class="profile-cards-tabs-headings">
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#packs" aria-controls="packs" role="tab" data-toggle="tab">Available Packs</a></li>
-        <li role="presentation"><a href="#items" aria-controls="items" role="tab" data-toggle="tab">Available Items</a></li>
-      </ul>
-</div>
-<!-- Tab headings ^^ -->
+  <!-- Tab headings ^^ -->
 
 
-<!-- Tab content  -->
- <div class="tab-content">
+  <!-- Tab content  -->
+  <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="packs">
       <!-- Packs go here -->
       <div class="profile-cards-container">
@@ -40,10 +41,15 @@
                     <h6><%= pack.description %></h6>
                   </div>
                   <div class="pack-price">
-                  <h6>¥<%= number_with_delimiter(pack.price, :delimiter => ',') %></h6>
+                    <h6>¥<%= number_with_delimiter(pack.price, :delimiter => ',') %></h6>
+                  </div>
+                  <div class="pack-delete">
+                    <%= link_to pack_path(pack), method: :delete do%>
+                    <i class="fas fa-trash"></i>
+                    <% end %>
                   </div>
                 </div>
-                <%= link_to "", pack_path(pack), class: "card-link" %>
+                <%= link_to "", pack_path(pack), class: "closetpack-card-link" %>
               </div>
             </div>
           <% end %>
@@ -55,32 +61,38 @@
 
     <div role="tabpanel" class="tab-pane fade" id="items">
       <!-- Items go here -->
-    <div class="profile-cards-container">
-        <div class="profile-card-row">
-          <% @user.items.sort.reverse.each do |item| %>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="pack-card">
-                <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>')"></div>
-                <div class="pack-description">
-                  <div><h6><%= item.style %></h6></div>
-                  <div class="pack-name"><h2><%= item.name %></h2></div>
-                  <div class="pack-size"><h6><%= item.size %></h6></div>
-                </div>
-                <div class="description-and-price">
-                  <div class="inner-pack-description">
-                    <h6><%= item.description %></h6>
+      <div class="profile-cards-container">
+          <div class="profile-card-row">
+            <% @user.items.select { |item| item.pack.nil? }.sort.reverse.each do |item| %>
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="pack-card">
+                  <div class="pack-image" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill %>')"></div>
+                  <div class="pack-description">
+                    <div><h6><%= item.style %></h6></div>
+                    <div class="pack-name"><h2><%= item.name %></h2></div>
+                    <div class="pack-size"><h6><%= item.size %></h6></div>
                   </div>
-                  <div class="pack-price">
-                  <h6>¥<%= number_with_delimiter(item.price, :delimiter => ',') %></h6>
+                  <div class="description-and-price">
+                    <div class="inner-pack-description">
+                      <h6><%= item.description %></h6>
+                    </div>
+                    <div class="pack-price">
+                    <h6>¥<%= number_with_delimiter(item.price, :delimiter => ',') %></h6>
+                    </div>
+                    <div class="pack-delete">
+                      <%= link_to item_path(item), method: :delete do%>
+                      <i class="fas fa-trash"></i>
+                      <% end %>
+                    </div>
                   </div>
-                </div>
 
+                </div>
               </div>
-            </div>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
       </div>
       <!-- Items go here ^^ -->
-
   <!-- Tab content ^^ -->
+    </div>
   </div>
+</div>
