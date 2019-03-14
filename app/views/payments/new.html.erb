@@ -1,0 +1,17 @@
+<h1>Booking ID <%= @booking.id %></h1>
+<%= form_tag booking_payments_path(@booking) do %>
+  <article>
+    <label class="Price">
+      <span>Amount: <%= @booking.cost %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="AirPack Booking"
+    data-email="<%= current_traveler.email %>"
+    data-description="Booking ID: <%= @booking.id %>"
+    data-amount="<%= @booking.cost %>"
+    data-currency="JPY"></script>
+
+<% end %>
