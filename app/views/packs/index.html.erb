@@ -25,7 +25,7 @@
     <div role="tabpanel" class="tab-pane fade active in" id="packs-tab" aria-labelledby="packs-tab">
 
         <div class="packs-container">
-          <p><%= @pack_message %></p>
+          <div class="pack-msg"><%= @pack_message %></div>
           <div class="pack-row">
             <% @filtered_packs.sort.reverse.first(18).each do |pack| %>
            <div class="col-xs-12 col-md-6 col-lg-4">
