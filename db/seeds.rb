@@ -621,20 +621,6 @@ puts "Finished Creating Separate Closet Items Seeds"
 
 puts "Creating Bookings Seeds"
 
-Traveler.all.each do |traveler|
-  2.times do
-    Booking.create!(
-      fees: rand(10),
-      delivery_address: "Impact HUB Tokyo, 2 Chome-11-３ Meguro, Tokyo 153-0063",
-      traveler_id: traveler.id,
-      packer: Packer.all.sample,
-      completed: [true, false].sample,
-      delivery_date: "15-3-2019",
-      return_deadline: "20-3-2019"
-    )
-  end
-end
-
 puts "Finished Bookings Packs Seeds"
 
 puts "Creating Yuki Seeds"
@@ -651,6 +637,24 @@ yuki_traveler = Packer.create!(
     password: "secret"
     )
 
+puts "Creating Reviews"
+32.times do
+  Booking.create!(
+    completed: true,
+    traveler: Traveler.last,
+    packer: yuki_traveler
+    )
+end
+
+Booking.all.each do |booking|
+  PackerReview.create!(
+    review: "Delivered on time, cleaned and ironed.",
+    rating: 4,
+    booking: booking
+    )
+end
+
+puts "Reviews Completed"
 yuki_pack = Pack.create!(
       size: "L",
       duration: "14-15 days",
