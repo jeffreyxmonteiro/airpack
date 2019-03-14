@@ -10,8 +10,11 @@ class PacksController < ApplicationController
     # This line is to cover cases where traveler is not logged in (otherwise @cart_items is nil)
     @cart_items = []
     @cart_items = current_traveler.cart.cart_items.map(&:cartable) if traveler_signed_in?
-    @filtered_packs = @packs.reject { |pack| @cart_items.include? pack }
+
+    @filtered_packs = @packs.reject { |pack| @cart_items.include? pack }.reject { |pack| pack.class == Item }
+
     @filtered_items = @items.reject { |item| @cart_items.include? item }
+
     empty_messages if @filtered_packs.empty?
   end
 
@@ -94,6 +97,7 @@ class PacksController < ApplicationController
   def cart_item_check
     if current_traveler.cart.cart_items.empty?
       @packs = Pack.all
+      @items = Item.all
     else
       # Finds packer of the first item
       @packer = current_traveler.cart.cart_items.first.cartable.packer
