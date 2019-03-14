@@ -6,6 +6,7 @@
   background-size: cover;
   display: flex;
   justify-content: space-around;
+  overflow: auto;
 }
 
 .new-bookings-left-items {
@@ -26,6 +27,7 @@
 
 .container-spacer{
   padding-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .new-bookings-left-pack {
@@ -59,6 +61,8 @@
 .new-bookings-form-total {
   text-align: left;
   padding-bottom: 15px;
+  border-top: 1px solid #42B6C5;
+  margin: 20px 0 20px 0;
 }
 
 .new-bookings-form-buttons-container {
@@ -87,9 +91,9 @@
   // margin-top: 25px;
   background-color: white;
   width: 40vw;
-  padding: 25px;
   box-shadow: 1px 1px 1px 1px #ccc;
   border-radius: 5px;
+  padding: 25px 25px 15px 25px;
 }
 
 .new-bookings-card-product {
@@ -153,7 +157,18 @@
 
 #map {
   height: 50vh;
-  width: 50vw;
+  width: 45vw;
   box-shadow: 1px 1px 1px 1px #ccc;
+  margin-bottom: 50px;
+}
+
+.billing {
+  display: flex;
+  justify-content: space-between;
+  color: gray;
+}
+
+.billing h4 {
+  color: black;
 }
 

@@ -31,16 +31,32 @@
       <div class="new-bookings-form-card">
         <div id="search-form">
           <%= simple_form_for [@booking] do |f| %>
-            <h3 class="new-bookings-form-total">TOTAL ¥<%= number_with_delimiter(total + 5000, :delimiter => ',') %></h3>
+          <h3>Billing</h3>
+            <% @cart.cart_items.each do |cart_item| %>
+              <div class="billing">
+                <div><%= cart_item.cartable.name %></div><div>¥<%= number_with_delimiter(cart_item.cartable.price, :delimiter => ',') %></div>
+                </div>
+              <% end %>
+            <div class="billing">
+              <div>Cleaning Fee</div><div>¥2,500</div>
+            </div>
+            <div class="billing">
+              <div>Delivery Fee</div><div>¥2,500</div>
+            </div>
+
+            <div class="billing new-bookings-form-total">
+              <div><h4>Total</h4></div><div><h4>¥<%= number_with_delimiter(total + 5000, :delimiter => ',') %></h4></div>
+            </div>
+
             <div class="deliveryaddress-container">
               <p class="new-bookings-form-labels">INPUT DELIVERY ADDRESS</p>
               <%= f.input :delivery_address, label: false, input_html: { id: 'search-input' } %>
             </div>
             <p class="new-bookings-form-labels">CONFIRM DELIVERY DATE & TIME</p>
             <%= f.input :delivery_date, as: :string, placeholder: "Click to Select Date", label: false, input_html: {class: "datepicker"}%>
-            <div class="new-bookings-form-buttons-container">
-              <%= f.button :button, 'BACK', type: :reset, class: "new-bookings-form-buttons" %>
-              <%= f.button :submit, "CONFIRM", class: "new-bookings-form-buttons" %>
+            <div class="btn-line">
+              <%= f.button :button, 'BACK', type: :reset, class: "find-btn" %>
+              <%= f.button :submit, "CONFIRM", class: "cart-btn" %>
             </div>
           <% end %>
         </div>
