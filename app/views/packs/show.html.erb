@@ -26,18 +26,100 @@
       <div class="packername"><%=  @pack.packer.fullname %></div>
     </div>
   </div>
-  <div class="container body-of-cards">
-    <% @pack.items.first(30).each do |item| %>
-      <div class="col-xs-12 col-md-4">
-        <div class="card">
-          <div class="card-photo" style="background-image: url('<%= cl_image_path item.photo_url, height: 300, width: 400, crop: :fill %>');"></div>
-          <div class="card-details">
-            <p class="card-name"><%= item.name %></p>
-            <p><%= item.description %></p>
-            <p class="card-type"><%= item.category %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
+
+  <div class="pack-show-tabs">
+    <ul class="nav nav-tabs" role="tablist">
+
+        <li role="presentation" class="active"><a href="#tops" aria-controls="tops" role="tab" data-toggle="tab">Tops</a></li>
+
+        <li role="presentation"><a href="#bottoms" aria-controls="bottoms" role="tab" data-toggle="tab">Bottoms</a></li>
+
+        <li role="presentation"><a href="#miscellaneous" aria-controls="miscellaneous" role="tab" data-toggle="tab">Miscellaneous</a></li>
+
+      </ul>
   </div>
-</div>
+
+ <div class="tab-content">
+
+  <div role="tabpanel" class="tab-pane fade in active" id="tops">
+
+    <% tops = @pack.items.select { |item| item.category == "Top" } %>
+
+    <div class="container body-of-cards">
+      <% tops.first(30).each do |item| %>
+        <div class="col-xs-12 col-md-4">
+              <div class="card">
+                <div class="card-photo" style="background-image: url('<%= cl_image_path item.photo_url, height: 300, width: 400, crop: :fill %>');">
+                </div>
+                <div class="card-details">
+                    <p class="card-name"><%= item.name %></p>
+                    <p><%= item.description %></p>
+                    <p class="card-type"><%= item.category %></p>
+                </div>
+              </div>
+        </div>
+      <% end %>
+    </div>
+
+
+
+  </div>
+
+  <div role="tabpanel" class="tab-pane fade in active" id="bottoms">
+
+     <% bottoms = @pack.items.select { |item| item.category == "Bottom" }%>
+
+     <div class="container body-of-cards">
+      <% bottoms.first(30).each do |item| %>
+        <div class="col-xs-12 col-md-4">
+              <div class="card">
+                <div class="card-photo" style="background-image: url('<%= cl_image_path item.photo_url, height: 300, width: 400, crop: :fill %>');">
+                </div>
+                <div class="card-details">
+                    <p class="card-name"><%= item.name %></p>
+                    <p><%= item.description %></p>
+                    <p class="card-type"><%= item.category %></p>
+                </div>
+              </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+
+  <div role="tabpanel" class="tab-pane fade in active" id="miscellaneous">
+
+    <% miscellaneous_items = @pack.items.reject { |item| item.category == "Bottom" || item.category == "Top" }%>
+
+     <div class="container body-of-cards">
+      <% miscellaneous_items.first(30).each do |item| %>
+        <div class="col-xs-12 col-md-4">
+              <div class="card">
+                <div class="card-photo" style="background-image: url('<%= cl_image_path item.photo_url, height: 300, width: 400, crop: :fill %>');">
+                </div>
+                <div class="card-details">
+                    <p class="card-name"><%= item.name %></p>
+                    <p><%= item.description %></p>
+                    <p class="card-type"><%= item.category %></p>
+                </div>
+              </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
