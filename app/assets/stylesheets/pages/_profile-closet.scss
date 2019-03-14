@@ -81,7 +81,8 @@
   background: #E2ECED;
 }
 .profile-card-row {
-  padding: 15px 50px 50px 50px;
+  padding: 30px 50px 50px 50px;
+  width: 1540px;
 }
 
 .pack-delete a {
@@ -91,6 +92,7 @@
   right: 15px;
   color: #0FA1A7;
 }
+
 .closetpack-card-link {
   position: absolute;
   top: 0;
@@ -101,6 +103,7 @@
   background: black;
   opacity: 0;
 }
+
 .closetpack-card-link:hover {
   opacity: 0.1;
 }
