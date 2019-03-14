@@ -51,7 +51,23 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="upcoming">
       <!-- Upcoming Trip Cards goes here -->
-      <% @user.bookings.each do |booking| %>
+      <% @user.bookings.sort.each do |booking| %>
+      <% if booking.completed == false %>
+        <div>
+        <%= "Booking No. #{booking.id}" %>
+        <%= "Status #{booking.state}" %>
+        <%= form_tag booking_payments_path(booking) do |f| %>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-name="AirPack Booking"
+              data-email="<%= current_traveler.email %>"
+              data-description="Booking ID: <%= booking.id %>"
+              data-amount="<%= booking.cost %>"
+              data-currency="JPY">
+              </script>
+        <% end %>
+        </div>
+      <% end %>
         <% booking.booking_items.each do |item| %>
 
           <% if item.bookable.class == Pack && booking.completed == false %>
