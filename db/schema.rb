@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_074448) do
+ActiveRecord::Schema.define(version: 2019_03_14_031249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_03_13_074448) do
     t.datetime "updated_at", null: false
     t.integer "booking_days"
     t.bigint "packer_id"
+    t.jsonb "payment"
+    t.string "state"
     t.index ["packer_id"], name: "index_bookings_on_packer_id"
     t.index ["traveler_id"], name: "index_bookings_on_traveler_id"
   end
