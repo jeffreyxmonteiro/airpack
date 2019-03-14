@@ -1,36 +1,100 @@
 <div class="page-wrapper">
   <div class="index-page-description text-center" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('<%= image_path 'index-banner.jpg' %>')">
-    <h3>Available Packs</h3>
+    <h3>Travel Essentials</h3>
   </div>
-  <div class="packs-container">
-    <p><%= @pack_message %></p>
-    <div class="pack-row">
-      <% @filtered_packs.sort.reverse.first(18).each do |pack| %>
-<!--         <div class="card-padding">
- -->      <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="pack-card">
-              <div class="pack-image" style="background-image: url(<%= pack.photo %>);"></div>
-              <div class="pack-description">
-                <div><h6><%= pack.style %> · Tops: <%= pack.top_count %>, Bottoms: <%= pack.bottom_count %>, Misc: <%= pack.misc_count %></h6></div>
-                <div class="pack-name"><h2><%= pack.name %></h2></div>
-                <div class="pack-size"><h6><%= pack.size %></h6></div>
-              </div>
-              <div class="description-and-price">
-                <div class="inner-pack-description">
-                  <h6><%= pack.description %></h6>
+
+<!-- tab headings -->
+  <div class="index-page-tabs">
+      <ul class="nav nav-tabs" role="tablist">
+
+        <li role="presentation" class="active"><a href="#packs" aria-controls="packs" role="tab" data-toggle="tab">Available Packs</a></li>
+
+        <li role="presentation"><a href="#items" aria-controls="items" role="tab" data-toggle="tab">Available Items</a></li>
+
+      </ul>
+  </div>
+<!-- tab headings^^^^^^^ -->
+
+<!-- tab content container -->
+
+  <div class="tab-content">
+
+    <div role="tabpanel" class="tab-pane fade in active" id="packs">
+
+        <div class="packs-container">
+          <p><%= @pack_message %></p>
+          <div class="pack-row">
+            <% @filtered_packs.sort.reverse.first(18).each do |pack| %>
+           <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="pack-card">
+                  <div class="pack-image" style="background-image: url(<%= pack.photo %>);"></div>
+                  <div class="pack-description">
+                    <div>
+                      <h6><%= pack.style %> · Tops: <%= pack.top_count %>, Bottoms: <%= pack.bottom_count %>, Misc: <%= pack.misc_count %></h6>
+                    </div>
+                    <div class="pack-name"><h2><%= pack.name %></h2></div>
+                    <div class="pack-size"><h6><%= pack.size %></h6></div>
+                  </div>
+                  <div class="description-and-price">
+                    <div class="inner-pack-description">
+                      <h6><%= pack.description %></h6>
+                    </div>
+                    <div class="pack-price">
+                      <h6>¥<%= number_with_delimiter(pack.price, :delimiter => ',') %></h6>
+                    </div>
+                  </div>
+                   <%= link_to "", pack_path(pack), class: "card-link" %>
                 </div>
-                <div class="pack-price">
-                <h6>¥<%= number_with_delimiter(pack.price, :delimiter => ',') %></h6>
+                <div class="packer-avatar" style="background-image: url(<%= pack.packer.photo_url %>);">
+                  <p class="packer-name"><%= pack.packer.first_name %></p>
                 </div>
               </div>
-               <%= link_to "", pack_path(pack), class: "card-link" %>
-            </div>
-            <div class="packer-avatar" style="background-image: url(<%= pack.packer.photo_url %>);">
-              <p class="packer-name"><%= pack.packer.first_name %></p>
-            </div>
+            <% end %>
           </div>
-      <!--   </div> -->
-      <% end %>
+        </div>
+
     </div>
+<!-- packs tab content^^^ above this div  -->
+
+    <div role="tabpanel" class="tab-pane fade in active" id="items">
+
+        <div class="packs-container">
+          <p><%= @pack_message %></p>
+          <div class="pack-row">
+            <% @filtered_packs.sort.reverse.first(18).each do |pack| %>
+           <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="pack-card">
+                  <div class="pack-image" style="background-image: url(<%= pack.photo %>);"></div>
+                  <div class="pack-description">
+                    <div>
+                      <h6><%= pack.style %> · Tops: <%= pack.top_count %>, Bottoms: <%= pack.bottom_count %>, Misc: <%= pack.misc_count %></h6>
+                    </div>
+                    <div class="pack-name"><h2><%= pack.name %></h2></div>
+                    <div class="pack-size"><h6><%= pack.size %></h6></div>
+                  </div>
+                  <div class="description-and-price">
+                    <div class="inner-pack-description">
+                      <h6><%= pack.description %></h6>
+                    </div>
+                    <div class="pack-price">
+                      <h6>¥<%= number_with_delimiter(pack.price, :delimiter => ',') %></h6>
+                    </div>
+                  </div>
+                   <%= link_to "", pack_path(pack), class: "card-link" %>
+                </div>
+                <div class="packer-avatar" style="background-image: url(<%= pack.packer.photo_url %>);">
+                  <p class="packer-name"><%= pack.packer.first_name %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+
+
+    </div>
+ <!-- items tab content^^^ above this div  -->
+
   </div>
-</div>
+<!-- tab content container^^^^^^^ -->
+
