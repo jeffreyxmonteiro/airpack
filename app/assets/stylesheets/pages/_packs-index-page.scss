@@ -11,7 +11,7 @@
 }
 .pack-row {
   padding: 30px 50px 50px 50px;
-  width: 1540px;
+  width: 100vw;
 }
 .pack-card {
   height: 390px;
@@ -153,7 +153,7 @@
 
 .packer-avatar {
   position: absolute;
-  right: 40px;
+  right: 85px;
   bottom: 140px;
   width: 67px;
   height: 67px;
@@ -176,7 +176,6 @@
 
 
   .index-page-tabs {
-    padding-bottom: 25px;
   li {
     a {
       background: transparent !important;
