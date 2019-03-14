@@ -47,9 +47,9 @@
                     </div>
                   </div>
                    <%= link_to "", pack_path(pack), class: "card-link" %>
-                </div>
-                <div class="packer-avatar" style="background-image: url(<%= pack.packer.photo_url %>);">
-                  <p class="packer-name"><%= pack.packer.first_name %></p>
+                   <div class="packer-avatar" style="background-image: url(<%= pack.packer.photo_url %>);">
+                      <p class="packer-name"><%= pack.packer.first_name %></p>
+                   </div>
                 </div>
               </div>
             <% end %>
@@ -83,9 +83,9 @@
                     </div>
                   </div>
                    <%= link_to "", cart_items_path(cartable_type: item.class, cartable_id: item.id), method: :post, class: "card-link" %>
-                </div>
-                <div class="packer-avatar" style="background-image: url('<%= cl_image_path item.packer.photo_url, height: 300, width: 400, crop: :fill %>');">
-                  <p class="packer-name"><%= item.packer.first_name %></p>
+                   <div class="packer-avatar" style="background-image: url('<%= cl_image_path item.packer.photo_url, height: 300, width: 400, crop: :fill %>');">
+                    <p class="packer-name"><%= item.packer.first_name %></p>
+                  </div>
                 </div>
               </div>
             <% end %>

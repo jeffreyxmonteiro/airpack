@@ -39,18 +39,18 @@
   <div class="pack-show-tabs">
     <ul class="nav nav-tabs" role="tablist">
 
-        <li role="presentation" class="active"><a href="#tops" aria-controls="tops" role="tab" data-toggle="tab">Tops</a></li>
+        <li role="presentation" class="active"><a href="#tops" aria-controls="tops" role="tab" data-toggle="tab" aria-controls="tops" aria-selected="true">Tops</a></li>
 
-        <li role="presentation"><a href="#bottoms" aria-controls="bottoms" role="tab" data-toggle="tab">Bottoms</a></li>
+        <li role="presentation"><a href="#bottoms" aria-controls="bottoms" role="tab" data-toggle="tab" aria-controls="bottoms" aria-selected="false">Bottoms</a></li>
 
-        <li role="presentation"><a href="#miscellaneous" aria-controls="miscellaneous" role="tab" data-toggle="tab">Miscellaneous</a></li>
+        <li role="presentation"><a href="#miscellaneous" aria-controls="miscellaneous" role="tab" data-toggle="tab" aria-controls="miscellaneous" aria-selected="false">Miscellaneous</a></li>
 
       </ul>
   </div>
 
  <div class="tab-content">
 
-  <div role="tabpanel" class="tab-pane fade in active" id="tops">
+  <div role="tabpanel" class="tab-pane fade in active" id="tops" aria-labelledby="tops">
 
     <% tops = @pack.items.select { |item| item.category == "Top" } %>
 
@@ -74,7 +74,7 @@
 
   </div>
 
-  <div role="tabpanel" class="tab-pane fade in active" id="bottoms">
+  <div role="tabpanel" class="tab-pane fade" id="bottoms" aria-labelledby="bottoms">
 
      <% bottoms = @pack.items.select { |item| item.category == "Bottom" }%>
 
@@ -97,7 +97,7 @@
   </div>
 
 
-  <div role="tabpanel" class="tab-pane fade in active" id="miscellaneous">
+  <div role="tabpanel" class="tab-pane fade" id="miscellaneous" aria-labelledby="miscellaneous">
 
     <% miscellaneous_items = @pack.items.reject { |item| item.category == "Bottom" || item.category == "Top" }%>
 

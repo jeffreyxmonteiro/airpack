@@ -1,0 +1,8 @@
+# config/meta.yml
+
+meta_product_name: "airPack"
+meta_title: "airPack - travel without the baggage"
+meta_description: "Rent travel essentials packed
+and delivered by locals"
+meta_image: "pack2.jpg" # should exist in `app/assets/images/`
+ # required for Twitter Cards
