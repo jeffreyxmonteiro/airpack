@@ -31,7 +31,17 @@
           <%= simple_fields_for :other do |o| %>
            <h5><%= o.input :location, label: 'TRAVEL DESTINATION', collection: ["Shibuya, Tokyo", "Ginza, Tokyo", "Shinjuku, Tokyo", "Meguro, Tokyo", "Roppongi, Tokyo", "Minato, Tokyo", "Gotanda, Tokyo", "Shinagawa, Tokyo", "Shin-Okubo, Tokyo", "Chiba, Tokyo"], input_html: { class: 'form-headers' }%></h5>
           <% end %>
-          <h5><%= f.input :duration, label: 'TRIP DURATION', collection: ["3-4 days", "7-8 days", "14-15 days"], input_html: { class: 'form-headers' }%></h5>
+
+          <h5>SELECT DATES</h5>
+
+          <h5 class="inline-date-inputs">
+
+            <%= f.input :duration, as: :string, placeholder: "START", label: false, input_html: {class: "datepicker"}%>
+            <%= f.input :duration, as: :string, placeholder: "RETURN", label: false, input_html: {class: "datepicker"}%>
+          </h5>
+
+
+
           <h5><%= f.input :size, label: 'PACK SIZE', collection: %w(XS S M L XL), input_html: { class: 'form-headers' } %></h5>
           <h5><%= f.input :style, label: 'PACK STYLE', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage), input_html: { class: 'form-headers' } %></h5>
         <% end %>

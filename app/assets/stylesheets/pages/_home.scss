@@ -64,7 +64,7 @@
   font-size: 30px;
 }
 .form-content {
-  width: 55%;
+  width: 78%;
   padding: 10px 0px 20px 0px;
   margin: 20px 0px 0px 50px;
 }
@@ -157,3 +157,13 @@ abbr[title="required"] {
 //     top: 142px;
 // }
 
+.inline-date-inputs {
+  display: flex;
+}
+
+.form-content {
+  h5 {
+    width: 23vw;
+    font-weight: 700;
+  }
+}
