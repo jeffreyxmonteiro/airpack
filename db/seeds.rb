@@ -620,7 +620,6 @@ puts "Finished Creating Separate Closet Items Seeds"
 # puts "Creating Bookings Seeds"
 
 puts "Finished Bookings Packs Seeds"
-=======
 # Traveler.all.each do |traveler|
 #   2.times do
 #     Booking.create!(
