@@ -49,11 +49,16 @@
             </div>
 
             <div class="deliveryaddress-container">
-              <p class="new-bookings-form-labels">INPUT DELIVERY ADDRESS</p>
+              <p class="new-bookings-form-labels">Delivery Address</p>
               <%= f.input :delivery_address, label: false, input_html: { id: 'search-input' } %>
             </div>
-            <p class="new-bookings-form-labels">CONFIRM DELIVERY DATE & TIME</p>
+            <p class="new-bookings-form-labels">Delivery Date & Time</p>
             <%= f.input :delivery_date, as: :string, placeholder: "Click to Select Date", label: false, input_html: {class: "datepicker"}%>
+            <div class="padding">
+              <form action="/action_page.php" method="get">
+                <input type="checkbox" name="vehicle" value="Car"> I agree to the Packer Policies below.<br>
+              </form>
+            </div>
             <div class="btn-line">
               <%= f.button :button, 'BACK', type: :reset, class: "find-btn" %>
               <%= f.button :submit, "CONFIRM", class: "cart-btn" %>
@@ -66,7 +71,7 @@
     <div class="new-bookings-right-policy-container">
 
       <div class="new-bookings-right-policy-heading">
-        <p>PACKER POLICIES</p>
+        <p>Packer Policies</p>
       </div>
 
       <div class="new-bookings-right-policy-content">
