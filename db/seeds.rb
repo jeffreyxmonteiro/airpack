@@ -214,10 +214,8 @@ DURATIONS = ["3-4 days", "7-8 days", "14-15 days"]
 PACKPRICES = [6000, 10000, 18000]
 
 UPSELLS = [
-"https://thedailywant.com/wp-content/uploads/2017/06/harrys-travel-shave-kit.jpg",
-"https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/204/original/1350X1350_BoxerBrief_Throwback_10P.jpg",
-"https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwaa4f896c/prod_images/MD18PKMAR_MUL_ALT_02.jpg",
-"https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwe3984e85/prod_images/MD17PKTHR_MUL_ALT_02.jpg"
+"https://www.conveniencekits.com/picts/products/500.jpg",
+"https://thedailywant.com/wp-content/uploads/2017/06/harrys-travel-shave-kit.jpg"
 ]
 
 DONDRAPERTOPS = [
@@ -619,23 +617,23 @@ end
 
 puts "Finished Creating Separate Closet Items Seeds"
 
-puts "Creating Bookings Seeds"
+# puts "Creating Bookings Seeds"
 
-Traveler.all.each do |traveler|
-  2.times do
-    Booking.create!(
-      fees: rand(10),
-      delivery_address: "Impact HUB Tokyo, 2 Chome-11-３ Meguro, Tokyo 153-0063",
-      traveler_id: traveler.id,
-      packer: Packer.all.sample,
-      completed: [true, false].sample,
-      delivery_date: "15-3-2019",
-      return_deadline: "20-3-2019"
-    )
-  end
-end
+# Traveler.all.each do |traveler|
+#   2.times do
+#     Booking.create!(
+#       fees: rand(10),
+#       delivery_address: "Impact HUB Tokyo, 2 Chome-11-３ Meguro, Tokyo 153-0063",
+#       traveler_id: traveler.id,
+#       packer: Packer.all.sample,
+#       completed: [true, false].sample,
+#       delivery_date: "15-3-2019",
+#       return_deadline: "20-3-2019"
+#     )
+#   end
+# end
 
-puts "Finished Bookings Packs Seeds"
+# puts "Finished Bookings Packs Seeds"
 
 puts "Creating Yuki Seeds"
 
@@ -1065,78 +1063,6 @@ Item.create!(
 
 #upsells
 
-Item.create!(
-      name: "Bombas Sock Pack",
-      description: "Comfy, reliable socks!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 800,
-      remote_photo_url: "https://assets.bombas.com/image/fetch/f_auto,q_auto/https://cdn.shopify.com/s/files/1/1119/5850/products/brights-layflat-product_600x600.jpg",
-      packer_id: yuki_traveler.id,
-      pack_id: yuki_pack.id
-    )
-
-    Item.create!(
-      name: "MeUndies Sock Pack",
-      description: "Comfy, reliable socks!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 800,
-      remote_photo_url: "https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/358/original/WEBSITE-Packs_Supima3-6-10_Classic.psd1350X1350_Crew_6P.jpg",
-      packer_id: yuki_traveler.id,
-      pack_id: yuki_pack.id
-    )
-
-    Item.create!(
-      name: "Stance Sock Pack",
-      description: "Comfy, reliable socks!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 800,
-      remote_photo_url: "https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwaa4f896c/prod_images/MD18PKMAR_MUL_ALT_02.jpg",
-      packer_id: yuki_traveler.id,
-      pack_id: yuki_pack.id
-    )
-
-    Item.create!(
-      name: "Undies 10 Pack",
-      description: "Feel good underwear!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 1000,
-      remote_photo_url: "https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/165/original/WEBSITE-Packs_3-6-10_BoyShort_Classic_1350X1350_10P.jpg",
-      packer_id: yuki_traveler.id,
-      pack_id: yuki_pack.id
-    )
-
-    Item.create!(
-      name: "Undies 6 Pack",
-      description: "Feel good underwear!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 800,
-      remote_photo_url: "https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/152/original/WEBSITE-Packs_3-6-10_BoyShort_Classic_1350X1350_6P.jpg",
-      packer_id: yuki_traveler.id,
-      pack_id: yuki_pack.id
-    )
-
-    Item.create!(
-      name: "Undies 3 Pack",
-      description: "Feel good underwear!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/124/original/WEBSITE-Packs_3-6-10_BoyShort_Classic_1350X1350_3P.jpg",
-      packer_id: yuki_traveler.id,
-      pack_id: yuki_pack.id
-    )
-
     Item.create!(
       name: "Harry's Shave Kit",
       description: "Stay fresh on the go!",
@@ -1553,72 +1479,6 @@ Item.create!(
 # belt^^
 
 #upsells
-
-Item.create!(
-      name: "Bombas Sock Pack",
-      description: "Comfy, reliable socks!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 800,
-      remote_photo_url: "https://assets.bombas.com/image/fetch/f_auto,q_auto/https://cdn.shopify.com/s/files/1/1119/5850/products/brights-layflat-product_600x600.jpg",
-      packer_id: yuki_packer.id
-    )
-
-    Item.create!(
-      name: "MeUndies Sock Pack",
-      description: "Comfy, reliable socks!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 800,
-      remote_photo_url: "https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/358/original/WEBSITE-Packs_Supima3-6-10_Classic.psd1350X1350_Crew_6P.jpg",
-      packer_id: yuki_packer.id
-    )
-
-    Item.create!(
-      name: "Stance Sock Pack",
-      description: "Comfy, reliable socks!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 800,
-      remote_photo_url: "https://www.stance.com/dw/image/v2/BBBN_PRD/on/demandware.static/-/Sites-masterCatalog_Stance/default/dwaa4f896c/prod_images/MD18PKMAR_MUL_ALT_02.jpg",
-      packer_id: yuki_packer.id
-    )
-
-    Item.create!(
-      name: "Undies 10 Pack",
-      description: "Feel good underwear!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 1000,
-      remote_photo_url: "https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/165/original/WEBSITE-Packs_3-6-10_BoyShort_Classic_1350X1350_10P.jpg",
-      packer_id: yuki_packer.id
-    )
-
-    Item.create!(
-      name: "Undies 6 Pack",
-      description: "Feel good underwear!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 800,
-      remote_photo_url: "https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/152/original/WEBSITE-Packs_3-6-10_BoyShort_Classic_1350X1350_6P.jpg",
-      packer_id: yuki_packer.id
-    )
-
-    Item.create!(
-      name: "Undies 3 Pack",
-      description: "Feel good underwear!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://meundies.imgix.net/spree/product_slides/mobile_images/000/008/124/original/WEBSITE-Packs_3-6-10_BoyShort_Classic_1350X1350_3P.jpg",
-      packer_id: yuki_packer.id
-    )
 
     Item.create!(
       name: "Harry's Shave Kit",
