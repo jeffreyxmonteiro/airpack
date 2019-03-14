@@ -36,7 +36,7 @@
               <p class="new-bookings-form-labels">INPUT DELIVERY ADDRESS</p>
               <%= f.input :delivery_address, label: false, input_html: { id: 'search-input' } %>
             </div>
-            <p class="new-bookings-form-labels">CONFIRM DELIVERY DATE</p>
+            <p class="new-bookings-form-labels">CONFIRM DELIVERY DATE & TIME</p>
             <%= f.input :delivery_date, as: :string, placeholder: "Click to Select Date", label: false, input_html: {class: "datepicker"}%>
             <div class="new-bookings-form-buttons-container">
               <%= f.button :button, 'BACK', type: :reset, class: "new-bookings-form-buttons" %>
