@@ -30,7 +30,7 @@
   <div class="packs-items-container">
     <div class="pack-item-row">
       <% unless @filtered_items.nil? %>
-        <% @filtered_items.first(18).each do |item| %>
+        <% @filtered_items.each do |item| %>
           <%= render 'temp_closet_items/item', tempcloset: @tempcloset, item: item %>
         <% end %>
       <% end %>
