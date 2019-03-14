@@ -14,6 +14,21 @@ class Packer < ApplicationRecord
     return "#{first_name} #{last_name}"
   end
 
+  def reviews_count
+    packer_reviews.count
+  end
+
+  def avg_rating
+    ratings = packer_reviews.map(&:rating)
+    return ratings.sum / ratings.count unless ratings.count.zero?
+
+    return 0
+  end
+
+  def blank_stars
+    (5 - avg_rating).round
+  end
+
   private
 
   def make_temp_closet

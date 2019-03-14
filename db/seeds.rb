@@ -619,6 +619,8 @@ puts "Finished Creating Separate Closet Items Seeds"
 
 # puts "Creating Bookings Seeds"
 
+puts "Finished Bookings Packs Seeds"
+=======
 # Traveler.all.each do |traveler|
 #   2.times do
 #     Booking.create!(
@@ -649,6 +651,24 @@ yuki_traveler = Packer.create!(
     password: "secret"
     )
 
+puts "Creating Reviews"
+32.times do
+  Booking.create!(
+    completed: true,
+    traveler: Traveler.last,
+    packer: yuki_traveler
+    )
+end
+
+Booking.all.each do |booking|
+  PackerReview.create!(
+    review: "Delivered on time, cleaned and ironed.",
+    rating: 4,
+    booking: booking
+    )
+end
+
+puts "Reviews Completed"
 yuki_pack = Pack.create!(
       size: "L",
       duration: "14-15 days",

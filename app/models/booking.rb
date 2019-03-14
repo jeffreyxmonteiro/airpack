@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :traveler
   belongs_to :packer
   has_many :booking_items
-  has_one :packer_reviews
+  has_one :packer_review
 
   def complete_booking
     update(completed: true)

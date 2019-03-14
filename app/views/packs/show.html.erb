@@ -24,6 +24,15 @@
       <div class="img-circle" style="background-image: url('<%= cl_image_path @pack.packer.photo_url, height: 300, width: 400, crop: :fill %>');">
       </div>
       <div class="packername"><%=  @pack.packer.fullname %></div>
+      <div class="packername">
+        <%  @pack.packer.avg_rating.to_i.times do%>
+          <span class="glyphicon glyphicon-star"></span>
+        <% end %>
+        <%  @pack.packer.blank_stars.to_i.times do%>
+          <span class="glyphicon glyphicon-star-empty"></span>
+        <% end %>
+      </div>
+      <div class="packername"><%=  @pack.packer.reviews_count %> reviews</div>
     </div>
   </div>
 
