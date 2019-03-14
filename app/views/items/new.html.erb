@@ -6,20 +6,20 @@
 
       <%= simple_form_for [@pack, @item] do |f|%>
       <div class="newitem-heading">
-        <h4>Fill New Item Details</h4>
+        <h5>Fill New Item Details</h5>
       </div>
 
-        <%= f.input :name, label: 'Item Name' %>
-        <%= f.input :category, label: 'Category', collection: %w(Top Bottom Blazer Miscellaneous Extras Outwerwear Hygiene) %>
-        <%= f.input :style, label: 'Style', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage) %>
-        <%= f.input :size, label: 'Size', collection: %w(XS S M L XL) %>
-        <%= f.input :price, label: 'Price(¥)' %>
-        <%= f.input :description, label: 'Item Description', wrapper_html: { class: 'new-item-description' } %>
-        <%= f.input :photo, label: 'Item Photo' %>
+        <%= f.input :name, label: 'Name', wrapper_html: { class: 'small-font' } %>
+        <%= f.input :category, label: 'Category', collection: %w(Top Bottom Blazer Miscellaneous Extras Outwerwear Hygiene),wrapper_html: { class: 'small-font' } %>
+        <%= f.input :style, label: 'Style', collection: %w(Jock Prepster Hipster Corporate Hip-Hop Outdoorsy Rockstar Vintage),wrapper_html: { class: 'small-font' } %>
+        <%= f.input :size, label: 'Size', collection: %w(XS S M L XL), wrapper_html: { class: 'small-font' } %>
+        <%= f.input :price, label: 'Price (¥)',wrapper_html: { class: 'small-font' } %>
+        <%= f.input :description, label: 'Description', wrapper_html: { class: 'new-item-description small-font' } %>
+        <%= f.input :photo, label: 'Photo',wrapper_html: { class: 'small-font' } %>
         <%= f.input :photo_cache, as: :hidden %>
         <div class="create-item-btns">
-          <div class="form-actions create-item-btn">
-            <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn btn-default"} %>
+          <div class="form-actions">
+            <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn find-btn"} %>
           </div>
           <div class="form-actions create-item-btn">
             <%= f.button :submit, "CREATE" %>

@@ -6,6 +6,8 @@
   margin: auto 0;
   overflow: auto;
   justify-content: space-around;
+  align-items: flex-start;
+  padding: 30px;
 }
 .pack-items-container {
   color: black;
@@ -18,7 +20,6 @@
 }
 .newpack-form-container {
   width: 40vw;
-  margin-left: 35px;
 }
 
 .pack-item-card {
@@ -33,4 +34,8 @@
   border-radius: 10px;
   background: white;
   // overflow: auto;
+}
+
+.small-font {
+  font-size: 16px;
 }
