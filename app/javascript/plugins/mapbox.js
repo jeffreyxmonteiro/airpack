@@ -2,15 +2,18 @@ import mapboxgl from 'mapbox-gl';
 
 const nav = (address = [139.7081, 35.6339]) => {
   mapboxgl.accessToken = 'pk.eyJ1IjoiZHlvdW5taW4iLCJhIjoiY2pydmp4MHN3MDJ2cDQ5bzB5M3U0eW5lMSJ9.uYqXcnCtdd3avGlzQFf1JA';
-  const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    center: address,
-    zoom: 12
-  });
-  new mapboxgl.Marker()
-    .setLngLat(address)
-    .addTo(map);
+
+  if (document.getElementById('map')) {
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v9',
+      center: address,
+      zoom: 12
+    });
+    new mapboxgl.Marker()
+      .setLngLat(address)
+      .addTo(map);
+  }
 };
 
 nav();
