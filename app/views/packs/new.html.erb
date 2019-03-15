@@ -8,7 +8,7 @@
       <%= select_tag 'size', options_for_select(Search.sizes) %>
       <%= select_tag 'style', options_for_select(Search.styles) %>
       <%= select_tag 'duration', options_for_select(0..15) %>
-      <%= submit_tag "Create Quick Pack", class: 'find-btn'%>
+      <%= submit_tag "Build Quick Pack", class: 'findquick-btn'%>
       <% end %>
 
       <%= simple_form_for [@packer, @pack] do |f|%>
@@ -28,7 +28,7 @@
             <%= link_to "BACK", closet_profile_path(current_packer), {:class=>"btn find-btn"} %>
           </div>
           <div class="form-actions create-pack-btn">
-            <%= f.button :submit, "CREATE" %>
+            <%= f.button :submit, "BUILD" %>
           </div>
         </div>
 

@@ -53,19 +53,27 @@
       <!-- Upcoming Trip Cards goes here -->
       <% @user.bookings.sort.each do |booking| %>
       <% if booking.completed == false %>
-        <%= "Booking No. #{booking.id}" %> <strong>   |   </strong> <%= "Status: #{booking.state}" %>
-        <div class="bookingcostcontainer">
-          <p>Total Booking Cost: ¥<%= number_with_delimiter(booking.cost, :delimiter => ',') %></p>
-          <%= form_tag booking_payments_path(booking) do |f| %>
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-name="AirPack Booking"
-              data-email="<%= current_traveler.email %>"
-              data-description="Booking ID: <%= booking.id %>"
-              data-amount="<%= booking.cost %>"
-              data-currency="JPY">
-            </script>
-          <% end %>
+        <div class="bookingsnumberstatuscontainer">
+          <div class="leftside-bookingsnumberstatus">
+            <%= "Booking No. #{booking.id}" %> <strong>   |   </strong> <%= "Status: #{booking.state}" %>
+          </div>
+          <div>
+            <% if booking.state == "Pending" %>
+              <%= form_tag booking_payments_path(booking) do |f| %>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-name="AirPack Booking"
+                  data-email="<%= current_traveler.email %>"
+                  data-description="Booking ID: <%= booking.id %>"
+                  data-amount="<%= booking.cost %>"
+                  data-currency="JPY">
+                </script>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="bookingcostcontainer">
+            <p>Total Booking Cost: ¥<%= number_with_delimiter(booking.cost, :delimiter => ',') %></p>
+          </div>
         </div>
       <% end %>
         <% booking.booking_items.each do |item| %>
