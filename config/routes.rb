@@ -23,5 +23,6 @@ Rails.application.routes.draw do
 
   post '/search', to: 'search#create', as: 'searches'
   delete '/carts/:id', to: 'cart#clear', as: 'clear_cart'
+  post '/quick_packs', to: 'packs#create_quick_pack', as: 'quick_pack'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

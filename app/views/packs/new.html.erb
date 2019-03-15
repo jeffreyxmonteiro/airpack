@@ -1,6 +1,15 @@
+<% @search = Search.new %>
+
 <div class="newpackpage-container">
   <div class="newpack-form-container sticky">
     <div class="newpack-form">
+
+      <%= form_tag quick_pack_path, html: { class: 'form-inline' }, defaults: { input_html: { class: 'form-inline-items' } } do%>
+      <%= select_tag 'size', options_for_select(Search.sizes) %>
+      <%= select_tag 'style', options_for_select(Search.styles) %>
+      <%= select_tag 'duration', options_for_select(0..15) %>
+      <%= submit_tag "Create Quick Pack", class: 'find-btn'%>
+      <% end %>
 
       <%= simple_form_for [@packer, @pack] do |f|%>
       <div class="newpack-heading">

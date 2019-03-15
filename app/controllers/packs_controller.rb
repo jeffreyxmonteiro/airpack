@@ -34,7 +34,50 @@ class PacksController < ApplicationController
     @pack.packer = current_packer
     if @pack.save
       add_item_to_pack(@closet)
-      @closet.clear_closet
+      @closet.clear_closet!
+      redirect_to pack_path(@pack)
+    else
+      render :new
+    end
+  end
+
+  def create_quick_pack
+    current_packer.temp_closet.clear_closet!
+    @items = Item.all
+    @packs = Pack.all
+    @closet = current_packer.temp_closet
+    pack_item_search
+    # Filter Tops and Bottoms
+    tops = @items.where(category: "Top").where(packer: current_packer).select { |item| item.pack_id.nil? }
+    bottoms = @items.where(category: "Bottom").where(packer: current_packer).select { |item| item.pack_id.nil? }
+
+    # Create Items
+    tops.first(params[:duration].to_i).each do |top|
+      TempClosetItem.create!(
+        item: top,
+        temp_closet: @closet
+      )
+    end
+
+    bottoms.first(params[:duration].to_i).each do |bottom|
+      TempClosetItem.create!(
+        item: bottom,
+        temp_closet: @closet
+      )
+    end
+
+    @pack = Pack.new(
+      name: "#{current_packer.first_name}'s #{params[:style]} Pack",
+      style: params[:style] || tops.first.style,
+      size: params[:size] || tops.first.size,
+      price: 3000 * params[:duration].to_i,
+      description: "A selection of #{params[:style]} clothing from #{current_packer.first_name}'s selection",
+      remote_photo_url: "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      )
+    @pack.packer = current_packer
+    if @pack.save
+      add_item_to_pack(@closet)
+      @closet.clear_closet!
       redirect_to pack_path(@pack)
     else
       render :new
@@ -42,7 +85,7 @@ class PacksController < ApplicationController
   end
 
   def edit
-    current_packer.temp_closet.clear_closet
+    current_packer.temp_closet.clear_closet!
     @pack = Pack.find(params[:id])
     @pack.items.each do |item|
       current_packer.temp_closet.temp_closet_items.create!(item: item)
@@ -66,7 +109,7 @@ class PacksController < ApplicationController
       @pack.clear_pack!
       add_item_to_pack(@tempcloset)
 
-      @tempcloset.clear_closet
+      @tempcloset.clear_closet!
 
       redirect_to pack_path(@pack)
     else
@@ -86,7 +129,7 @@ class PacksController < ApplicationController
   private
 
   def search_params
-    params.permit(:size, :style)
+    params.permit(:size, :style, :duration)
   end
 
   def pack_params
