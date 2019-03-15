@@ -29,6 +29,9 @@ class PacksController < ApplicationController
   end
 
   def create
+    @items = Item.all
+    @tempcloset = current_packer.temp_closet.temp_closet_items.map(&:item)
+    @filtered_items = @items.select { |item| item.packer == current_packer && item.pack_id.nil?}
     @closet = current_packer.temp_closet
     @pack = Pack.new(pack_params)
     @pack.packer = current_packer
@@ -42,10 +45,12 @@ class PacksController < ApplicationController
   end
 
   def create_quick_pack
-    current_packer.temp_closet.clear_closet!
     @items = Item.all
     @packs = Pack.all
     @closet = current_packer.temp_closet
+    @closet.clear_closet!
+    @tempcloset = current_packer.temp_closet.temp_closet_items.map(&:item)
+    @filtered_items = @items.select { |item| item.packer == current_packer && item.pack_id.nil?}
     pack_item_search
     # Filter Tops and Bottoms
     tops = @items.where(category: "Top").where(packer: current_packer).select { |item| item.pack_id.nil? }
@@ -71,17 +76,20 @@ class PacksController < ApplicationController
       style: params[:style] || tops.first.style,
       size: params[:size] || tops.first.size,
       price: 3000 * params[:duration].to_i,
-      description: "A selection of #{params[:style]} clothing from #{current_packer.first_name}'s selection",
-      remote_photo_url: "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      description: "A selection of #{params[:style]} clothing from #{current_packer.first_name}'s selection"
       )
-    @pack.packer = current_packer
-    if @pack.save
-      add_item_to_pack(@closet)
-      @closet.clear_closet!
-      redirect_to pack_path(@pack)
-    else
-      render :new
-    end
+    # @pack.packer = current_packer
+    # if @pack.save
+    #   add_item_to_pack(@closet)
+    #   @closet.clear_closet!
+    #   redirect_to pack_path(@pack)
+    # else
+
+    @pack.remote_photo_url = "https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    render :new
+    # end
+
+    # redirect_to new_pack_path
   end
 
   def edit
