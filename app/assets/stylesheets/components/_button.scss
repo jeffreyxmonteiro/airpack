@@ -61,3 +61,23 @@ a.cart-btn {
 a:hover.cart-btn  {
   text-decoration: none;
 }
+
+.stripe-button-el {
+  background: transparent !important;
+  box-shadow: none !important;
+  span {
+    text-shadow: none !important;
+    background: transparent !important;
+    line-height: 10px !important;
+    border-radius: 50px !important;
+    font-weight: bold !important;
+    padding: 10px 30px !important;
+    border: 1px solid #42B6C5 !important;
+    color: #42B6C5 !important;
+    span:hover {
+    text-decoration: none !important;
+    color: #5DD1D2 !important;
+    }
+  }
+}
+

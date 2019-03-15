@@ -53,19 +53,19 @@
       <!-- Upcoming Trip Cards goes here -->
       <% @user.bookings.sort.each do |booking| %>
       <% if booking.completed == false %>
-        <div>
-        <%= "Booking No. #{booking.id}" %>
-        <%= "Status #{booking.state}" %>
-        <%= form_tag booking_payments_path(booking) do |f| %>
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        <%= "Booking No. #{booking.id}" %> <strong>   |   </strong> <%= "Status: #{booking.state}" %>
+        <div class="bookingcostcontainer">
+          <p>Total Booking Cost: ¥<%= number_with_delimiter(booking.cost, :delimiter => ',') %></p>
+          <%= form_tag booking_payments_path(booking) do |f| %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
               data-name="AirPack Booking"
               data-email="<%= current_traveler.email %>"
               data-description="Booking ID: <%= booking.id %>"
               data-amount="<%= booking.cost %>"
               data-currency="JPY">
-              </script>
-        <% end %>
+            </script>
+          <% end %>
         </div>
       <% end %>
         <% booking.booking_items.each do |item| %>
@@ -78,7 +78,7 @@
                 <div class="profile-show-bottom-right-bookings-cards-infos">
                   <h2>Pack: <%= item.bookable.name %><strong>   |   </strong> <%= booking.delivery_date %></h2>
                   <p><strong>Delivery Address: </strong><%= booking.delivery_address %></p>
-                  <p>Booking #: <%= booking.id %> <strong>   |   </strong> ¥<%= number_with_delimiter(item.bookable.price, :delimiter => ',') %> <strong>   |   </strong>Return: <%= booking.return_deadline %><strong>   |   </strong> ¥<%= number_with_delimiter(booking.cost, :delimiter => ',') %></p>
+                  <p>Booking #: <%= booking.id %> <strong>   |   </strong> ¥<%= number_with_delimiter(item.bookable.price, :delimiter => ',') %> <strong>   |   </strong>Return: <%= booking.return_deadline %></p>
                   <p>Packer Name: <%= "#{booking.packer.first_name} #{booking.packer.last_name}" %><strong>   |   </strong>Packer Email: <%= "#{booking.packer.email}" %></p>
                 </div>
               </div>
