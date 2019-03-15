@@ -1,14 +1,23 @@
 require 'faker'
 
 BookingItem.destroy_all
+puts "destroyed booking items"
 Booking.destroy_all
+puts "destroyed bookings"
 TempClosetItem.destroy_all
+puts "destroyed temp closet items"
 TempCloset.destroy_all
+puts "destroyed temp closet"
 Item.destroy_all
+puts "destroyed items"
 Pack.destroy_all
+puts "destroyed pack"
 Cart.destroy_all
+puts "destroyed carts"
 Traveler.destroy_all
+puts "destroyed travelers"
 Packer.destroy_all
+puts "destroyed packers"
 
 AVATARIMAGES = [
                 "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
@@ -20,8 +29,7 @@ AVATARIMAGES = [
                 "https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                 "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                 "https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                "https://images.pexels.com/photos/227294/pexels-photo-227294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 ]
 
 USERIMAGES = [
@@ -29,13 +37,11 @@ USERIMAGES = [
               "https://images.pexels.com/photos/555790/pexels-photo-555790.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
               "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
               "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-              "https://images.pexels.com/photos/247206/pexels-photo-247206.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-              "https://images.pexels.com/photos/245239/pexels-photo-245239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-              "https://images.pexels.com/photos/965324/pexels-photo-965324.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-              "https://images.pexels.com/photos/1689731/pexels-photo-1689731.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-              "https://images.pexels.com/photos/1722198/pexels-photo-1722198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-              "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-              "https://images.pexels.com/photos/1001180/pexels-photo-1001180.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/xvtpasg6sdcqf8kogpxs.jpg",
+              "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/dvqqcqbipvupvgnpls0n.jpg",
+              "https://avatars2.githubusercontent.com/u/35948805?v=4",
+              "https://avatars0.githubusercontent.com/u/46082443?v=4",
+              "https://images.pexels.com/photos/1722198/pexels-photo-1722198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
               ]
 
 PACKIMAGES = [
@@ -601,7 +607,7 @@ puts "Finished Creating Initial Packs Seeds"
 puts "Creating Separate Closet Items Seeds"
 
 Packer.all.each do |packer|
-  5.times do
+  6.times do
     Item.create!(
       name: "Convenience Pack",
       description: "A little extra boost to your pack.",
@@ -619,7 +625,6 @@ puts "Finished Creating Separate Closet Items Seeds"
 
 # puts "Creating Bookings Seeds"
 
-puts "Finished Bookings Packs Seeds"
 # Traveler.all.each do |traveler|
 #   2.times do
 #     Booking.create!(
@@ -641,39 +646,21 @@ puts "Creating Yuki Seeds"
 # working pack for yuki travel view
 
 yuki_traveler = Packer.create!(
-    first_name: "Yuki",
-    last_name: "Mori",
-    photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/wzq20vmxjrjfpjlsvlnl.jpg",
-    biography: "Living in Shibuya! Love Mad Men and play jazz - check out CMajor7!",
+    first_name: "Francis",
+    last_name: "Abad",
+    photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/rv0pygihavnaelkqwbhd.jpg",
+    biography: "Living in Shibuya! Love Mad Men - salary man turned coder!",
     location: "Shibuya, Tokyo",
-    email: "jazzyuki@gmail.com",
+    email: "francis@gmail.com",
     password: "secret"
     )
 
-puts "Creating Reviews"
-32.times do
-  Booking.create!(
-    completed: true,
-    traveler: Traveler.last,
-    packer: yuki_traveler
-    )
-end
-
-Booking.all.each do |booking|
-  PackerReview.create!(
-    review: "Delivered on time, cleaned and ironed.",
-    rating: 4,
-    booking: booking
-    )
-end
-
-puts "Reviews Completed"
 yuki_pack = Pack.create!(
       size: "L",
       duration: "14-15 days",
       name: "The Don Draper",
       style: "Vintage",
-      description: "Travel like Don - extra mystery item :D",
+      description: "Travel like Don!",
       remote_photo_url: "https://cdn-images-1.medium.com/max/1600/1*bU77rAT955Qeo0xAL45c5Q.jpeg",
       price: 18000,
       packer_id: yuki_traveler.id
@@ -1007,17 +994,17 @@ Item.create!(
 
 # weeb
 
-Item.create!(
-      name: "Mystery Item",
-      description: "Nerdy Surprise",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.preternia.com/wp-content/uploads/2014/01/1493237_719399828079185_996651153_n.jpg",
-      packer_id: yuki_traveler.id,
-      pack_id: yuki_pack.id
-    )
+# Item.create!(
+#       name: "Mystery Item",
+#       description: "Nerdy Surprise",
+#       category: "Miscellaneous",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.preternia.com/wp-content/uploads/2014/01/1493237_719399828079185_996651153_n.jpg",
+#       packer_id: yuki_traveler.id,
+#       pack_id: yuki_pack.id
+#     )
 
 # weeb^^
 
@@ -1066,17 +1053,17 @@ Item.create!(
         packer_id: yuki_traveler.id
       )
 
-      Item.create!(
-        name: "Brown belt",
-        description: "This belt will be very useful in your travels.",
-        category: "Belt",
-        style: STYLES.sample,
-        size: SIZES.sample,
-        price: 600,
-        remote_photo_url: "https://im.uniqlo.com/images/jp/pc/goods/416101/item/38_416101_middles.jpg",
-        pack_id: yuki_pack.id,
-        packer_id: yuki_traveler.id
-      )
+      # Item.create!(
+      #   name: "Brown belt",
+      #   description: "This belt will be very useful in your travels.",
+      #   category: "Belt",
+      #   style: STYLES.sample,
+      #   size: SIZES.sample,
+      #   price: 600,
+      #   remote_photo_url: "https://im.uniqlo.com/images/jp/pc/goods/416101/item/38_416101_middles.jpg",
+      #   pack_id: yuki_pack.id,
+      #   packer_id: yuki_traveler.id
+      # )
 
 # belt^^
 
@@ -1090,8 +1077,7 @@ Item.create!(
       size: "L",
       price: 500,
       remote_photo_url: "https://uncrate.com/p/2016/06/harrys.jpg",
-      packer_id: yuki_traveler.id,
-      pack_id: yuki_pack.id
+      packer_id: yuki_traveler.id
     )
 
     Item.create!(
@@ -1102,8 +1088,7 @@ Item.create!(
       size: "L",
       price: 500,
       remote_photo_url: "https://www.harrys.com/harrys-cdnx-prod/assets/images/index_images/attachments/7bb0b3ca7972df77e6a7dbe552510ccda8decfb3.jpg",
-      packer_id: yuki_traveler.id,
-      pack_id: yuki_pack.id
+      packer_id: yuki_traveler.id
     )
 
     Item.create!(
@@ -1114,325 +1099,485 @@ Item.create!(
       size: "L",
       price: 500,
       remote_photo_url: "http://res.cloudinary.com/them-gifts/image/upload/v1460928243/cd4tw97x8izkrfba1pqv.jpg",
-      packer_id: yuki_traveler.id,
-      pack_id: yuki_pack.id
+      packer_id: yuki_traveler.id
     )
 
 
 #upsells^^
 
+
+# hipster pack
+
+# hipster tops
+
+ Item.create!(
+      name: "Trippy Flowers",
+      description: "Back: 79.5 cm Sleeve: 67.25 cm.",
+      category: "Top",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/49197171_031_d",
+      packer_id: yuki_traveler.id
+    )
+
+ Item.create!(
+      name: "Striped Red Short",
+      description: "Back: 79.5 cm Sleeve: 67.25 cm.",
+      category: "Top",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/50221464_060_b",
+      packer_id: yuki_traveler.id
+    )
+
+ Item.create!(
+      name: "Denim Long Sleeve",
+      description: "Back: 79.5 cm Sleeve: 67.25 cm.",
+      category: "Top",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/50215805_107_b",
+      packer_id: yuki_traveler.id
+    )
+
+ Item.create!(
+      name: "Tiger Pattern Short",
+      description: "Back: 79.5 cm Sleeve: 67.25 cm.",
+      category: "Top",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/50167394_029_b",
+      packer_id: yuki_traveler.id
+    )
+
+ Item.create!(
+      name: "Lime Stripe Long",
+      description: "Back: 79.5 cm Sleeve: 67.25 cm.",
+      category: "Top",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/49909302_034_b",
+      packer_id: yuki_traveler.id
+    )
+
+ Item.create!(
+      name: "Ancient Relic",
+      description: "Back: 79.5 cm Sleeve: 67.25 cm.",
+      category: "Top",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/50120658_001_d",
+      packer_id: yuki_traveler.id
+    )
+
+ Item.create!(
+      name: "Casual Long",
+      description: "Back: 79.5 cm Sleeve: 67.25 cm.",
+      category: "Top",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/48274518_010_b",
+      packer_id: yuki_traveler.id
+    )
+
+# hipster tops^^^^
+
+
+# hipster bottoms
+
+ Item.create!(
+      name: "Circle Brown Print",
+      description: "Waist: Circumference: 94.0 cm (Size 36R).",
+      category: "Bottom",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/44050458_002_b",
+      packer_id: yuki_traveler.id
+    )
+
+  Item.create!(
+      name: "Square Stripes Casual",
+      description: "Waist: Circumference: 94.0 cm (Size 36R).",
+      category: "Bottom",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/44050458_006_b",
+      packer_id: yuki_traveler.id
+    )
+
+   Item.create!(
+      name: "White Straight Long",
+      description: "Waist: Circumference: 94.0 cm (Size 36R).",
+      category: "Bottom",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/43681741_010_b",
+      packer_id: yuki_traveler.id
+    )
+
+    Item.create!(
+      name: "Woodstock Pattern",
+      description: "Loose Waist (Size 36R).",
+      category: "Bottom",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: "https://s7d5.scene7.com/is/image/UrbanOutfitters/49269616_062_b",
+      packer_id: yuki_traveler.id
+    )
+
+
+
+# hipster bottoms^^^
+
+
+# hipster belt
+
+ Item.create!(
+      name: "Hygiene Kit",
+      description: "Stay fresh on the go!",
+      category: "Miscellaneous",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: TRAVELTOILETRIES.sample,
+      packer_id: yuki_traveler.id
+      )
+
+ Item.create!(
+      name: "Not Mainstream Belt",
+      description: "New Age Belt",
+      category: "Miscellaneous",
+      style: "Hipster",
+      size: "L",
+      price: 500,
+      remote_photo_url: BELTS.sample,
+      packer_id: yuki_traveler.id
+      )
+
+# hipster belt^^^
+
+# hipster pack ^^^^
+
 # working pack for yuki travel view^^^^^^^^^
 
 # packer profile of yuki with just items
 
-yuki_packer = Packer.create!(
-    first_name: "Yuki",
-    last_name: "Mori",
-    photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/wzq20vmxjrjfpjlsvlnl.jpg",
-    biography: "Living in Shibuya! Love Mad Men and play jazz - check out CMajor7!",
-    location: "Shibuya, Tokyo",
-    email: "yuki@gmail.com",
-    password: "secret"
-    )
+# yuki_packer = Packer.create!(
+#     first_name: "Yuki",
+#     last_name: "Mori",
+#     photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/wzq20vmxjrjfpjlsvlnl.jpg",
+#     biography: "Living in Shibuya! Love Mad Men and play jazz - check out CMajor7!",
+#     location: "Shibuya, Tokyo",
+#     email: "yuki@gmail.com",
+#     password: "secret"
+#     )
 
 # tops
 
-Item.create!(
-      name: "White Oxford Shirt",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw53c499fe/hi-res/FON0333WHT_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "White Oxford Shirt",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw53c499fe/hi-res/FON0333WHT_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Lilac Oxford",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwf9d1a2da/hi-res/FON0409SKY_c.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Lilac Oxford",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwf9d1a2da/hi-res/FON0409SKY_c.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Pastel Casual Button Down",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw8ecfac06/hi-res/FOR2048PNK_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Pastel Casual Button Down",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw8ecfac06/hi-res/FOR2048PNK_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Light Sky Blue Squares",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwdb002a08/hi-res/FOB0306TEL_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Light Sky Blue Squares",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwdb002a08/hi-res/FOB0306TEL_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Navy Large Squares",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw0e1dcf88/hi-res/FOB0308NAV_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Navy Large Squares",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw0e1dcf88/hi-res/FOB0308NAV_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Light Blue Stripes",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw1db4033e/hi-res/FOB0338SWT_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Light Blue Stripes",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw1db4033e/hi-res/FOB0338SWT_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Pink and Sky Stripes",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw4c30bb3f/hi-res/FON0960LSK_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Pink and Sky Stripes",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw4c30bb3f/hi-res/FON0960LSK_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Navy Gingham",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9e105aff/hi-res/CSN0234RYL_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Navy Gingham",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9e105aff/hi-res/CSN0234RYL_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Bone Formal",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw53c499fe/hi-res/FON0333WHT_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Bone Formal",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw53c499fe/hi-res/FON0333WHT_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Evening White Formal",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw828bd065/hi-res/FOL0153WHT_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Evening White Formal",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw828bd065/hi-res/FOL0153WHT_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Pinstripe Button Down",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw77573435/hi-res/FOL0206HWT_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Pinstripe Button Down",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw77573435/hi-res/FOL0206HWT_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "White Polo",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwb8b31993/hi-res/JEP0317WHT_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "White Polo",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwb8b31993/hi-res/JEP0317WHT_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Lilac Oxford",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw10f41cfb/hi-res/FOB0340BLU_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Lilac Oxford",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw10f41cfb/hi-res/FOB0340BLU_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Salmon Polo",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw212f278c/hi-res/JEP0327DOR_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Salmon Polo",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw212f278c/hi-res/JEP0327DOR_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Navy Polo Long Sleeve",
-      description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
-      category: "Top",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwf4af94be/hi-res/JEP0326NAV_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Navy Polo Long Sleeve",
+#       description: "Back: Length: 79.5 cm (Size L) Sleeve: Length: 67.25 cm.",
+#       category: "Top",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwf4af94be/hi-res/JEP0326NAV_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
 # tops^^
-
-
-
 # bottoms
 
-Item.create!(
-      name: "Gray Dress Pants",
-      description: "Waist: Circumference: 93.0 cm (Size 36R).",
-      category: "Bottom",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Gray Dress Pants",
+#       description: "Waist: Circumference: 93.0 cm (Size 36R).",
+#       category: "Bottom",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Ludlow Heather Twill",
-      description: "Waist: Circumference: 93.0 cm (Size 36R).",
-      category: "Bottom",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwe84cae28/hi-res/TRC0184NAV_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Ludlow Heather Twill",
+#       description: "Waist: Circumference: 93.0 cm (Size 36R).",
+#       category: "Bottom",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwe84cae28/hi-res/TRC0184NAV_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Casual Khakis",
-      description: "Waist: Circumference: 93.0 cm (Size 36R).",
-      category: "Bottom",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw4a6e4312/hi-res/TRT0230STN_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Casual Khakis",
+#       description: "Waist: Circumference: 93.0 cm (Size 36R).",
+#       category: "Bottom",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw4a6e4312/hi-res/TRT0230STN_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Black Dress Pants",
-      description: "Waist: Circumference: 93.0 cm (Size 36R).",
-      category: "Bottom",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw00bea9b4/hi-res/SUB0002BLK_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Black Dress Pants",
+#       description: "Waist: Circumference: 93.0 cm (Size 36R).",
+#       category: "Bottom",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw00bea9b4/hi-res/SUB0002BLK_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Charcoal Club Shorts",
-      description: "Waist: Circumference: 93.0 cm (Size 36R).",
-      category: "Bottom",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwff23005e/hi-res/TRH0032NAV_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Charcoal Club Shorts",
+#       description: "Waist: Circumference: 93.0 cm (Size 36R).",
+#       category: "Bottom",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwff23005e/hi-res/TRH0032NAV_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Navy Club Shorts",
-      description: "Waist: Circumference: 93.0 cm (Size 36R).",
-      category: "Bottom",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwf5de01a7/hi-res/TRH0033AFB_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Navy Club Shorts",
+#       description: "Waist: Circumference: 93.0 cm (Size 36R).",
+#       category: "Bottom",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwf5de01a7/hi-res/TRH0033AFB_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Khakis Club Shorts",
-      description: "Waist: Circumference: 93.0 cm (Size 36R).",
-      category: "Bottom",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwd72ee061/hi-res/TRH0033TAN_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Khakis Club Shorts",
+#       description: "Waist: Circumference: 93.0 cm (Size 36R).",
+#       category: "Bottom",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwd72ee061/hi-res/TRH0033TAN_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Light Blue Corduroy Pants",
-      description: "Waist: Circumference: 93.0 cm (Size 36R).",
-      category: "Bottom",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw54b29cca/hi-res/TRT0123AFB_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Light Blue Corduroy Pants",
+#       description: "Waist: Circumference: 93.0 cm (Size 36R).",
+#       category: "Bottom",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw54b29cca/hi-res/TRT0123AFB_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Blue Corduroy Pants",
-      description: "Waist: Circumference: 93.0 cm (Size 36R).",
-      category: "Bottom",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwb98ee8ed/hi-res/TRT0124NAV_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Blue Corduroy Pants",
+#       description: "Waist: Circumference: 93.0 cm (Size 36R).",
+#       category: "Bottom",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwb98ee8ed/hi-res/TRT0124NAV_a.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
-Item.create!(
-      name: "Brown Corduroy Pants",
-      description: "Waist: Circumference: 93.0 cm (Size 36R).",
-      category: "Bottom",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwb262b30c/hi-res/TRT0123OLV_a.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Brown Corduroy Pants",
+#       description: "Waist: Circumference: 93.0 cm (Size 36R).",
+#       category: "Bottom",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwb262b30c/hi-res/TRT0123OLV_a.jpg",
+#       packer_id: yuki_packer.id
+    # )
 
 
 # bottoms ^^
 
 # culturals
 
-Item.create!(
-      name: "Traditional Robe",
-      description: "Perfect for lounging",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.nipponandco.fr/9444-large_default/japanese-traditional-black-cotton-yukata-kimono-ancient-coins-for-men.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Traditional Robe",
+#       description: "Perfect for lounging",
+#       category: "Miscellaneous",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.nipponandco.fr/9444-large_default/japanese-traditional-black-cotton-yukata-kimono-ancient-coins-for-men.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
 # culturals^^
 
@@ -1446,98 +1591,109 @@ Item.create!(
 
 
 
-Item.create!(
-      name: "Hygiene Kit",
-      description: "Stay fresh on the go!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 600,
-      remote_photo_url: "https://www.conveniencekits.com/blog/picts/blog/139-2.jpg",
-      packer_id: yuki_packer.id
-    )
+# Item.create!(
+#       name: "Hygiene Kit",
+#       description: "Stay fresh on the go!",
+#       category: "Miscellaneous",
+#       style: "Vintage",
+#       size: "L",
+#       price: 600,
+#       remote_photo_url: "https://www.conveniencekits.com/blog/picts/blog/139-2.jpg",
+#       packer_id: yuki_packer.id
+#     )
 
 # hygiene^^
 
 # belt
 
-Item.create!(
-        name: "Black belt",
-        description: "This belt will be very useful in your travels.",
-        category: "Belt",
-        style: "Vintage",
-        size: "L",
-        price: 600,
-        remote_photo_url: "https://im.uniqlo.com/images/jp/pc/goods/413069/item/09_413069_middles.jpg",
-        packer_id: yuki_packer.id
-      )
+# Item.create!(
+#         name: "Black belt",
+#         description: "This belt will be very useful in your travels.",
+#         category: "Belt",
+#         style: "Vintage",
+#         size: "L",
+#         price: 600,
+#         remote_photo_url: "https://im.uniqlo.com/images/jp/pc/goods/413069/item/09_413069_middles.jpg",
+#         packer_id: yuki_packer.id
+#       )
 
 
-      Item.create!(
-        name: "Brown belt",
-        description: "This belt will be very useful in your travels.",
-        category: "Belt",
-        style: "Vintage",
-        size: "L",
-        price: 600,
-        remote_photo_url: "https://im.uniqlo.com/images/jp/pc/goods/415573/item/37_415573_middles.jpg",
-        packer_id: yuki_packer.id
-      )
+#       Item.create!(
+#         name: "Brown belt",
+#         description: "This belt will be very useful in your travels.",
+#         category: "Belt",
+#         style: "Vintage",
+#         size: "L",
+#         price: 600,
+#         remote_photo_url: "https://im.uniqlo.com/images/jp/pc/goods/415573/item/37_415573_middles.jpg",
+#         packer_id: yuki_packer.id
+#       )
 
-      Item.create!(
-        name: "Brown belt",
-        description: "This belt will be very useful in your travels.",
-        category: "Belt",
-        style: STYLES.sample,
-        size: SIZES.sample,
-        price: 600,
-        remote_photo_url: "https://im.uniqlo.com/images/jp/pc/goods/416101/item/38_416101_middles.jpg",
-        packer_id: yuki_packer.id
-      )
+#       Item.create!(
+#         name: "Brown belt",
+#         description: "This belt will be very useful in your travels.",
+#         category: "Belt",
+#         style: STYLES.sample,
+#         size: SIZES.sample,
+#         price: 600,
+#         remote_photo_url: "https://im.uniqlo.com/images/jp/pc/goods/416101/item/38_416101_middles.jpg",
+#         packer_id: yuki_packer.id
+#       )
 
 # belt^^
 
 #upsells
 
-    Item.create!(
-      name: "Harry's Shave Kit",
-      description: "Stay fresh on the go!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 500,
-      remote_photo_url: "https://uncrate.com/p/2016/06/harrys.jpg",
-      packer_id: yuki_packer.id
-    )
+    # Item.create!(
+    #   name: "Harry's Shave Kit",
+    #   description: "Stay fresh on the go!",
+    #   category: "Miscellaneous",
+    #   style: "Vintage",
+    #   size: "L",
+    #   price: 500,
+    #   remote_photo_url: "https://uncrate.com/p/2016/06/harrys.jpg",
+    #   packer_id: yuki_packer.id
+    # )
 
-    Item.create!(
-      name: "Harry's Shave Kit",
-      description: "Stay fresh on the go!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 500,
-      remote_photo_url: "https://www.harrys.com/harrys-cdnx-prod/assets/images/index_images/attachments/7bb0b3ca7972df77e6a7dbe552510ccda8decfb3.jpg",
-      packer_id: yuki_packer.id
-    )
+    # Item.create!(
+    #   name: "Harry's Shave Kit",
+    #   description: "Stay fresh on the go!",
+    #   category: "Miscellaneous",
+    #   style: "Vintage",
+    #   size: "L",
+    #   price: 500,
+    #   remote_photo_url: "https://www.harrys.com/harrys-cdnx-prod/assets/images/index_images/attachments/7bb0b3ca7972df77e6a7dbe552510ccda8decfb3.jpg",
+    #   packer_id: yuki_packer.id
+    # )
 
-    Item.create!(
-      name: "Dollar Shave Kit",
-      description: "Stay fresh on the go!",
-      category: "Miscellaneous",
-      style: "Vintage",
-      size: "L",
-      price: 500,
-      remote_photo_url: "http://res.cloudinary.com/them-gifts/image/upload/v1460928243/cd4tw97x8izkrfba1pqv.jpg",
-      packer_id: yuki_packer.id
-    )
+    # Item.create!(
+    #   name: "Dollar Shave Kit",
+    #   description: "Stay fresh on the go!",
+    #   category: "Miscellaneous",
+    #   style: "Vintage",
+    #   size: "L",
+    #   price: 500,
+    #   remote_photo_url: "http://res.cloudinary.com/them-gifts/image/upload/v1460928243/cd4tw97x8izkrfba1pqv.jpg",
+    #   packer_id: yuki_packer.id
+    # )
 
 
 # packer profile of yuki with just items^^^^^^^
-puts "Finished creatng yuki seeds"
+puts "Finished creating yuki seeds"
 
-5.times do
-    Pack.create!(
+
+puts "creating spacer packs"
+bob = Packer.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo_url: USERIMAGES.sample,
+    biography: "Living that good life in Tokyo! I enjoy reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    location: TOKYOLOCATIONS.sample,
+    email: "#{rand(1000)}#{Faker::Internet.email}",
+    password: "psecret"
+    )
+
+   bob_pack = Pack.create!(
       size: SIZES.sample,
       duration: DURATIONS.sample,
       name: PACKNAMES.sample,
@@ -1545,8 +1701,278 @@ puts "Finished creatng yuki seeds"
       description: PACKDESCRIPTIONS.sample,
       remote_photo_url: PACKIMAGES.sample,
       price: PACKPRICES.sample,
-      packer_id: Packer.first(5).sample.id
+      packer_id: bob.id
       )
-  end
+4.times do
+   Item.create!(
+      name: "Gray Dress Pants",
+      description: "Waist: Circumference: 93.0 cm (Size 36R).",
+      category: "Top",
+      style: "Vintage",
+      size: "L",
+      price: 600,
+      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+      packer_id: bob.id,
+      pack_id: bob_pack.id
+    )
+ end
+
+ 3.times do
+   Item.create!(
+      name: "Gray Dress Pants",
+      description: "Waist: Circumference: 93.0 cm (Size 36R).",
+      category: "Bottom",
+      style: "Vintage",
+      size: "L",
+      price: 600,
+      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+      packer_id: bob.id,
+      pack_id: bob_pack.id
+    )
+ end
+
+ chris = Packer.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo_url: USERIMAGES.sample,
+    biography: "Living that good life in Tokyo! I enjoy reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    location: TOKYOLOCATIONS.sample,
+    email: "#{rand(1000)}#{Faker::Internet.email}",
+    password: "psecret"
+    )
+
+   chris_pack = Pack.create!(
+      size: SIZES.sample,
+      duration: DURATIONS.sample,
+      name: PACKNAMES.sample,
+      style: STYLES.sample,
+      description: PACKDESCRIPTIONS.sample,
+      remote_photo_url: PACKIMAGES.sample,
+      price: PACKPRICES.sample,
+      packer_id: chris.id
+      )
+
+   4.times do
+   Item.create!(
+      name: "Gray Dress Pants",
+      description: "Waist: Circumference: 93.0 cm (Size 36R).",
+      category: "Top",
+      style: "Vintage",
+      size: "L",
+      price: 600,
+      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+      packer_id: chris.id,
+      pack_id: chris_pack.id
+    )
+ end
+
+ 3.times do
+   Item.create!(
+      name: "Gray Dress Pants",
+      description: "Waist: Circumference: 93.0 cm (Size 36R).",
+      category: "Bottom",
+      style: "Vintage",
+      size: "L",
+      price: 600,
+      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+      packer_id: chris.id,
+      pack_id: chris_pack.id
+    )
+ end
+
+   david = Packer.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo_url: USERIMAGES.sample,
+    biography: "Living that good life in Tokyo! I enjoy reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    location: TOKYOLOCATIONS.sample,
+    email: "#{rand(1000)}#{Faker::Internet.email}",
+    password: "psecret"
+    )
+
+   david_pack = Pack.create!(
+      size: SIZES.sample,
+      duration: DURATIONS.sample,
+      name: PACKNAMES.sample,
+      style: STYLES.sample,
+      description: PACKDESCRIPTIONS.sample,
+      remote_photo_url: PACKIMAGES.sample,
+      price: PACKPRICES.sample,
+      packer_id: david.id
+      )
+
+   4.times do
+   Item.create!(
+      name: "Gray Dress Pants",
+      description: "Waist: Circumference: 93.0 cm (Size 36R).",
+      category: "Top",
+      style: "Vintage",
+      size: "L",
+      price: 600,
+      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+      packer_id: david.id,
+      pack_id: david_pack.id
+    )
+ end
+
+ 3.times do
+   Item.create!(
+      name: "Gray Dress Pants",
+      description: "Waist: Circumference: 93.0 cm (Size 36R).",
+      category: "Bottom",
+      style: "Vintage",
+      size: "L",
+      price: 600,
+      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+      packer_id: david.id,
+      pack_id: david_pack.id
+    )
+ end
+
+   adis = Packer.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo_url: USERIMAGES.sample,
+    biography: "Living that good life in Tokyo! I enjoy reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    location: TOKYOLOCATIONS.sample,
+    email: "#{rand(1000)}#{Faker::Internet.email}",
+    password: "psecret"
+    )
+
+   adis_pack = Pack.create!(
+      size: SIZES.sample,
+      duration: DURATIONS.sample,
+      name: PACKNAMES.sample,
+      style: STYLES.sample,
+      description: PACKDESCRIPTIONS.sample,
+      remote_photo_url: PACKIMAGES.sample,
+      price: PACKPRICES.sample,
+      packer_id: adis.id
+      )
+
+   4.times do
+   Item.create!(
+      name: "Gray Dress Pants",
+      description: "Waist: Circumference: 93.0 cm (Size 36R).",
+      category: "Top",
+      style: "Vintage",
+      size: "L",
+      price: 600,
+      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+      packer_id: adis.id,
+      pack_id: adis_pack.id
+    )
+ end
+
+ 3.times do
+   Item.create!(
+      name: "Gray Dress Pants",
+      description: "Waist: Circumference: 93.0 cm (Size 36R).",
+      category: "Bottom",
+      style: "Vintage",
+      size: "L",
+      price: 600,
+      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+      packer_id: adis.id,
+      pack_id: adis_pack.id
+    )
+ end
+
+   jeff = Packer.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    photo_url: USERIMAGES.sample,
+    biography: "Living that good life in Tokyo! I enjoy reading #{Faker::DcComics.hero} comics and eating #{Faker::Dessert.variety}.",
+    location: TOKYOLOCATIONS.sample,
+    email: "#{rand(1000)}#{Faker::Internet.email}",
+    password: "psecret"
+    )
+
+   jeff_pack = Pack.create!(
+      size: SIZES.sample,
+      duration: DURATIONS.sample,
+      name: PACKNAMES.sample,
+      style: STYLES.sample,
+      description: PACKDESCRIPTIONS.sample,
+      remote_photo_url: PACKIMAGES.sample,
+      price: PACKPRICES.sample,
+      packer_id: jeff.id
+      )
+
+   4.times do
+   Item.create!(
+      name: "Gray Dress Pants",
+      description: "Waist: Circumference: 93.0 cm (Size 36R).",
+      category: "Top",
+      style: "Vintage",
+      size: "L",
+      price: 600,
+      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+      packer_id: jeff.id,
+      pack_id: jeff_pack.id
+    )
+ end
+
+ 3.times do
+   Item.create!(
+      name: "Gray Dress Pants",
+      description: "Waist: Circumference: 93.0 cm (Size 36R).",
+      category: "Bottom",
+      style: "Vintage",
+      size: "L",
+      price: 600,
+      remote_photo_url: "https://www.ctshirts.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw9dea2b4b/hi-res/TRT0227WNV_a.jpg",
+      packer_id: jeff.id,
+      pack_id: jeff_pack.id
+    )
+ end
+
+ puts "finished creating spacer packers"
+
+ puts "creating francis bookings"
+
+
+
+
+  # t.integer "fees"
+#     t.string "delivery_address"
+#     t.string "delivery_date"
+#     t.string "return_deadline"
+#     t.boolean "completed", default: false
+#     t.bigint "traveler_id"
+#     t.datetime "created_at", null: false
+#     t.datetime "updated_at", null: false
+#     t.integer "booking_days"
+#     t.bigint "packer_id"
+#     t.jsonb "payment"
+#     t.string "state"
+
+
+# Current_Packer.Bookings.where(completed: true).map(&:cost).sum
+
+ puts "finished creating francis bookings"
+
+  puts "Creating Reviews"
+32.times do
+  Booking.create!(
+    completed: true,
+    traveler: Traveler.last,
+    packer: yuki_traveler,
+    fees: 8000
+    )
+end
+
+Booking.all.each do |booking|
+  PackerReview.create!(
+    review: "Delivered on time, cleaned and ironed.",
+    rating: 4,
+    booking: booking
+    )
+end
+
+puts "Reviews Completed"
+
+
+
 
 puts "Finished creating all seeds :D"
