@@ -175,3 +175,14 @@
 
   }
 }
+
+
+.bookingcostcontainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.bookingcostcontainer p {
+  margin: 0px 10px 0px 0px;
+}
