@@ -176,13 +176,17 @@
   }
 }
 
-
-.bookingcostcontainer {
+.bookingsnumberstatuscontainer {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 15px;
+  justify-content: space-between;
+  margin-bottom: 5px;
 }
-.bookingcostcontainer p {
-  margin: 0px 10px 0px 0px;
+
+
+.glyphicon {
+  font-size: 18px;
+}
+
+.packerreviews {
+  margin-bottom: 10px;
 }

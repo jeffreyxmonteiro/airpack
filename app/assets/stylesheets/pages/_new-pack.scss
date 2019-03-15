@@ -33,7 +33,7 @@
   box-shadow: 1px 1px 1px 1px lightgrey;
   border-radius: 10px;
   background: white;
-  // overflow: auto;
+  overflow: hidden;
 }
 
 .small-font {
@@ -51,4 +51,16 @@ div.sticky {
   display: flex;
   flex-direction: column;
   align-items:center;
+}
+.findquick-btn {
+  border-radius: 50px;
+  font-weight: bold;
+  padding: 5px 20px;
+  border: 1px solid #42B6C5;
+  color: #42B6C5;
+}
+
+.findquick-btn:hover {
+  text-decoration: none;
+  color: #5DD1D2;
 }
