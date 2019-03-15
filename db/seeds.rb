@@ -1,5 +1,7 @@
 require 'faker'
 
+PackerReview.destroy_all
+puts "destroyed reviews"
 BookingItem.destroy_all
 puts "destroyed booking items"
 Booking.destroy_all
